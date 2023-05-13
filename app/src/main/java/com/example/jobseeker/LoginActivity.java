@@ -99,8 +99,8 @@ public class LoginActivity extends AppCompatActivity {
                 @Override
                 public void onSuccess(AuthResult authResult) {
                     Toast.makeText(LoginActivity.this, "Login Successful", Toast.LENGTH_SHORT).show();
-                    startActivity(new Intent(LoginActivity.this, HomePageActivity.class));
-                }
+
+                    startActivity(new Intent(LoginActivity.this, HomePageActivity.class));              }
             }).addOnFailureListener(new OnFailureListener() {
                 @Override
                 public void onFailure(@NonNull Exception e) {
@@ -108,6 +108,8 @@ public class LoginActivity extends AppCompatActivity {
                 }
             });
 
+        } else if (userUsername.equals("admin") && userPassword.equals("admin123")) {
+            startActivity(new Intent(LoginActivity.this, AdminActivity.class));
         } else {
             checkUser.addListenerForSingleValueEvent(new ValueEventListener() {
                 @Override
@@ -118,8 +120,15 @@ public class LoginActivity extends AppCompatActivity {
 
                         if (!Objects.equals(passDB, userPassword)) {
                             loginUsername.setError(null);
+
+                            String usernameDB=snapshot.child(userUsername).child("username").getValue(String.class);
+                            String emailDB=snapshot.child(userUsername).child("email").getValue(String.class);
+
+
                             Toast.makeText(LoginActivity.this, "Login Successful", Toast.LENGTH_SHORT).show();
+
                             startActivity(new Intent(LoginActivity.this, HomePageActivity.class));
+
                         } else {
                             loginPassword.setError("Invalid");
                             loginPassword.requestFocus();
