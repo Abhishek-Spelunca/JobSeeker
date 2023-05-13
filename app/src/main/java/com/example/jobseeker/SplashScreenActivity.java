@@ -1,36 +1,46 @@
 package com.example.jobseeker;
 
-import android.content.Intent;
-import android.os.Bundle;
-import android.view.View;
-import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-public class SplashScreenActivity extends AppCompatActivity {
+import android.content.Intent;
+import android.os.Bundle;
+import android.os.Handler;
+import android.view.WindowManager;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
+import android.widget.ImageView;
+import android.widget.TextView;
 
-    TextView loginPage, signupPage;
+public class SplashScreenActivity extends AppCompatActivity {
+    private  static  int SPLASH_SCREEN =3500;
+    ImageView imageView;
+    TextView textView1, textView2;
+    Animation top, bottom;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_splashscreen);
 
-        loginPage = findViewById(R.id.login_page);
-        signupPage = findViewById(R.id.signup_page);
+        imageView = findViewById(R.id.imageView);
+        textView1 = findViewById(R.id.textView);
+        top = AnimationUtils.loadAnimation(this, R.anim. top);
+        bottom = AnimationUtils.loadAnimation(this, R.anim.bottom);
 
-        loginPage.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(SplashScreenActivity.this, LoginActivity.class));
-            }
-        });
+        imageView.setAnimation(top);
+        textView1.setAnimation(bottom);
 
-        signupPage.setOnClickListener(new View.OnClickListener() {
+
+        new Handler().postDelayed(new Runnable() {
             @Override
-            public void onClick(View v) {
-                startActivity(new Intent(SplashScreenActivity.this, SignUpActivity.class));
+            public void run() {
+                Intent intent = new Intent(SplashScreenActivity.this, LoginActivity.class);
+                startActivity(intent);
+                finish();
             }
-        });
+        }, SPLASH_SCREEN);
+
     }
 }
