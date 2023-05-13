@@ -64,6 +64,7 @@
                     android:layout_marginStart="20dp"
                     android:layout_marginTop="10dp"
                     android:text="Name"
+                    android:id="@+id/profileName"
                     android:textColor="@color/dark"
                     android:textSize="18sp" />
 
@@ -83,6 +84,7 @@
                     android:layout_marginStart="20dp"
                     android:layout_marginTop="10dp"
                     android:text="email"
+                    android:id="@+id/profileEmail"
                     android:textColor="@color/dark"
                     android:textSize="18sp" />
 
@@ -102,6 +104,7 @@
                     android:layout_marginStart="20dp"
                     android:layout_marginTop="10dp"
                     android:text="age"
+                    android:id="@+id/profileAge"
                     android:textColor="@color/dark"
                     android:textSize="18sp" />
 
@@ -121,6 +124,7 @@
                     android:layout_marginStart="20dp"
                     android:layout_marginTop="10dp"
                     android:text="address"
+                    android:id="@+id/profileAddress"
                     android:textColor="@color/dark"
                     android:textSize="18sp" />
 
@@ -141,6 +145,7 @@
                     android:layout_marginStart="20dp"
                     android:layout_marginTop="10dp"
                     android:text="qualification"
+                    android:id="@+id/profileQualification"
                     android:textColor="@color/dark"
                     android:textSize="18sp" />
 

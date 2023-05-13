@@ -94,13 +94,15 @@ public class LoginActivity extends AppCompatActivity {
         DatabaseReference reference = FirebaseDatabase.getInstance().getReference("Users");
         Query checkUser = reference.orderByChild("username").equalTo(userUsername);
 
-        if (checkInput(userUsername)) {
+        if (userUsername.equals("admin") && userPassword.equals("admin123")) {
+            startActivity(new Intent(LoginActivity.this, AdminActivity.class));
+        }
+        else  {
             auth.signInWithEmailAndPassword(userUsername, userPassword).addOnSuccessListener(new OnSuccessListener<AuthResult>() {
                 @Override
                 public void onSuccess(AuthResult authResult) {
                     Toast.makeText(LoginActivity.this, "Login Successful", Toast.LENGTH_SHORT).show();
-
-                    startActivity(new Intent(LoginActivity.this, HomePageActivity.class));              }
+                    startActivity(new Intent(LoginActivity.this, HomePageActivity.class));                }
             }).addOnFailureListener(new OnFailureListener() {
                 @Override
                 public void onFailure(@NonNull Exception e) {
@@ -108,9 +110,8 @@ public class LoginActivity extends AppCompatActivity {
                 }
             });
 
-        } else if (userUsername.equals("admin") && userPassword.equals("admin123")) {
-            startActivity(new Intent(LoginActivity.this, AdminActivity.class));
-        } else {
+        }
+        /*else {
             checkUser.addListenerForSingleValueEvent(new ValueEventListener() {
                 @Override
                 public void onDataChange(@NonNull DataSnapshot snapshot) {
@@ -144,11 +145,6 @@ public class LoginActivity extends AppCompatActivity {
 
                 }
             });
-        }
+        }*/
     }
-
-    public Boolean checkInput(String userInput) {
-        return Patterns.EMAIL_ADDRESS.matcher(userInput).matches();
-    }
-
 }

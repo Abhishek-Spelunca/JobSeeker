@@ -53,14 +53,15 @@
                 android:textColor="@color/black" />
 
             <EditText
-                android:id="@+id/upload_email"
+                android:id="@+id/upload_phone"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:layout_marginTop="20dp"
                 android:background="@drawable/border"
                 android:gravity="start|center_vertical"
-                android:hint="Email"
+                android:hint="Phone No"
                 android:padding="16dp"
+                android:inputType="number"
                 android:textColor="@color/black" />
 
             <EditText
@@ -71,11 +72,12 @@
                 android:background="@drawable/border"
                 android:gravity="start|center_vertical"
                 android:hint="Age"
+                android:inputType="number"
                 android:padding="16dp"
                 android:textColor="@color/black" />
 
             <EditText
-                android:id="@+id/upload_skills"
+                android:id="@+id/upload_address"
                 android:layout_width="match_parent"
                 android:layout_height="80dp"
                 android:layout_marginTop="20dp"
@@ -87,7 +89,7 @@
 
 
             <EditText
-                android:id="@+id/upload_jobDesc"
+                android:id="@+id/upload_qualification"
                 android:layout_width="match_parent"
                 android:layout_height="80dp"
                 android:layout_marginTop="20dp"
