@@ -17,6 +17,7 @@ import androidx.drawerlayout.widget.DrawerLayout;
 
 import com.google.android.material.navigation.NavigationView;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -28,7 +29,7 @@ public class HomePageActivity extends AppCompatActivity implements NavigationVie
 
     DrawerLayout drawerLayout;
 
-    FirebaseAuth auth;
+    FirebaseUser auth;
 
 
     @Override
@@ -36,7 +37,7 @@ public class HomePageActivity extends AppCompatActivity implements NavigationVie
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home_page);
 
-        auth = FirebaseAuth.getInstance();
+        auth = FirebaseAuth.getInstance().getCurrentUser();
 
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -55,26 +56,21 @@ public class HomePageActivity extends AppCompatActivity implements NavigationVie
         TextView email=header.findViewById(R.id.nav_email);
 
 
-        Intent intent=getIntent();
-        String loggedUser=intent.getStringExtra("loginInfo");
-
         FirebaseDatabase database=FirebaseDatabase.getInstance();
-        Query checkType;
+
 
         DatabaseReference reference= database.getReference("Users");
-        if (Patterns.EMAIL_ADDRESS.matcher(loggedUser).matches()){
-            checkType = reference.orderByChild("email").equalTo(loggedUser);
-        }else {
+        String currUser= auth.getUid();
 
-            checkType= reference.orderByChild("username").equalTo(loggedUser);
-        }
+
+        Query checkType=reference.orderByChild("uid").equalTo(currUser);
 
         checkType.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 if (snapshot.exists()){
-                    String userDB = snapshot.child(loggedUser).child("username").getValue(String.class);
-                    String emailDB = snapshot.child(loggedUser).child("email").getValue(String.class);
+                    String userDB = snapshot.child(currUser).child("username").getValue(String.class);
+                    String emailDB = snapshot.child(currUser).child("email").getValue(String.class);
                     user.setText(""+userDB);
                     email.setText(""+emailDB);
                 }
@@ -85,6 +81,10 @@ public class HomePageActivity extends AppCompatActivity implements NavigationVie
 
             }
         });
+
+
+
+
 
         if (savedInstanceState == null) {
             getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new HomeFragment()).commit();
@@ -105,7 +105,7 @@ public class HomePageActivity extends AppCompatActivity implements NavigationVie
         } else if (itemId == R.id.nav_applied) {
             getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new AppliedJobFragment()).commit();
         } else if (itemId == R.id.logout) {
-            auth.signOut();
+            FirebaseAuth.getInstance().signOut();
             startActivity(new Intent(HomePageActivity.this, LoginActivity.class));
             Toast.makeText(this, "Logout", Toast.LENGTH_SHORT).show();
             finish();

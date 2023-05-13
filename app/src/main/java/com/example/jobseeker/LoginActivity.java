@@ -100,9 +100,7 @@ public class LoginActivity extends AppCompatActivity {
                 public void onSuccess(AuthResult authResult) {
                     Toast.makeText(LoginActivity.this, "Login Successful", Toast.LENGTH_SHORT).show();
 
-                    Intent intent=new Intent(LoginActivity.this, HomePageActivity.class);
-                    intent.putExtra("loginInfo",userUsername);
-                    startActivity(intent);                }
+                    startActivity(new Intent(LoginActivity.this, HomePageActivity.class));              }
             }).addOnFailureListener(new OnFailureListener() {
                 @Override
                 public void onFailure(@NonNull Exception e) {
@@ -129,9 +127,7 @@ public class LoginActivity extends AppCompatActivity {
 
                             Toast.makeText(LoginActivity.this, "Login Successful", Toast.LENGTH_SHORT).show();
 
-                            Intent intent=new Intent(LoginActivity.this, HomePageActivity.class);
-                            intent.putExtra("loginInfo",userUsername);
-                            startActivity(intent);
+                            startActivity(new Intent(LoginActivity.this, HomePageActivity.class));
 
                         } else {
                             loginPassword.setError("Invalid");
