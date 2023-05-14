@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal"
+    tools:context=".DetailActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/detailTitle"
+            android:text="Title"
+            android:layout_marginTop="14dp"
+            android:textSize="30sp"
+            android:textAlignment="center"
+            android:layout_gravity="top|center"
+            android:layout_marginBottom="12dp"
+            android:textColor="@color/black"
+            android:textStyle="bold"/>
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/detailLogo"
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:layout_below="@id/detailTitle"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentEnd="true"
+            android:layout_gravity="center"
+            android:layout_marginStart="100dp"
+            android:layout_marginTop="9dp"
+            android:layout_marginEnd="100dp"
+            android:scaleType="fitXY"
+            android:src="@drawable/image"
+            app:shapeAppearanceOverlay="@style/roundedImageViewRounded" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="15dp"
+            android:text="Company"
+            android:layout_below="@id/detailLogo"
+            android:id="@+id/detailCompany"
+            android:textSize="20sp"
+            android:drawableLeft="@drawable/company"
+            android:drawablePadding="8dp"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="15dp"
+            android:text="Location"
+            android:id="@+id/detailLocation"
+            android:layout_below="@id/detailCompany"
+            android:textSize="20sp"
+            android:drawableLeft="@drawable/location"
+            android:drawablePadding="8dp"/>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/detailLocation"
+            android:src="@drawable/currency"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginBottom="15dp"
+            android:id="@+id/currencyLogo"/>
+
+        <TextView
+            android:id="@+id/detailPayScale"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toEndOf="@id/currencyLogo"
+            android:layout_below="@id/detailLocation"
+            android:layout_marginTop="15dp"
+            android:layout_marginEnd="15dp"
+            android:layout_marginBottom="15dp"
+            android:background="@color/green2"
+            android:textColor="@color/green"
+            android:text="Pay"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/detailType"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/detailPayScale"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="15dp"
+            android:layout_marginBottom="15dp"
+            android:background="@color/blue"
+            android:paddingStart="6dp"
+            android:paddingTop="8dp"
+            android:paddingEnd="6dp"
+            android:paddingBottom="10dp"
+            android:text="Type"
+            android:textColor="@color/white"
+            android:textSize="20sp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/detailType"
+            android:id="@+id/ll"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="15dp"
+                android:text="Created On :"
+                android:textSize="20sp" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:layout_marginBottom="15dp"
+                android:text="Date"
+                android:id="@+id/detailCreated"
+                android:textSize="20sp" />
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="15dp"
+            android:layout_below="@id/ll"
+            android:text="Description"
+            android:textSize="26sp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="60dp"
+            android:layout_marginEnd="15dp"
+            android:text="Description"
+            android:id="@+id/detailDesc"
+            android:layout_below="@id/ll"
+            android:textSize="20sp" />
+
+        <Button
+            android:layout_width="300dp"
+            android:layout_height="60dp"
+            android:layout_below="@id/detailDesc"
+            android:layout_margin="20dp"
+            android:id="@+id/apply"
+            android:text="Apply"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            android:textStyle="bold"/>
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/detailDesc"
+            android:layout_toEndOf="@id/apply"
+            android:layout_marginTop="25dp"
+            app:cardCornerRadius="20dp"
+            app:cardElevation="20dp">
+
+            <ImageView
+                android:id="@+id/marked"
+                android:layout_width="45dp"
+                android:layout_height="45dp"
+                android:layout_below="@id/detailDesc"
+                android:layout_toEndOf="@+id/apply"
+                android:src="@drawable/mark"/>
+
+
+        </androidx.cardview.widget.CardView>
+
+
+
+
+
+
+
+    </RelativeLayout>
+
+</ScrollView>

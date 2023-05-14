@@ -94,8 +94,21 @@ public class LoginActivity extends AppCompatActivity {
         DatabaseReference reference = FirebaseDatabase.getInstance().getReference("Users");
         Query checkUser = reference.orderByChild("username").equalTo(userUsername);
 
-        if (userUsername.equals("admin") && userPassword.equals("admin123")) {
-            startActivity(new Intent(LoginActivity.this, AdminActivity.class));
+        if (userUsername.equals("admin@gmail.com") && userPassword.equals("admin123")) {
+            auth.signInWithEmailAndPassword(userUsername, userPassword).addOnSuccessListener
+                    (new OnSuccessListener<AuthResult>() {
+                        @Override
+                        public void onSuccess(AuthResult authResult) {
+                            Toast.makeText(LoginActivity.this, "Login Successful", Toast.LENGTH_SHORT).show();
+                            startActivity(new Intent(LoginActivity.this, AdminActivity.class));
+                            finish();
+                        }
+                    }).addOnFailureListener(new OnFailureListener() {
+                @Override
+                public void onFailure(@NonNull Exception e) {
+                    Toast.makeText(LoginActivity.this, "Login Failed", Toast.LENGTH_SHORT).show();
+                }
+            });
         }
         else  {
             auth.signInWithEmailAndPassword(userUsername, userPassword).addOnSuccessListener(new OnSuccessListener<AuthResult>() {

@@ -41,7 +41,7 @@
                 android:background="@drawable/border"
                 android:drawableLeft="@drawable/username"
                 android:drawablePadding="8dp"
-                android:hint="Username or Email"
+                android:hint="Email"
                 android:padding="8dp"
                 android:textColor="@color/black" />
 
@@ -57,12 +57,21 @@
                 android:hint="Password"
                 android:padding="8dp"
                 android:textColor="@color/black" />
+            <TextView
+                android:id="@+id/forgot_pass"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="Forgot Password?"
+                android:textAlignment="viewEnd"
+                android:textColor="@color/dark"
+                android:textSize="14sp" />
 
             <Button
                 android:id="@+id/login_btn"
                 android:layout_width="match_parent"
                 android:layout_height="60dp"
-                android:layout_marginTop="40dp"
+                android:layout_marginTop="20dp"
                 android:backgroundTint="@color/dark"
                 android:text="LOGIN"
                 android:textSize="26sp"
@@ -73,7 +82,7 @@
                 android:id="@+id/signupRedirectText"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="30dp"
+                android:layout_marginTop="25dp"
                 android:text="Not yet registered? Signup"
                 android:textAlignment="center"
                 android:textColor="@color/dark"
