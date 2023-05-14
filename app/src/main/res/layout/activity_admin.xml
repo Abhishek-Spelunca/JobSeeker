@@ -8,7 +8,9 @@
     android:orientation="vertical"
     tools:context=".AdminActivity">
 
-    <LinearLayout
+
+
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical">
@@ -19,241 +21,84 @@
             android:layout_height="50dp"
             android:background="@color/blue"
             android:elevation="4dp"
+            android:padding="10dp"
             android:popupTheme="@style/ThemeOverlay.AppCompat.Light"
-            android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar" />
-    </LinearLayout>
+            android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
+
+            <TextView
+                android:id="@+id/admin_logout"
+                android:layout_width="368dp"
+                android:layout_height="wrap_content"
+                android:drawableRight="@drawable/logout"
+                android:drawablePadding="10dp"
+                android:text="Welcome Admin"
+                android:textColor="@color/white"
+                android:textSize="24sp"
+                android:textStyle="bold" />
+
+        </androidx.appcompat.widget.Toolbar>
+
+    </RelativeLayout>
 
 
-    <LinearLayout
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@drawable/admin_border"
         android:backgroundTint="@color/blue"
         android:orientation="horizontal">
 
-        <androidx.cardview.widget.CardView
-            android:layout_width="140dp"
-            android:layout_height="100dp"
+        <androidx.appcompat.widget.SearchView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:searchHintIcon="@null"
+            app:iconifiedByDefault="false"
+            android:focusable="false"
+            android:background="@drawable/border"
+            android:backgroundTint="@color/white"
+            app:queryHint="Search..."
+            android:id="@+id/search"
+            app:searchIcon="@drawable/search"
+            app:closeIcon="@drawable/clear"
+            android:layout_marginStart="12dp"
+            android:layout_marginEnd="12dp"
+            android:layout_marginBottom="20dp"
+            android:layout_marginTop="16dp" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="10dp"
+            android:scrollbars="vertical"
+            android:id="@+id/recyclerView"/>
+
+
+
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/fab"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentBottom="true"
+            android:layout_gravity="bottom"
             android:layout_marginStart="40dp"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="40dp"
             android:layout_marginEnd="40dp"
             android:layout_marginBottom="40dp"
-            android:background="@drawable/border"
             android:backgroundTint="@color/dark"
-            android:elevation="4dp"
-            app:cardCornerRadius="20dp">
-
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:text="Users"
-                android:textAlignment="center"
-                android:textSize="28sp"
-                android:textStyle="bold" />
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:layout_gravity="bottom"
-                android:background="@color/white"
-                android:gravity="center"
-                android:text="0"
-                android:id="@+id/user_num"
-                android:textSize="28sp"
-                android:textStyle="bold" />
-
-
-        </androidx.cardview.widget.CardView>
-
-        <androidx.cardview.widget.CardView
-            android:layout_width="140dp"
-            android:layout_height="100dp"
-            android:layout_marginStart="10dp"
-            android:layout_marginTop="20dp"
-            android:layout_marginEnd="40dp"
-            android:layout_marginBottom="40dp"
             android:background="@drawable/border"
-            android:backgroundTint="@color/dark"
-            android:elevation="4dp"
-            app:cardCornerRadius="20dp">
+            android:src="@drawable/add"
+            android:tint="@color/white" />
 
 
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:text="Jobs"
-                android:textAlignment="center"
-                android:textSize="28sp"
-                android:textStyle="bold" />
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="53dp"
-                android:layout_gravity="bottom"
-                android:background="@color/white"
-                android:gravity="center"
-                android:text="0"
-                android:id="@+id/job_num"
-                android:textSize="28sp"
-                android:textStyle="bold" />
-
-
-        </androidx.cardview.widget.CardView>
-
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="10dp"
-        android:orientation="horizontal">
-
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="100dp"
-            android:orientation="horizontal"
-            android:layout_marginStart="20dp"
-            android:layout_marginTop="20dp"
-            android:layout_marginEnd="20dp"
-            android:background="@drawable/white_background">
-
-            <androidx.cardview.widget.CardView
-                android:layout_width="150dp"
-                android:layout_height="100dp"
-                app:cardCornerRadius="30dp"
-                android:backgroundTint="@color/blue"
-                android:elevation="10dp">
-
-                <TextView
-                    android:id="@+id/add_job"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:elevation="10dp"
-                    android:padding="8dp"
-                    android:text="Add New Job"
-                    android:textAlignment="center"
-                    android:textColor="@color/white"
-                    android:textSize="28sp"
-                    android:textStyle="bold" />
-
-            </androidx.cardview.widget.CardView>
-
-
-
-
-        </LinearLayout>
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="100dp"
-            android:orientation="horizontal"
-            android:layout_marginStart="20dp"
-            android:layout_marginTop="20dp"
-            android:layout_marginEnd="20dp"
-            android:background="@drawable/white_background">
-
-
-
-            <androidx.cardview.widget.CardView
-                android:layout_width="150dp"
-                android:layout_height="100dp"
-                app:cardCornerRadius="30dp"
-                android:backgroundTint="@color/blue"
-                android:elevation="10dp">
-
-                <TextView
-                    android:id="@+id/update_job"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:elevation="10dp"
-                    android:padding="8dp"
-                    android:text="Update Job"
-                    android:textColor="@color/white"
-                    android:textAlignment="center"
-                    android:textSize="28sp"
-                    android:textStyle="bold" />
-
-            </androidx.cardview.widget.CardView>
-
-
-
-        </LinearLayout>
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="10dp"
-        android:orientation="horizontal">
-
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="100dp"
-            android:orientation="horizontal"
-            android:layout_marginStart="20dp"
-            android:layout_marginTop="20dp"
-            android:layout_marginEnd="20dp"
-            android:background="@drawable/white_background">
-
-            <androidx.cardview.widget.CardView
-                android:layout_width="150dp"
-                android:layout_height="100dp"
-                app:cardCornerRadius="30dp"
-                android:backgroundTint="@color/blue"
-                android:elevation="10dp">
-
-                <TextView
-                    android:id="@+id/delete_job"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:elevation="10dp"
-                    android:padding="8dp"
-                    android:text="Delete Job"
-                    android:textAlignment="center"
-                    android:textColor="@color/white"
-                    android:textSize="28sp"
-                    android:textStyle="bold" />
-            </androidx.cardview.widget.CardView>
-
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="100dp"
-            android:orientation="horizontal"
-            android:layout_marginStart="20dp"
-            android:layout_marginTop="20dp"
-            android:layout_marginEnd="20dp"
-            android:background="@drawable/white_background">
-
-
-
-            <androidx.cardview.widget.CardView
-                android:layout_width="150dp"
-                android:layout_height="100dp"
-                app:cardCornerRadius="30dp"
-                android:backgroundTint="@color/blue"
-                android:elevation="10dp">
-
-                <TextView
-                    android:id="@+id/search_user"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:elevation="10dp"
-                    android:padding="8dp"
-                    android:text="Search User"
-                    android:textColor="@color/white"
-                    android:textAlignment="center"
-                    android:textSize="28sp"
-                    android:textStyle="bold" />
-
-            </androidx.cardview.widget.CardView>
-
-
-        </LinearLayout>
-    </LinearLayout>
+    </RelativeLayout>
 
 
 </LinearLayout>
