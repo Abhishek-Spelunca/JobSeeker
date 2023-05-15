@@ -34,18 +34,6 @@
                 android:textStyle="bold" />
 
             <EditText
-                android:id="@+id/sign_username"
-                android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:layout_marginTop="30dp"
-                android:background="@drawable/border"
-                android:drawableLeft="@drawable/username"
-                android:drawablePadding="8dp"
-                android:hint="Username"
-                android:padding="8dp"
-                android:textColor="@color/black" />
-
-            <EditText
                 android:id="@+id/sign_email"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
