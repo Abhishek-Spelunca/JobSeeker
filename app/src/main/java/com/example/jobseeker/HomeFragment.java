@@ -34,7 +34,7 @@ public class HomeFragment extends Fragment {
     List<DataClass> dataList;
     DatabaseReference reference;
     ValueEventListener eventListener;
-    androidx.appcompat.widget.SearchView searchView;
+    androidx.appcompat.widget.SearchView searchView,locationView;
     MyAdapter adapter;
 
 
@@ -50,7 +50,9 @@ public class HomeFragment extends Fragment {
 
         recyclerView=v.findViewById(R.id.recyclerView);
         searchView=v.findViewById(R.id.search);
+        locationView=v.findViewById(R.id.searchLocation);
         searchView.clearFocus();
+        locationView.clearFocus();
 
         GridLayoutManager gridLayoutManager=new GridLayoutManager(getActivity(),1);
         recyclerView.setLayoutManager(gridLayoutManager);
@@ -106,6 +108,18 @@ public class HomeFragment extends Fragment {
                 return true;
             }
         });
+        locationView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+            @Override
+            public boolean onQueryTextSubmit(String query) {
+                return false;
+            }
+
+            @Override
+            public boolean onQueryTextChange(String newText) {
+                searchLocation(newText);
+                return true;
+            }
+        });
 
 
         return v;
@@ -118,5 +132,14 @@ public class HomeFragment extends Fragment {
             }
         }
         adapter.searchDataList(searchList);
+    }
+    public void searchLocation(String text){
+        ArrayList<DataClass> searchLocation=new ArrayList<>();
+        for (DataClass dataClass:dataList){
+            if (dataClass.getDataLocation().toLowerCase().contains(text.toLowerCase())){
+                searchLocation.add(dataClass);
+            }
+        }
+        adapter.searchDataList(searchLocation);
     }
 }

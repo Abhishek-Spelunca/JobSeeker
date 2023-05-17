@@ -22,16 +22,34 @@
             app:searchHintIcon="@null"
             app:iconifiedByDefault="false"
             android:focusable="false"
-            android:background="@drawable/border"
+            android:background="@drawable/search_border"
             android:backgroundTint="@color/white"
-            app:queryHint="Search..."
+            app:queryHint="What Job are you looking for?"
             android:id="@+id/search"
             app:searchIcon="@drawable/search"
             app:closeIcon="@drawable/clear"
             android:layout_marginStart="12dp"
             android:layout_marginEnd="12dp"
-            android:layout_marginBottom="20dp"
+
             android:layout_marginTop="16dp" />
+
+        <androidx.appcompat.widget.SearchView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:searchHintIcon="@null"
+            app:iconifiedByDefault="false"
+            android:focusable="false"
+            android:background="@drawable/search_border2"
+            android:backgroundTint="@color/white"
+            app:queryHint="Search Location..."
+            android:id="@+id/searchLocation"
+            app:searchIcon="@drawable/search"
+            app:closeIcon="@drawable/clear"
+            android:layout_below="@id/search"
+            android:layout_marginStart="12dp"
+            android:layout_marginEnd="12dp"
+            android:layout_marginBottom="20dp"
+            />
 
     </RelativeLayout>
 
@@ -39,11 +57,23 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Available Jobs"
+            android:textStyle="bold"
+            android:textColor="@color/black"
+            android:textSize="22sp"
+            android:layout_marginTop="10dp"
+            android:layout_marginStart="14dp"
+            android:id="@+id/text"/>
+
         <androidx.recyclerview.widget.RecyclerView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_marginTop="10dp"
             android:scrollbars="vertical"
+            android:layout_below="@id/text"
             android:id="@+id/recyclerView"/>
 
     </RelativeLayout>

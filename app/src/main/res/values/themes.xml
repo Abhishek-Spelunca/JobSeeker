@@ -2,13 +2,25 @@
     <!-- Base application theme. -->
     <style name="Base.Theme.JobSeeker" parent="Theme.Material3.DayNight.NoActionBar">
         <!-- Customize your light theme here. -->
-        <item name="colorPrimary">@color/dark</item>
+        <item name="colorPrimary">@color/blue</item>
         <item name="colorPrimaryVariant">@color/dark</item>
+    </style>
+
+    <style name="AppTheme" parent="Base.Theme.JobSeeker">
+        <item name="android:textViewStyle">@style/RobotTextViewStyle</item>
+        <item name="android:buttonStyle">@style/RobotButtonStyle</item>
+    </style>
+
+    <style name="RobotTextViewStyle" parent="android:Widget.TextView">
+        <item name="android:fontFamily">@font/lato_regular</item>
+    </style>
+    <style name="RobotButtonStyle" parent="android:Widget.Holo.Button">
+        <item name="android:fontFamily">@font/lato_bold</item>
     </style>
 
     <style name="roundedImageViewRounded">
         <item name="cornerFamily">rounded</item>
-        <item name="cornerSize">30%</item>
+        <item name="cornerSize">50%</item>
 
     </style>
 
