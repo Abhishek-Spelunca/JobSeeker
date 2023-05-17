@@ -110,6 +110,18 @@
                 android:padding="16dp"
                 android:textColor="@color/black" />
 
+            <EditText
+                android:id="@+id/Date"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/border"
+                android:gravity="start|center_vertical"
+                android:hint="Created On"
+                android:padding="16dp"
+                android:inputType="date"
+                android:textColor="@color/black" />
+
 
             <EditText
                 android:id="@+id/upload_description"

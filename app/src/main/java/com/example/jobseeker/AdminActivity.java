@@ -78,9 +78,6 @@ public class AdminActivity extends AppCompatActivity {
                 for (DataSnapshot itemSnapshot:snapshot.getChildren()){
                     DataClass dataClass=itemSnapshot.getValue(DataClass.class);
                     dataClass.setKey(itemSnapshot.getKey());
-                    SimpleDateFormat sdf=new SimpleDateFormat("dd/MM/yyyy");
-                    String currDate=sdf.format(Calendar.getInstance().getTime());
-                    dataClass.setDate(currDate);
                     dataList.add(dataClass);
                 }
                 adapter.notifyDataSetChanged();

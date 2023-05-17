@@ -1,25 +1,31 @@
 package com.example.jobseeker;
 
 public class DataClass {
+
     String dataTitle;
     String dataCompany;
     String dataType;
     String dataPay;
     String dataLocation;
     String dataDesc;
+
+    String dataDate;
     String DataCompanyUrl;
     String logo;
     String key;
 
-    public String getDate() {
-        return date;
+    public DataClass(String title, String company, String type, String payScale, String location, String desc, String date, String companyUrl, String imageUrl) {
+        this.dataTitle = title;
+        this.dataCompany = company;
+        this.dataType = type;
+        this.dataPay = payScale;
+        this.dataLocation = location;
+        this.dataDesc = desc;
+        this.dataDate = date;
+        DataCompanyUrl = companyUrl;
+        this.logo = imageUrl;
+        this.key = getKey();
     }
-
-    public void setDate(String date) {
-        this.date = date;
-    }
-
-    String date;
 
     public String getKey() {
         return key;
@@ -61,16 +67,10 @@ public class DataClass {
         return logo;
     }
 
-    public DataClass(String dataTitle, String dataCompany, String dataType, String dataPay, String dataLocation, String dataDesc, String dataCompanyUrl, String logo) {
-        this.dataTitle = dataTitle;
-        this.dataCompany = dataCompany;
-        this.dataType = dataType;
-        this.dataPay = dataPay;
-        this.dataLocation = dataLocation;
-        this.dataDesc = dataDesc;
-        DataCompanyUrl = dataCompanyUrl;
-        this.logo = logo;
+    public String getDataDate() {
+        return dataDate;
     }
+
 
     public DataClass(){
 

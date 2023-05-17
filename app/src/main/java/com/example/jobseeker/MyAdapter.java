@@ -45,7 +45,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyViewHolder> {
         holder.recType.setText(dataList.get(position).getDataType());
         holder.recUrl.setText(dataList.get(position).getDataCompanyUrl());
         holder.recDesc.setText(dataList.get(position).getDataDesc());
-        holder.recDate.setText(dataList.get(position).getDate());
+        holder.recDate.setText(dataList.get(position).getDataDate());
 
         String admin= FirebaseAuth.getInstance().getCurrentUser().getUid();
 
@@ -67,7 +67,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyViewHolder> {
                 intent.putExtra("Type", dataList.get(holder.getAdapterPosition()).getDataType());
                 intent.putExtra("Description", dataList.get(holder.getAdapterPosition()).getDataDesc());
                 intent.putExtra("Key", dataList.get(holder.getAdapterPosition()).getKey());
-                intent.putExtra("Date", dataList.get(holder.getAdapterPosition()).getDate());
+                intent.putExtra("Date", dataList.get(holder.getAdapterPosition()).getDataDate());
                 context.startActivity(intent);
             }
         });

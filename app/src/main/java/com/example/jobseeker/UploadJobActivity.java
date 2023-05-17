@@ -31,7 +31,7 @@ public class UploadJobActivity extends AppCompatActivity {
 
     ImageView logo;
     Button uploadBtn;
-    EditText uploadTitle,uploadCompany,uploadType,uploadUrl,uploadPay,uploadLocation,uploadDesc;
+    EditText uploadTitle,uploadCompany,uploadType,uploadUrl,uploadPay,uploadLocation,uploadDesc,uploadDate;
     String imageUrl;
     Uri uri;
 
@@ -47,6 +47,7 @@ public class UploadJobActivity extends AppCompatActivity {
         uploadUrl=findViewById(R.id.job_url);
         uploadPay=findViewById(R.id.pay_scale);
         uploadLocation=findViewById(R.id.location);
+        uploadDate=findViewById(R.id.Date);
         uploadDesc=findViewById(R.id.upload_description);
         uploadBtn=findViewById(R.id.add_btn);
 
@@ -117,9 +118,10 @@ public class UploadJobActivity extends AppCompatActivity {
         String type=uploadType.getText().toString();
         String payScale=uploadPay.getText().toString();
         String location=uploadLocation.getText().toString();
+        String date=uploadDate.getText().toString();
         String desc=uploadDesc.getText().toString();
 
-        DataClass dataClass=new DataClass(title,company,type,payScale,location,desc,companyUrl,imageUrl);
+       DataClass dataClass=new DataClass(title,company,type,payScale,location,desc,date,companyUrl,imageUrl);
 
         FirebaseDatabase.getInstance().getReference("Jobs").child(title).setValue(dataClass).addOnCompleteListener(
                 new OnCompleteListener<Void>() {
@@ -127,6 +129,7 @@ public class UploadJobActivity extends AppCompatActivity {
                     public void onComplete(@NonNull Task<Void> task) {
                         if (task.isSuccessful()){
                             Toast.makeText(UploadJobActivity.this, "Saved", Toast.LENGTH_SHORT).show();
+                            startActivity(new Intent(UploadJobActivity.this, AdminActivity.class));
                         }
                     }
                 }).addOnFailureListener(new OnFailureListener() {
