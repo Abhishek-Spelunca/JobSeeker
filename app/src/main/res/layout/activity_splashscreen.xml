@@ -16,7 +16,7 @@
         android:layout_height="wrap_content"
         android:layout_margin="20dp"
         android:backgroundTint="@color/gray"
-        android:fontFamily="@font/bungee"
+        android:fontFamily="@font/julee"
         android:gravity="center"
         android:padding="8dp"
         android:text="JOB SEEKER"
