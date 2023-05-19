@@ -25,7 +25,7 @@ import com.google.firebase.database.ValueEventListener;
 public class ProfileFragment extends Fragment {
 
 
-    TextView username,name,email,age,address,qualification;
+    TextView username,name,email,age,address,qualification,number;
     ImageView profilePic,resume;
     Button editBtn;
     FirebaseUser auth;
@@ -43,6 +43,7 @@ public class ProfileFragment extends Fragment {
         email=v.findViewById(R.id.profileEmail);
         age=v.findViewById(R.id.profileAge);
         address=v.findViewById(R.id.profileAddress);
+        number=v.findViewById(R.id.profilePhone);
         qualification=v.findViewById(R.id.profileQualification);
         editBtn=v.findViewById(R.id.edit_btn);
 
@@ -73,6 +74,10 @@ public class ProfileFragment extends Fragment {
                     String qual=snapshot.child(auth.getUid()).child("profile").child("qualify").getValue(String.class);
                     if (qual==null) qualification.setText("qualification");
                     qualification.setText(""+qual);
+
+                    String num=snapshot.child(auth.getUid()).child("profile").child("phone").getValue(String.class);
+                    if (num==null) number.setText("Number");
+                    qualification.setText(""+num);
 
 
                     String un=snapshot.child(auth.getUid()).child("username").getValue(String.class);

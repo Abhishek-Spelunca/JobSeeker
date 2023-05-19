@@ -13,7 +13,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@drawable/admin_border"
-        android:backgroundTint="@color/dark"
+        android:backgroundTint="@color/blue2"
         android:orientation="horizontal">
 
         <androidx.appcompat.widget.SearchView
@@ -43,13 +43,37 @@
             android:backgroundTint="@color/white"
             app:queryHint="Search Location..."
             android:id="@+id/searchLocation"
-            app:searchIcon="@drawable/search"
+            app:searchIcon="@drawable/location"
             app:closeIcon="@drawable/clear"
             android:layout_below="@id/search"
             android:layout_marginStart="12dp"
             android:layout_marginEnd="12dp"
             android:layout_marginBottom="20dp"
             />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Marked Jobs"
+            android:textStyle="bold"
+            android:textColor="@color/black"
+            android:textSize="22sp"
+            android:layout_marginTop="10dp"
+            android:layout_marginStart="14dp"
+            android:id="@+id/text2"/>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:scrollbars="horizontal"
+            android:layout_below="@id/text2"
+            android:id="@+id/recyclerView2"/>
 
     </RelativeLayout>
 

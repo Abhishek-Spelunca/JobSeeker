@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/dark"
+    android:background="@color/blue2"
     android:gravity="center"
     android:orientation="vertical"
     tools:context=".LoginActivity">
@@ -29,7 +29,7 @@
                 android:layout_height="wrap_content"
                 android:text="Login"
                 android:textAlignment="center"
-                android:textColor="@color/dark"
+                android:textColor="@color/blue2"
                 android:textSize="34sp"
                 android:textStyle="bold" />
 
@@ -73,7 +73,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="60dp"
                 android:layout_marginTop="20dp"
-                android:backgroundTint="@color/dark"
+                android:backgroundTint="@color/blue2"
                 android:text="LOGIN"
                 android:textSize="26sp"
                 android:textStyle="bold"

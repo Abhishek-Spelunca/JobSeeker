@@ -38,8 +38,7 @@
             android:layout_marginTop="9dp"
             android:layout_marginEnd="100dp"
             android:scaleType="fitXY"
-            android:src="@drawable/image"
-            app:shapeAppearanceOverlay="@style/roundedImageViewRounded" />
+            android:src="@drawable/image" />
 
         <TextView
             android:layout_width="match_parent"
@@ -86,7 +85,7 @@
             android:paddingEnd="6dp"
             android:paddingBottom="10dp"
             android:textSize="20sp"
-            android:background="@color/blue"
+            android:background="@color/blue2"
             android:textColor="@color/white"/>
 
         <LinearLayout
@@ -142,7 +141,7 @@
                 android:layout_marginBottom="20dp"
                 android:layout_alignParentEnd="true"
                 android:layout_alignParentBottom="true"
-                app:menu_colorNormal="@color/blue"
+                app:menu_colorNormal="@color/blue2"
                 app:menu_colorPressed="@color/red"
                 app:menu_fab_size="normal"
                 android:layout_below="@id/detailDesc"

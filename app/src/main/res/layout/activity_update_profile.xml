@@ -30,7 +30,7 @@
                 android:layout_height="wrap_content"
                 android:text="Upload Profile"
                 android:textAlignment="center"
-                android:textColor="@color/dark"
+                android:textColor="@color/blue2"
                 android:textSize="30sp" />
 
             <ImageView
