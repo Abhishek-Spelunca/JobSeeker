@@ -65,7 +65,7 @@
                 android:layout_marginTop="10dp"
                 android:text="Forgot Password?"
                 android:textAlignment="viewEnd"
-                android:textColor="@color/dark"
+                android:textColor="@color/blue2"
                 android:textSize="14sp" />
 
             <Button
@@ -86,7 +86,7 @@
                 android:layout_marginTop="25dp"
                 android:text="Not yet registered? Signup"
                 android:textAlignment="center"
-                android:textColor="@color/dark"
+                android:textColor="@color/blue2"
                 android:textSize="20sp" />
 
         </LinearLayout>
