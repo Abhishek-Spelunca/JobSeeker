@@ -19,7 +19,7 @@ import com.google.firebase.storage.StorageReference;
 
 public class AdminDetailActivity extends AppCompatActivity {
 
-    TextView detailTitle,detailCompany,detailLocation,detailPay,detailType,detailDesc,detailDate;
+    TextView detailTitle,detailCompany,detailLocation,detailPay,detailType,detailDesc,detailDate,titleCompany,detailWeb;
     ImageView detailImage;
     FloatingActionButton deleteButton;
     String key="";
@@ -38,6 +38,8 @@ public class AdminDetailActivity extends AppCompatActivity {
         detailDesc=findViewById(R.id.detailDesc);
         detailDate=findViewById(R.id.detailCreated);
         deleteButton=findViewById(R.id.deleteBtn);
+        titleCompany=findViewById(R.id.detailCompany2);
+        detailWeb=findViewById(R.id.company_website);
 
 
 
@@ -53,6 +55,8 @@ public class AdminDetailActivity extends AppCompatActivity {
             detailType.setText(bundle.getString("Type"));
             detailDesc.setText(bundle.getString("Description"));
             detailDate.setText(bundle.getString("Date"));
+            detailWeb.setText(bundle.getString("CompanyUrl"));
+            titleCompany.setText(bundle.getString("Company"));
             key=bundle.getString("Key");
             imageUrl=bundle.getString("Image");
             Glide.with(this).load(bundle.getString("Image")).into(detailImage);

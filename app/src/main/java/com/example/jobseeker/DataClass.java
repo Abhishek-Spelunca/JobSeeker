@@ -10,7 +10,7 @@ public class DataClass {
     String dataDesc;
 
     String dataDate;
-    String DataCompanyUrl;
+    String dataCompanyUrl;
     String logo;
     String key;
 
@@ -22,7 +22,7 @@ public class DataClass {
         this.dataLocation = location;
         this.dataDesc = desc;
         this.dataDate = date;
-        DataCompanyUrl = companyUrl;
+        this.dataCompanyUrl = companyUrl;
         this.logo = imageUrl;
         this.key = getKey();
     }
@@ -60,7 +60,7 @@ public class DataClass {
     }
 
     public String getDataCompanyUrl() {
-        return DataCompanyUrl;
+        return dataCompanyUrl;
     }
 
     public String getLogo() {

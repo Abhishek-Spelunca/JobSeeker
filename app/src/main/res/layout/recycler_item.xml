@@ -161,7 +161,7 @@
                     android:textStyle="bold"
                     android:singleLine="true"
                     android:background="@color/blue2"
-                    android:textColor="@color/blue2"
+                    android:textColor="@color/white"
                     android:ellipsize="end"
                     android:paddingStart="6dp"
                     android:paddingEnd="6dp"
@@ -194,7 +194,6 @@
                     android:id="@+id/rec_Created"
                     android:textStyle="bold"
                     android:ellipsize="end"
-
                     android:paddingEnd="6dp"
                     android:paddingTop="2dp"
                     android:paddingBottom="2dp"/>
@@ -211,13 +210,9 @@
                 <TextView
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:text=""
                     android:maxLines="0"
-                    android:textSize="11sp"
                     android:layout_alignParentEnd="true"
-                    android:singleLine="true"
                     android:id="@+id/rec_Url"
-                    android:ellipsize="end"
                     android:paddingStart="6dp"
                     android:paddingEnd="6dp"
                     android:paddingTop="2dp"

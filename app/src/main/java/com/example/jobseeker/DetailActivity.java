@@ -10,7 +10,7 @@ import com.bumptech.glide.Glide;
 
 public class DetailActivity extends AppCompatActivity {
 
-    TextView detailTitle,detailCompany,titleCompany,detailLocation,detailPay,detailType,detailDesc,detailDate,detailWebsite;
+    TextView detailTitle,detailCompany,titleCompany,detailLocation,detailPay,detailType,detailDesc,detailDate,detailWeb;
     ImageView detailImage;
     String key="";
     String imageUrl="";
@@ -28,7 +28,7 @@ public class DetailActivity extends AppCompatActivity {
         detailDesc=findViewById(R.id.detailDesc);
         detailDate=findViewById(R.id.detailCreated);
         titleCompany=findViewById(R.id.detailCompany2);
-        detailWebsite=findViewById(R.id.detailWebsite);
+        detailWeb=findViewById(R.id.company_website);
 
         detailImage=findViewById(R.id.detailLogo);
 
@@ -42,7 +42,7 @@ public class DetailActivity extends AppCompatActivity {
             detailType.setText(bundle.getString("Type"));
             detailDesc.setText(bundle.getString("Description"));
             detailDate.setText(bundle.getString("Date"));
-            detailWebsite.setText(bundle.getString("CompanyUrl"));
+            detailWeb.setText(bundle.getString("CompanyUrl"));
             titleCompany.setText(bundle.getString("Company"));
             key=bundle.getString("Key");
             imageUrl=bundle.getString("Image");
