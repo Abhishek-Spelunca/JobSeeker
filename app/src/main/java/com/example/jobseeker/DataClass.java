@@ -8,7 +8,6 @@ public class DataClass {
     String dataPay;
     String dataLocation;
     String dataDesc;
-
     String dataDate;
     String dataCompanyUrl;
     String logo;

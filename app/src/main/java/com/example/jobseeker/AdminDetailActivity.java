@@ -19,7 +19,7 @@ import com.google.firebase.storage.StorageReference;
 
 public class AdminDetailActivity extends AppCompatActivity {
 
-    TextView detailTitle,detailCompany,detailLocation,detailPay,detailType,detailDesc,detailDate,titleCompany,detailWeb;
+    TextView backBtn,detailTitle,detailCompany,detailLocation,detailPay,detailType,detailDesc,detailDate,titleCompany,detailWeb;
     ImageView detailImage;
     FloatingActionButton deleteButton;
     String key="";
@@ -40,6 +40,7 @@ public class AdminDetailActivity extends AppCompatActivity {
         deleteButton=findViewById(R.id.deleteBtn);
         titleCompany=findViewById(R.id.detailCompany2);
         detailWeb=findViewById(R.id.company_website);
+        //backBtn=findViewById(R.id.back);
 
 
 
@@ -74,10 +75,16 @@ public class AdminDetailActivity extends AppCompatActivity {
                         reference.child(key).removeValue();
                         Toast.makeText(AdminDetailActivity.this, "Deleted", Toast.LENGTH_SHORT).show();
                         startActivity(new Intent(getApplicationContext(),AdminActivity.class));
-
+                        finish();
                     }
                 });
             }
         });
+        /*backBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(AdminDetailActivity.this,AdminActivity.class));
+            }
+        });*/
     }
 }

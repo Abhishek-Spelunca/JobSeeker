@@ -130,6 +130,7 @@ public class UploadJobActivity extends AppCompatActivity {
                         if (task.isSuccessful()){
                             Toast.makeText(UploadJobActivity.this, "Saved", Toast.LENGTH_SHORT).show();
                             startActivity(new Intent(UploadJobActivity.this, AdminActivity.class));
+                            finish();
                         }
                     }
                 }).addOnFailureListener(new OnFailureListener() {

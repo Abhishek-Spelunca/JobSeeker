@@ -175,40 +175,13 @@ public class LoginActivity extends AppCompatActivity {
             });
 
         }
-        /*else {
-            checkUser.addListenerForSingleValueEvent(new ValueEventListener() {
-                @Override
-                public void onDataChange(@NonNull DataSnapshot snapshot) {
-                    if (snapshot.exists()) {
-                        loginUsername.setError(null);
-                        String passDB = snapshot.child(userUsername).child("password").getValue(String.class);
+    }
 
-                        if (!Objects.equals(passDB, userPassword)) {
-                            loginUsername.setError(null);
-
-                            String usernameDB=snapshot.child(userUsername).child("username").getValue(String.class);
-                            String emailDB=snapshot.child(userUsername).child("email").getValue(String.class);
-
-
-                            Toast.makeText(LoginActivity.this, "Login Successful", Toast.LENGTH_SHORT).show();
-
-                            startActivity(new Intent(LoginActivity.this, HomePageActivity.class));
-
-                        } else {
-                            loginPassword.setError("Invalid");
-                            loginPassword.requestFocus();
-                        }
-                    } else {
-                        loginUsername.setError("Invalid");
-                        loginUsername.requestFocus();
-                    }
-                }
-
-                @Override
-                public void onCancelled(@NonNull DatabaseError error) {
-
-                }
-            });
-        }*/
+    @Override
+    protected void onStart() {
+        super.onStart();
+        if (auth.getCurrentUser() != null){
+            startActivity(new Intent(LoginActivity.this, HomePageActivity.class));
+        }
     }
 }

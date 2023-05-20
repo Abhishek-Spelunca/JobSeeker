@@ -25,7 +25,7 @@ import com.google.firebase.database.ValueEventListener;
 public class ProfileFragment extends Fragment {
 
 
-    TextView username,name,email,age,address,qualification,number;
+    TextView username,name,email,age,address,qualification,number,experience;
     ImageView profilePic,resume;
     Button editBtn;
     FirebaseUser auth;
@@ -41,10 +41,11 @@ public class ProfileFragment extends Fragment {
         username=v.findViewById(R.id.profileUsername);
         name=v.findViewById(R.id.profileName);
         email=v.findViewById(R.id.profileEmail);
+        experience=v.findViewById(R.id.profileExperience);
         age=v.findViewById(R.id.profileAge);
         address=v.findViewById(R.id.profileAddress);
         number=v.findViewById(R.id.profilePhone);
-        qualification=v.findViewById(R.id.profileQualification);
+        qualification=v.findViewById(R.id.profileQualify);
         editBtn=v.findViewById(R.id.edit_btn);
 
         FirebaseDatabase database=FirebaseDatabase.getInstance();
@@ -60,29 +61,28 @@ public class ProfileFragment extends Fragment {
                     if (n==null) name.setText("name");
                     name.setText(""+n);
 
-
                     String ag=snapshot.child(auth.getUid()).child("profile").child("age").getValue(String.class);
                     if (ag==null) age.setText("age");
                     age.setText(""+ag);
-
 
                     String add=snapshot.child(auth.getUid()).child("profile").child("address").getValue(String.class);
                     if (add==null) address.setText("address");
                     address.setText(""+add);
 
+                    String num=snapshot.child(auth.getUid()).child("profile").child("phone").getValue(String.class);
+                    if (num==null) number.setText("number");
+                    number.setText(""+num);
 
                     String qual=snapshot.child(auth.getUid()).child("profile").child("qualify").getValue(String.class);
                     if (qual==null) qualification.setText("qualification");
                     qualification.setText(""+qual);
 
-                    String num=snapshot.child(auth.getUid()).child("profile").child("phone").getValue(String.class);
-                    if (num==null) number.setText("Number");
-                    qualification.setText(""+num);
-
+                    String exp=snapshot.child(auth.getUid()).child("profile").child("experience").getValue(String.class);
+                    if (exp==null) experience.setText("Experience");
+                    experience.setText(""+exp);
 
                     String un=snapshot.child(auth.getUid()).child("username").getValue(String.class);
                     username.setText(""+un);
-
 
                     String em=snapshot.child(auth.getUid()).child("email").getValue(String.class);
                     email.setText(""+em);

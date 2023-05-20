@@ -2,7 +2,9 @@ package com.example.jobseeker;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -10,7 +12,7 @@ import com.bumptech.glide.Glide;
 
 public class DetailActivity extends AppCompatActivity {
 
-    TextView detailTitle,detailCompany,titleCompany,detailLocation,detailPay,detailType,detailDesc,detailDate,detailWeb;
+    TextView backBtn,detailTitle,detailCompany,titleCompany,detailLocation,detailPay,detailType,detailDesc,detailDate,detailWeb;
     ImageView detailImage;
     String key="";
     String imageUrl="";
@@ -31,6 +33,7 @@ public class DetailActivity extends AppCompatActivity {
         detailWeb=findViewById(R.id.company_website);
 
         detailImage=findViewById(R.id.detailLogo);
+        //backBtn=findViewById(R.id.back);
 
 
         Bundle bundle=getIntent().getExtras();
@@ -48,6 +51,13 @@ public class DetailActivity extends AppCompatActivity {
             imageUrl=bundle.getString("Image");
             Glide.with(this).load(bundle.getString("Image")).into(detailImage);
         }
+        /*backBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(DetailActivity.this,HomeFragment.class));
+
+            }
+        });*/
 
     }
 }

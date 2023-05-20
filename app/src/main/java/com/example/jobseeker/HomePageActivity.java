@@ -102,8 +102,6 @@ public class HomePageActivity extends AppCompatActivity implements NavigationVie
             getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new AboutFragment()).commit();
         } else if (itemId == R.id.nav_profile) {
             getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new ProfileFragment()).commit();
-        } else if (itemId == R.id.nav_applied) {
-            getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new AppliedJobFragment()).commit();
         } else if (itemId == R.id.logout) {
             FirebaseAuth.getInstance().signOut();
             startActivity(new Intent(HomePageActivity.this, LoginActivity.class));

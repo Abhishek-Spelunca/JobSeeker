@@ -15,7 +15,7 @@ import com.google.firebase.database.FirebaseDatabase;
 
 public class UpdateProfileActivity extends AppCompatActivity {
 
-    EditText inputName,inputPhone,inputAge,inputAddress,inputQualify;
+    EditText inputName,inputPhone,inputAge,inputAddress,inputQualify,inputExperience;
     Button uploadBtn;
     FirebaseAuth auth;
 
@@ -31,6 +31,7 @@ public class UpdateProfileActivity extends AppCompatActivity {
         inputAge=findViewById(R.id.upload_age);
         inputAddress=findViewById(R.id.upload_address);
         inputQualify=findViewById(R.id.upload_qualification);
+        inputExperience=findViewById(R.id.upload_experience);
         uploadBtn=findViewById(R.id.upload_btn);
 
 
@@ -42,15 +43,16 @@ public class UpdateProfileActivity extends AppCompatActivity {
                 String age=inputAge.getText().toString();
                 String address=inputAddress.getText().toString();
                 String qualify=inputQualify.getText().toString();
+                String experience=inputExperience.getText().toString();
 
                 FirebaseDatabase database = FirebaseDatabase.getInstance();
                 DatabaseReference reference = database.getReference("Users");
 
-                ProfileHelper helper=new ProfileHelper(name,phone,age,address,qualify);
+                ProfileHelper helper=new ProfileHelper(name,phone,age,address,qualify,experience);
                 reference.child(auth.getCurrentUser().getUid()).child("profile").setValue(helper);
                 Toast.makeText(UpdateProfileActivity.this, "Upload Successful", Toast.LENGTH_SHORT).show();
                 startActivity(new Intent(UpdateProfileActivity.this, ProfileFragment.class));
-
+                finish();
             }
         });
     }

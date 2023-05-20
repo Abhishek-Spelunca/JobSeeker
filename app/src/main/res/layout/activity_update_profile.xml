@@ -5,6 +5,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/blue2"
     tools:context=".UpdateProfileActivity">
 
 
@@ -30,7 +31,10 @@
                 android:layout_height="wrap_content"
                 android:text="Upload Profile"
                 android:textAlignment="center"
-                android:textColor="@color/blue2"
+                android:fontFamily="@font/lato_bold"
+                android:textStyle="bold"
+                android:background="@drawable/rounded_top"
+                android:backgroundTint="@color/grey"
                 android:textSize="30sp" />
 
             <ImageView
@@ -46,7 +50,7 @@
                 android:id="@+id/upload_name"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
-                android:background="@drawable/border"
+                android:background="@drawable/edit_border"
                 android:gravity="start|center_vertical"
                 android:hint="Name"
                 android:padding="16dp"
@@ -57,7 +61,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:layout_marginTop="20dp"
-                android:background="@drawable/border"
+                android:background="@drawable/edit_border"
                 android:gravity="start|center_vertical"
                 android:hint="Phone No"
                 android:padding="16dp"
@@ -69,7 +73,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:layout_marginTop="20dp"
-                android:background="@drawable/border"
+                android:background="@drawable/edit_border"
                 android:gravity="start|center_vertical"
                 android:hint="Age"
                 android:inputType="number"
@@ -81,7 +85,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="80dp"
                 android:layout_marginTop="20dp"
-                android:background="@drawable/border"
+                android:background="@drawable/edit_border"
                 android:gravity="start|center_vertical"
                 android:hint="Address"
                 android:padding="16dp"
@@ -93,9 +97,20 @@
                 android:layout_width="match_parent"
                 android:layout_height="80dp"
                 android:layout_marginTop="20dp"
-                android:background="@drawable/border"
+                android:background="@drawable/edit_border"
                 android:gravity="start|center_vertical"
                 android:hint="Qualification"
+                android:padding="16dp"
+                android:textColor="@color/black" />
+
+            <EditText
+                android:id="@+id/upload_experience"
+                android:layout_width="match_parent"
+                android:layout_height="80dp"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/edit_border"
+                android:gravity="start|center_vertical"
+                android:hint="Work Experience if any.."
                 android:padding="16dp"
                 android:textColor="@color/black" />
 
