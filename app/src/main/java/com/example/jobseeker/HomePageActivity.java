@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.util.Patterns;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -15,6 +16,7 @@ import androidx.appcompat.widget.Toolbar;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 
+import com.bumptech.glide.Glide;
 import com.google.android.material.navigation.NavigationView;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -54,6 +56,7 @@ public class HomePageActivity extends AppCompatActivity implements NavigationVie
         View header=navigationView.getHeaderView(0);
         TextView user=header.findViewById(R.id.nav_user);
         TextView email=header.findViewById(R.id.nav_email);
+        ImageView pic=header.findViewById(R.id.image);
 
 
         FirebaseDatabase database=FirebaseDatabase.getInstance();
@@ -73,6 +76,11 @@ public class HomePageActivity extends AppCompatActivity implements NavigationVie
                     String emailDB = snapshot.child(currUser).child("email").getValue(String.class);
                     user.setText(""+userDB);
                     email.setText(""+emailDB);
+                    if (snapshot.child(auth.getUid()).child("profile")
+                            .child("imageUrl").getValue(String.class)!=null) {
+                        Glide.with(HomePageActivity.this).load(snapshot.child(currUser)
+                                .child("profile").child("imageUrl").getValue(String.class)).into(pic);
+                    }
                 }
             }
 

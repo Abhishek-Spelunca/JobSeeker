@@ -1,6 +1,7 @@
 package com.example.jobseeker;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -12,6 +13,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 
+import com.bumptech.glide.Glide;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
@@ -26,10 +28,10 @@ public class ProfileFragment extends Fragment {
 
 
     TextView username,name,email,age,address,qualification,number,experience;
-    ImageView profilePic,resume;
+    ImageView profilePic;
     Button editBtn;
     FirebaseUser auth;
-
+    String profileUrl;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -46,6 +48,7 @@ public class ProfileFragment extends Fragment {
         address=v.findViewById(R.id.profileAddress);
         number=v.findViewById(R.id.profilePhone);
         qualification=v.findViewById(R.id.profileQualify);
+        profilePic=v.findViewById(R.id.profileImg);
         editBtn=v.findViewById(R.id.edit_btn);
 
         FirebaseDatabase database=FirebaseDatabase.getInstance();
@@ -57,6 +60,15 @@ public class ProfileFragment extends Fragment {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 if (snapshot.exists()){
+                    //Uri uri= (Uri) snapshot.child(auth.getUid()).child("profile").child("imageUrl").getValue();
+                    //Picasso.with(requireContext()).load(uri).into(profilePic);
+
+                    if(snapshot.child(auth.getUid()).child("profile")
+                            .child("imageUrl").getValue(String.class)!=null) {
+                        Glide.with(requireContext()).load(snapshot.child(auth.getUid()).child("profile")
+                                .child("imageUrl").getValue(String.class)).into(profilePic);
+                    }
+
                     String n=snapshot.child(auth.getUid()).child("profile").child("name").getValue(String.class);
                     if (n==null) name.setText("name");
                     name.setText(""+n);

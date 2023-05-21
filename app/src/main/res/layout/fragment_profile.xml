@@ -13,13 +13,14 @@
         android:layout_height="wrap_content"
         android:orientation="vertical">
 
-        <ImageView
+        <com.google.android.material.imageview.ShapeableImageView
             android:id="@+id/profileImg"
-            android:layout_width="100dp"
-            android:layout_height="100dp"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
             android:layout_gravity="center"
             android:layout_margin="10dp"
             android:scaleType="fitXY"
+            app:shapeAppearanceOverlay="@style/roundedImageViewRounded"
             android:src="@drawable/set_profile"
             android:elevation="5dp"/>
 
