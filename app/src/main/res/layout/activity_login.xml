@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/blue2"
+    android:background="@color/white"
     android:gravity="center"
     android:orientation="vertical"
     tools:context=".LoginActivity">
@@ -29,7 +29,7 @@
                 android:layout_height="wrap_content"
                 android:text="Login"
                 android:textAlignment="center"
-                android:textColor="@color/blue2"
+                android:textColor="@color/cyan"
                 android:textSize="34sp"
                 android:textStyle="bold" />
 
@@ -38,7 +38,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:layout_marginTop="30dp"
-                android:background="@drawable/border"
+                android:background="@drawable/edit_border"
                 android:drawableLeft="@drawable/username"
                 android:drawablePadding="8dp"
                 android:hint="Email"
@@ -51,7 +51,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:layout_marginTop="20dp"
-                android:background="@drawable/border"
+                android:background="@drawable/edit_border"
                 android:drawableLeft="@drawable/password"
                 android:drawablePadding="8dp"
                 android:hint="Password"
@@ -65,16 +65,18 @@
                 android:layout_marginTop="10dp"
                 android:text="Forgot Password?"
                 android:textAlignment="viewEnd"
-                android:textColor="@color/blue2"
+                android:textColor="@color/cyan"
                 android:textSize="14sp" />
 
             <Button
                 android:id="@+id/login_btn"
                 android:layout_width="match_parent"
-                android:layout_height="60dp"
+                android:layout_height="50dp"
                 android:layout_marginTop="20dp"
-                android:backgroundTint="@color/blue2"
+                android:backgroundTint="@color/color"
+                android:background="@drawable/edit_border"
                 android:text="LOGIN"
+                android:textColor="@color/white"
                 android:textSize="26sp"
                 android:textStyle="bold"
                 app:cornerRadius="20dp" />
@@ -86,7 +88,7 @@
                 android:layout_marginTop="25dp"
                 android:text="Not yet registered? Signup"
                 android:textAlignment="center"
-                android:textColor="@color/blue2"
+                android:textColor="@color/cyan"
                 android:textSize="20sp" />
 
         </LinearLayout>

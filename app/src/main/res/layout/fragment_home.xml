@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="@color/blue2"
+    android:background="@color/color"
     tools:context=".HomeFragment">
 
 
@@ -14,7 +14,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@drawable/admin_border"
-        android:backgroundTint="@color/blue2"
+        android:backgroundTint="@color/color"
         android:orientation="horizontal">
 
         <androidx.appcompat.widget.SearchView

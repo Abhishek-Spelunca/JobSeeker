@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="@color/blue2"
+    android:background="@color/color"
     tools:context=".DetailActivity">
 
     <LinearLayout
@@ -28,7 +28,7 @@
                 android:layout_height="4dp"
                 android:layout_marginTop="4dp"
                 android:background="@drawable/border"
-                android:backgroundTint="@color/blue2"
+                android:backgroundTint="@color/color"
                 android:layout_centerInParent="true"
                 android:layout_alignParentTop="true"/>
 
@@ -89,7 +89,7 @@
                 android:layout_below="@id/detailCompany"
                 android:layout_centerInParent="true"
                 android:layout_marginBottom="10dp"
-                android:background="@color/blue2"
+                android:background="@color/color"
                 android:fontFamily="@font/lato_bold"
                 android:paddingStart="6dp"
                 android:paddingTop="8dp"

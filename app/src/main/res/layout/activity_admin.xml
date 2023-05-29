@@ -19,7 +19,7 @@
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
             android:layout_height="50dp"
-            android:background="@color/blue2"
+            android:background="@color/color"
             android:elevation="4dp"
             android:padding="10dp"
             android:popupTheme="@style/ThemeOverlay.AppCompat.Light"
@@ -45,7 +45,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@drawable/admin_border"
-        android:backgroundTint="@color/blue2"
+        android:backgroundTint="@color/color"
         android:orientation="horizontal">
 
         <androidx.appcompat.widget.SearchView
@@ -109,7 +109,7 @@
             android:layout_marginTop="40dp"
             android:layout_marginEnd="40dp"
             android:layout_marginBottom="40dp"
-            android:backgroundTint="@color/blue2"
+            android:backgroundTint="@color/color"
             android:background="@drawable/border"
             android:src="@drawable/add"
             android:tint="@color/white" />

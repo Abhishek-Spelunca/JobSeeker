@@ -81,7 +81,7 @@
                     android:layout_height="16dp"
                     android:layout_marginEnd="5dp"
                     android:src="@drawable/company"
-                    app:tint="@color/blue2"/>
+                    app:tint="@color/color"/>
 
                 <TextView
                     android:layout_width="match_parent"
@@ -106,7 +106,7 @@
                     android:layout_height="16dp"
                     android:layout_marginEnd="5dp"
                     android:src="@drawable/location"
-                    app:tint="@color/blue2"/>
+                    app:tint="@color/color"/>
 
                 <TextView
                     android:layout_width="match_parent"
@@ -131,7 +131,7 @@
                     android:layout_height="16dp"
                     android:layout_marginEnd="5dp"
                     android:src="@drawable/currency"
-                    app:tint="@color/blue2"/>
+                    app:tint="@color/color"/>
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -161,7 +161,7 @@
                     android:textSize="14sp"
                     android:textStyle="bold"
                     android:singleLine="true"
-                    android:background="@color/blue2"
+                    android:background="@color/color"
                     android:textColor="@color/white"
                     android:ellipsize="end"
                     android:paddingStart="6dp"
