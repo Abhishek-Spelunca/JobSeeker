@@ -181,7 +181,15 @@ public class LoginActivity extends AppCompatActivity {
     protected void onStart() {
         super.onStart();
         if (auth.getCurrentUser() != null){
-            startActivity(new Intent(LoginActivity.this, HomePageActivity.class));
+            String admin= FirebaseAuth.getInstance().getCurrentUser().getUid();
+            if (admin.equals("5iCUYJUk2FRUcMKMmwmPgGz7tHH3")){//checking for Admin
+                startActivity(new Intent(LoginActivity.this, AdminActivity.class));
+                finish();
+            }else {
+                startActivity(new Intent(LoginActivity.this, HomePageActivity.class));
+                finish();
+            }
+
         }
     }
 }

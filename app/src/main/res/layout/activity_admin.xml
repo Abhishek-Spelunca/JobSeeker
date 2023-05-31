@@ -31,7 +31,7 @@
                 android:layout_height="wrap_content"
                 android:drawableRight="@drawable/logout"
                 android:drawablePadding="10dp"
-                android:text="Welcome Admin"
+                android:text="Welcome Admin !"
                 android:textColor="@color/white"
                 android:textSize="24sp"
                 android:textStyle="bold" />
