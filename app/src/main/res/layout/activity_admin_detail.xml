@@ -14,6 +14,13 @@
     android:layout_height="wrap_content"
     android:orientation="vertical">
 
+        <TextView
+            android:id="@+id/previous"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:drawableLeft="@drawable/back"
+            android:layout_margin="10dp"/>
+
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -21,6 +28,7 @@
         android:orientation="horizontal"
         android:layout_gravity="center"
         android:elevation="6dp"
+        android:layout_margin="6dp"
         android:padding="10dp"
         android:background="@drawable/rounded_top">
 
@@ -36,17 +44,19 @@
 
         <com.google.android.material.imageview.ShapeableImageView
             android:id="@+id/detailLogo"
-            android:layout_width="200dp"
-            android:layout_height="200dp"
+            android:layout_width="236dp"
+            android:layout_height="169dp"
             android:layout_alignParentStart="true"
             android:layout_alignParentTop="true"
             android:layout_alignParentEnd="true"
             android:layout_centerInParent="true"
             android:layout_gravity="center"
-            android:layout_marginStart="30dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginEnd="30dp"
+            android:layout_marginStart="84dp"
+            android:layout_marginTop="30dp"
+            android:layout_marginEnd="84dp"
             android:layout_marginBottom="10dp"
+            android:background="@drawable/image_holder"
+            android:elevation="8dp"
             android:scaleType="fitXY"
             android:src="@drawable/image" />
 
@@ -238,35 +248,39 @@
             android:fontFamily="@font/lato_regular"
             android:textSize="18sp" />
 
-    </RelativeLayout>
-    </RelativeLayout>
+        <com.github.clans.fab.FloatingActionMenu
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="20dp"
+            android:layout_gravity="end"
+            android:layout_marginBottom="20dp"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            app:menu_colorNormal="@color/color"
+            app:menu_colorPressed="@color/red"
+            app:menu_fab_size="normal"
+            android:layout_below="@id/detailDesc"
+            app:menu_icon="@drawable/list"
+            app:menu_openDirection="up"
+            app:menu_showShadow="true">
 
-    <com.github.clans.fab.FloatingActionMenu
+            <com.github.clans.fab.FloatingActionButton
+                android:id="@+id/deleteBtn"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginEnd="20dp"
-                android:layout_gravity="end"
-                android:layout_marginBottom="20dp"
-                android:layout_alignParentEnd="true"
-                android:layout_alignParentBottom="true"
-                app:menu_colorNormal="@color/color"
-                app:menu_colorPressed="@color/red"
-                app:menu_fab_size="normal"
-                android:layout_below="@id/detailDesc"
-                app:menu_icon="@drawable/list"
-                app:menu_openDirection="down"
-                app:menu_showShadow="true">
+                android:src="@drawable/delete"
+                app:fabSize="mini"
+                app:fab_colorNormal="@color/red"
+                app:fab_showShadow="true" />
 
-                <com.github.clans.fab.FloatingActionButton
-                    android:id="@+id/deleteBtn"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:src="@drawable/delete"
-                    app:fabSize="mini"
-                    app:fab_colorNormal="@color/red"
-                    app:fab_showShadow="true" />
+        </com.github.clans.fab.FloatingActionMenu>
 
-            </com.github.clans.fab.FloatingActionMenu>
+    </RelativeLayout>
+
+
+    </RelativeLayout>
+
+
 
 
     </LinearLayout>

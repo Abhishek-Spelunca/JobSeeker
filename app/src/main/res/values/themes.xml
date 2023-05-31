@@ -16,12 +16,20 @@
     </style>
     <style name="RobotButtonStyle" parent="android:Widget.Holo.Button">
         <item name="android:fontFamily">@font/lato_bold</item>
+        <item name="android:background">@drawable/edit_border</item>
+        <item name="android:backgroundTint">@color/color</item>
     </style>
 
     <style name="roundedImageViewRounded">
         <item name="cornerFamily">rounded</item>
         <item name="cornerSize">50%</item>
 
+    </style>
+
+    <style name="DialogAnimation">
+
+        <item name="android:windowEnterAnimation">@anim/slide_in_animation</item>
+        <item name="android:windowExitAnimation">@anim/slide_out_animation</item>
     </style>
 
     <style name="Theme.JobSeeker" parent="Base.Theme.JobSeeker" />

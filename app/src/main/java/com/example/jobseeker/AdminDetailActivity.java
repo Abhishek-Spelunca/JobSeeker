@@ -40,7 +40,7 @@ public class AdminDetailActivity extends AppCompatActivity {
         deleteButton=findViewById(R.id.deleteBtn);
         titleCompany=findViewById(R.id.detailCompany2);
         detailWeb=findViewById(R.id.company_website);
-        //backBtn=findViewById(R.id.back);
+        backBtn=findViewById(R.id.previous);
 
 
 
@@ -80,11 +80,11 @@ public class AdminDetailActivity extends AppCompatActivity {
                 });
             }
         });
-        /*backBtn.setOnClickListener(new View.OnClickListener() {
+        backBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(AdminDetailActivity.this,AdminActivity.class));
+                onBackPressed();
             }
-        });*/
+        });
     }
 }

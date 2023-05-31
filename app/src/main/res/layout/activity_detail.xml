@@ -14,11 +14,20 @@
         android:layout_height="wrap_content"
         android:orientation="vertical">
 
+        <TextView
+            android:id="@+id/back"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:drawableLeft="@drawable/back"
+            android:layout_margin="10dp"/>
+
+
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
             android:layout_gravity="center"
+            android:layout_margin="6dp"
             android:elevation="6dp"
             android:padding="10dp"
             android:background="@drawable/rounded_top">
@@ -26,30 +35,31 @@
             <View
                 android:layout_width="50dp"
                 android:layout_height="4dp"
+                android:layout_alignParentTop="true"
+                android:layout_centerInParent="true"
                 android:layout_marginTop="4dp"
                 android:background="@drawable/border"
                 android:backgroundTint="@color/color"
+                />
+
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/detailLogo"
+                android:layout_width="236dp"
+                android:layout_height="169dp"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentEnd="true"
                 android:layout_centerInParent="true"
-                android:layout_alignParentTop="true"/>
-
-
-
-
-        <com.google.android.material.imageview.ShapeableImageView
-            android:id="@+id/detailLogo"
-            android:layout_width="200dp"
-            android:layout_height="200dp"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentEnd="true"
-            android:layout_gravity="center"
-            android:layout_marginStart="30dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginEnd="30dp"
-            android:layout_marginBottom="10dp"
-            android:layout_centerInParent="true"
-            android:layout_alignParentTop="true"
-            android:scaleType="fitXY"
-            android:src="@drawable/image" />
+                android:layout_gravity="center"
+                android:layout_marginStart="84dp"
+                android:layout_marginTop="30dp"
+                android:layout_marginEnd="84dp"
+                android:layout_marginBottom="10dp"
+                android:background="@drawable/image_holder"
+                android:elevation="8dp"
+                android:scaleType="fitXY"
+                android:src="@drawable/image" />
 
             <TextView
                 android:id="@+id/detailTitle"
@@ -244,8 +254,10 @@
 
             <Button
                 android:id="@+id/apply"
+                android:background="@drawable/edit_border"
+                android:backgroundTint="@color/color"
                 android:layout_width="match_parent"
-                android:layout_height="60dp"
+                android:layout_height="50dp"
                 android:layout_below="@id/rl2"
                 android:layout_alignParentStart="true"
                 android:layout_marginStart="10dp"

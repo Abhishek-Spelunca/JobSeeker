@@ -2,20 +2,30 @@ package com.example.jobseeker;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.Dialog;
 import android.content.Intent;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
+import android.view.Gravity;
 import android.view.View;
+import android.view.ViewGroup;
+import android.view.Window;
+import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
 
 public class DetailActivity extends AppCompatActivity {
 
-    TextView backBtn,detailTitle,detailCompany,titleCompany,detailLocation,detailPay,detailType,detailDesc,detailDate,detailWeb;
+    TextView back_btn, detailTitle,detailCompany,titleCompany,detailLocation,detailPay,detailType,detailDesc,detailDate,detailWeb;
     ImageView detailImage;
+    Button apply_btn;
     String key="";
     String imageUrl="";
+    Bundle bundle;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,12 +41,13 @@ public class DetailActivity extends AppCompatActivity {
         detailDate=findViewById(R.id.detailCreated);
         titleCompany=findViewById(R.id.detailCompany2);
         detailWeb=findViewById(R.id.company_website);
+        apply_btn=findViewById(R.id.apply);
+        back_btn=findViewById(R.id.back);
 
         detailImage=findViewById(R.id.detailLogo);
-        //backBtn=findViewById(R.id.back);
 
+        bundle=getIntent().getExtras();
 
-        Bundle bundle=getIntent().getExtras();
         if (bundle!=null){
             detailTitle.setText(bundle.getString("Title"));
             detailCompany.setText(bundle.getString("Company"));
@@ -51,13 +62,44 @@ public class DetailActivity extends AppCompatActivity {
             imageUrl=bundle.getString("Image");
             Glide.with(this).load(bundle.getString("Image")).into(detailImage);
         }
-        /*backBtn.setOnClickListener(new View.OnClickListener() {
+
+        apply_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(DetailActivity.this,HomeFragment.class));
-
+                showBottomDialog();
             }
-        });*/
+        });
 
+        back_btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                onBackPressed();
+            }
+        });
+
+    }
+    private void showBottomDialog(){
+        final Dialog dialog=new Dialog(this);
+        dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
+        dialog.setContentView(R.layout.bottomsheet_layout);
+
+        TextView urlLayout=dialog.findViewById(R.id.url);
+        Button closeDialog=dialog.findViewById(R.id.close);
+        bundle=getIntent().getExtras();
+        if (bundle!=null){
+            urlLayout.setText(bundle.getString("CompanyUrl"));
+        }
+        closeDialog.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                dialog.dismiss();
+            }
+        });
+
+        dialog.show();
+        dialog.getWindow().setLayout(ViewGroup.LayoutParams.MATCH_PARENT,ViewGroup.LayoutParams.WRAP_CONTENT);
+        dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+        dialog.getWindow().getAttributes().windowAnimations=R.style.DialogAnimation;
+        dialog.getWindow().setGravity(Gravity.BOTTOM);
     }
 }
