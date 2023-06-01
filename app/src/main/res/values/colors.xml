@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="gray">#00FFCA</color>
-    <color name="cyan">#7DC5FD</color>
-    <color name="blue1">#5E17EB</color>
-    <color name="blueG">#A5F1E9</color>
+    <color name="b2">#3b444b</color>
+    <color name="link">#52c1ef</color>
     <color name="black">#FF000000</color>
+    <color name="col">#1190c4</color>
     <color name="white">#FFFFFFFF</color>
     <color name="color">#4c84ac</color>
     <color name="grey">#9B9B9B</color>

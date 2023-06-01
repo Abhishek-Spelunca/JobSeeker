@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/white"
+    android:background="@color/col"
     android:gravity="center"
     android:orientation="vertical"
     tools:context=".LoginActivity">
@@ -21,6 +21,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
             android:background="@drawable/border"
+            android:elevation="8dp"
             android:orientation="vertical"
             android:padding="24dp">
 
@@ -28,8 +29,9 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Login"
+                android:fontFamily="@font/lato_bold"
                 android:textAlignment="center"
-                android:textColor="@color/cyan"
+                android:textColor="@color/color"
                 android:textSize="34sp"
                 android:textStyle="bold" />
 
@@ -43,7 +45,7 @@
                 android:drawablePadding="8dp"
                 android:hint="Email"
                 android:padding="8dp"
-                android:textColor="@color/black" />
+                android:textColor="@color/b2" />
 
 
             <EditText
@@ -57,7 +59,7 @@
                 android:hint="Password"
                 android:padding="8dp"
                 android:inputType="textPassword"
-                android:textColor="@color/black" />
+                android:textColor="@color/b2" />
             <TextView
                 android:id="@+id/forgot_pass"
                 android:layout_width="match_parent"
@@ -65,7 +67,8 @@
                 android:layout_marginTop="10dp"
                 android:text="Forgot Password?"
                 android:textAlignment="viewEnd"
-                android:textColor="@color/cyan"
+                android:textColor="@color/b2"
+                android:fontFamily="@font/lato_bold"
                 android:textSize="14sp" />
 
             <Button
@@ -73,9 +76,9 @@
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:layout_marginTop="20dp"
-                android:backgroundTint="@color/color"
                 android:background="@drawable/edit_border"
                 android:text="LOGIN"
+                android:fontFamily="@font/lato_bold"
                 android:textColor="@color/white"
                 android:textSize="26sp"
                 android:textStyle="bold"
@@ -88,7 +91,8 @@
                 android:layout_marginTop="25dp"
                 android:text="Not yet registered? Signup"
                 android:textAlignment="center"
-                android:textColor="@color/cyan"
+                android:textColor="@color/b2"
+                android:fontFamily="@font/lato_bold"
                 android:textSize="20sp" />
 
         </LinearLayout>

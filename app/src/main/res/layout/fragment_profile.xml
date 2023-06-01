@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="@color/color"
+    android:background="@color/col"
     tools:context=".ProfileFragment">
 
     <LinearLayout
@@ -22,7 +23,7 @@
             android:scaleType="fitXY"
             app:shapeAppearanceOverlay="@style/roundedImageViewRounded"
             android:src="@drawable/set_profile"
-            android:elevation="5dp"/>
+            android:elevation="4dp"/>
 
         <RelativeLayout
             android:layout_width="match_parent"
@@ -39,6 +40,7 @@
                 android:id="@+id/profileUsername"
                 android:gravity="center"
                 android:textSize="22sp"
+                android:textColor="@color/b2"
                 android:textStyle="bold"
                 android:fontFamily="@font/lato_bold"/>
 
@@ -56,6 +58,7 @@
                     android:id="@+id/userText"
                     android:textStyle="bold"
                     android:textSize="24sp"
+                    android:textColor="@color/b2"
                     android:drawableLeft="@drawable/username"
                     android:drawablePadding="8dp"
                     android:fontFamily="@font/lato_bold"/>
@@ -64,36 +67,16 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Name:"
+                    android:paddingStart="10dp"
                     android:layout_below="@id/userText"
                     android:layout_marginTop="8dp"
                     android:textSize="18sp"
                     android:textStyle="bold"
                     android:fontFamily="@font/lato_regular"
+                    android:textColor="@color/b2"
                     android:id="@+id/nameText"/>
-
                 <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Name"
-                    android:layout_marginStart="8dp"
-                    android:layout_toEndOf="@id/ageText"
-                    android:layout_below="@id/profileName"
-                    android:layout_marginTop="8dp"
-                    android:textSize="18sp"
-                    android:fontFamily="@font/lato_regular"
-                    android:id="@+id/profileAge"/>
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Age:"
-                    android:layout_below="@id/profileName"
-                    android:layout_marginTop="8dp"
-                    android:textSize="18sp"
-                    android:textStyle="bold"
-                    android:fontFamily="@font/lato_regular"
-                    android:id="@+id/ageText"/>
-                <TextView
+                    android:textColor="@color/b2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Name"
@@ -105,10 +88,40 @@
                     android:fontFamily="@font/lato_regular"
                     android:id="@+id/profileName"/>
 
+
+
                 <TextView
+                    android:textColor="@color/b2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Age:"
+                    android:layout_below="@id/profileName"
+                    android:layout_marginTop="8dp"
+                    android:textSize="18sp"
+                    android:paddingStart="10dp"
+                    android:textStyle="bold"
+                    android:fontFamily="@font/lato_regular"
+                    android:id="@+id/ageText"/>
+
+                <TextView
+                    android:textColor="@color/b2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Age"
+                    android:layout_marginStart="8dp"
+                    android:layout_toEndOf="@id/ageText"
+                    android:layout_below="@id/profileName"
+                    android:layout_marginTop="8dp"
+                    android:textSize="18sp"
+                    android:fontFamily="@font/lato_regular"
+                    android:id="@+id/profileAge"/>
+
+                <TextView
+                    android:textColor="@color/b2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Address:"
+                    android:paddingStart="10dp"
                     android:layout_below="@id/ageText"
                     android:layout_marginTop="8dp"
                     android:textSize="18sp"
@@ -116,9 +129,10 @@
                     android:fontFamily="@font/lato_regular"
                     android:id="@+id/addressText"/>
                 <TextView
+                    android:textColor="@color/b2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Name"
+                    android:text="Address"
                     android:layout_marginStart="8dp"
                     android:layout_toEndOf="@id/addressText"
                     android:layout_below="@id/ageText"
@@ -137,18 +151,23 @@
                 android:layout_marginTop="20dp">
 
                 <TextView
+                    android:textColor="@color/b2"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="Contact Details"
                     android:textStyle="bold"
+                    android:drawableLeft="@drawable/contact"
+                    android:drawablePadding="8dp"
                     android:textSize="24sp"
                     android:fontFamily="@font/lato_regular"
                     android:id="@+id/contactText"/>
 
                 <TextView
+                    android:textColor="@color/b2"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="Email"
+                    android:paddingStart="10dp"
                     android:id="@+id/profileEmail"
                     android:layout_below="@id/contactText"
                     android:layout_marginTop="8dp"
@@ -158,9 +177,11 @@
                     android:drawablePadding="8dp"/>
 
                 <TextView
+                    android:textColor="@color/b2"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="Phone"
+                    android:paddingStart="10dp"
                     android:id="@+id/profilePhone"
                     android:layout_below="@id/profileEmail"
                     android:layout_marginTop="8dp"
@@ -178,6 +199,7 @@
                 android:layout_below="@id/rl2">
 
                 <TextView
+                    android:textColor="@color/b2"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="Quailifications"
@@ -189,9 +211,11 @@
                     android:id="@+id/qualificationText"/>
 
                 <TextView
+                    android:textColor="@color/b2"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="qualification"
+                    android:paddingStart="10dp"
                     android:id="@+id/profileQualify"
                     android:layout_below="@id/qualificationText"
                     android:layout_marginTop="8dp"
@@ -208,6 +232,7 @@
                 android:layout_marginTop="20dp">
 
                 <TextView
+                    android:textColor="@color/b2"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="Work Experience"
@@ -219,12 +244,14 @@
                     android:drawablePadding="8dp"/>
 
                 <TextView
+                    android:textColor="@color/b2"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:id="@+id/profileExperience"
                     android:layout_below="@id/experienceText"
                     android:text="Experience"
                     android:textSize="18sp"
+                    android:paddingStart="10dp"
                     android:layout_marginTop="8dp"/>
 
             </RelativeLayout>
@@ -232,17 +259,19 @@
             <Button
                 android:id="@+id/edit_btn"
                 android:layout_width="match_parent"
-                android:layout_height="60dp"
+                android:layout_height="50dp"
                 android:layout_below="@id/rl4"
                 android:layout_marginTop="30dp"
-                android:layout_marginStart="20dp"
-                android:layout_marginEnd="20dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
+                android:background="@drawable/edit_border"
+                android:gravity="center"
                 android:layout_marginBottom="20dp"
+                android:textColor="@color/white"
                 android:text="Edit Profile"
                 android:textStyle="bold"
                 android:fontFamily="@font/lato_bold"
-                android:textSize="30sp"
-                android:padding="10dp"/>
+                android:textSize="30sp" />
 
         </RelativeLayout>
 

@@ -16,6 +16,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -33,6 +34,7 @@ public class UpdateProfileActivity extends AppCompatActivity {
 
     EditText inputName,inputPhone,inputAge,inputAddress,inputQualify,inputExperience;
     ImageView inputImage;
+    TextView back;
     String profileUrl;
     Uri uri1;
     Button uploadBtn;
@@ -53,6 +55,7 @@ public class UpdateProfileActivity extends AppCompatActivity {
         inputQualify=findViewById(R.id.upload_qualification);
         inputExperience=findViewById(R.id.upload_experience);
         uploadBtn=findViewById(R.id.upload_btn);
+        back=findViewById(R.id.back_btn1);
 
         ActivityResultLauncher<Intent> activityResultLauncher=registerForActivityResult(
                 new ActivityResultContracts.StartActivityForResult(),
@@ -76,6 +79,13 @@ public class UpdateProfileActivity extends AppCompatActivity {
                 Intent photoPicker=new Intent(Intent.ACTION_PICK);
                 photoPicker.setType("image/+");
                 activityResultLauncher.launch(photoPicker);
+            }
+        });
+
+        back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                onBackPressed();
             }
         });
 

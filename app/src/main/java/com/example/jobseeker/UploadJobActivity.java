@@ -8,6 +8,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.activity.result.ActivityResult;
@@ -31,6 +32,7 @@ public class UploadJobActivity extends AppCompatActivity {
 
     ImageView logo;
     Button uploadBtn;
+    TextView back;
     EditText uploadTitle,uploadCompany,uploadType,uploadUrl,uploadPay,uploadLocation,uploadDesc,uploadDate;
     String imageUrl;
     Uri uri;
@@ -50,6 +52,7 @@ public class UploadJobActivity extends AppCompatActivity {
         uploadDate=findViewById(R.id.Date);
         uploadDesc=findViewById(R.id.upload_description);
         uploadBtn=findViewById(R.id.add_btn);
+        back=findViewById(R.id.back);
 
         ActivityResultLauncher<Intent> activityResultLauncher=registerForActivityResult(
                 new ActivityResultContracts.StartActivityForResult(), new ActivityResultCallback<ActivityResult>() {
@@ -79,6 +82,13 @@ public class UploadJobActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 saveData();
+            }
+        });
+
+        back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                onBackPressed();
             }
         });
     }

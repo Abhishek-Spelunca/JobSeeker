@@ -22,18 +22,22 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Username"
-        android:layout_marginTop="8dp"
+        android:textSize="16sp"
+        android:gravity="center_vertical"
+        android:layout_marginTop="6dp"
         android:id="@+id/nav_user"
+        android:fontFamily="@font/lato_bold"
         android:textColor="@color/white"
         android:textStyle="bold" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="10dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginBottom="5dp"
+        android:layout_marginTop="6dp"
         android:text="Username@contact.com"
         android:id="@+id/nav_email"
+        android:fontFamily="@font/lato_bold"
         android:textColor="@color/white"
         android:textSize="14sp" />
 

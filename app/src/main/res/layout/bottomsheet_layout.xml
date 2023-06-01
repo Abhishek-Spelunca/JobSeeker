@@ -8,10 +8,9 @@
 
     <ImageView
         android:layout_width="70dp"
-        android:layout_height="10dp"
-        android:src="@drawable/baseline_remove_24"
+        android:layout_height="6dp"
         android:background="@drawable/border"
-        android:backgroundTint="@color/grey"
+        android:backgroundTint="@color/col"
         android:scaleType="centerCrop"
         android:layout_gravity="center|top"/>
 
@@ -35,7 +34,7 @@
             android:layout_gravity="center"
             android:text="How to apply..Please Visit"
             android:textSize="25sp"
-            android:textColor="@color/grey"
+            android:textColor="@color/b2"
             android:fontFamily="@font/lato_bold"
             android:layout_margin="10dp"/>
 
@@ -47,8 +46,8 @@
             android:text="Company url"
             android:layout_gravity="center"
             android:textSize="18sp"
-            android:textColor="@color/grey"
-            android:fontFamily="@font/lato_bold"
+            android:textColor="@color/link"
+            android:fontFamily="@font/lato_regular"
             android:drawableLeft="@drawable/website"
             android:drawablePadding="8dp"
             android:layout_margin="15dp"/>
@@ -58,9 +57,9 @@
             android:layout_height="40dp"
             android:text="Ok!"
             android:background="@drawable/edit_border"
-            android:backgroundTint="@color/grey"
             android:layout_gravity="center"
             android:layout_marginTop="10dp"
+            android:fontFamily="@font/lato_bold"
             android:id="@+id/close"
             android:textSize="18sp"
             android:textStyle="bold"/>

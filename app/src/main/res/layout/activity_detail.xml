@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="@color/color"
+    android:background="@color/col"
     tools:context=".DetailActivity">
 
     <LinearLayout
@@ -19,7 +19,9 @@
             android:layout_width="match_parent"
             android:layout_height="40dp"
             android:drawableLeft="@drawable/back"
-            android:layout_margin="10dp"/>
+            android:layout_marginTop="3dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"/>
 
 
         <RelativeLayout
@@ -27,20 +29,9 @@
             android:layout_height="wrap_content"
             android:orientation="horizontal"
             android:layout_gravity="center"
-            android:layout_margin="6dp"
             android:elevation="6dp"
             android:padding="10dp"
             android:background="@drawable/rounded_top">
-
-            <View
-                android:layout_width="50dp"
-                android:layout_height="4dp"
-                android:layout_alignParentTop="true"
-                android:layout_centerInParent="true"
-                android:layout_marginTop="4dp"
-                android:background="@drawable/border"
-                android:backgroundTint="@color/color"
-                />
 
 
             <com.google.android.material.imageview.ShapeableImageView
@@ -53,11 +44,11 @@
                 android:layout_centerInParent="true"
                 android:layout_gravity="center"
                 android:layout_marginStart="84dp"
-                android:layout_marginTop="30dp"
+                android:layout_marginTop="10dp"
                 android:layout_marginEnd="84dp"
                 android:layout_marginBottom="10dp"
                 android:background="@drawable/image_holder"
-                android:elevation="8dp"
+                android:elevation="6dp"
                 android:scaleType="fitXY"
                 android:src="@drawable/image" />
 
@@ -72,7 +63,7 @@
                 android:fontFamily="@font/lato_bold"
                 android:gravity="center"
                 android:text="Title"
-                android:textColor="@color/black"
+                android:textColor="@color/b2"
                 android:textSize="30sp"
                 android:textStyle="bold" />
 
@@ -89,6 +80,7 @@
                 android:fontFamily="@font/lato_bold"
                 android:gravity="center"
                 android:text="Company"
+                android:textColor="@color/b2"
                 android:textSize="20sp" />
 
 
@@ -99,7 +91,8 @@
                 android:layout_below="@id/detailCompany"
                 android:layout_centerInParent="true"
                 android:layout_marginBottom="10dp"
-                android:background="@color/color"
+                android:background="@drawable/edit_border"
+                android:backgroundTint="@color/b2"
                 android:fontFamily="@font/lato_bold"
                 android:paddingStart="6dp"
                 android:paddingTop="8dp"
@@ -124,6 +117,7 @@
                     android:layout_height="wrap_content"
                     android:text="Company Details"
                     android:textSize="22sp"
+                    android:textColor="@color/b2"
                     android:textStyle="bold"
                     android:fontFamily="@font/lato_bold"
                     android:id="@+id/cd"/>
@@ -132,6 +126,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="Company Name"
+                    android:textColor="@color/b2"
+                    android:paddingStart="8dp"
                     android:layout_below="@id/cd"
                     android:layout_marginTop="8dp"
                     android:id="@+id/detailCompany2"
@@ -143,6 +139,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="Location"
+                    android:textColor="@color/b2"
+                    android:paddingStart="8dp"
                     android:layout_below="@id/detailCompany2"
                     android:layout_marginTop="8dp"
                     android:id="@+id/detailLocation"
@@ -154,6 +152,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="Company Website"
+                    android:textColor="@color/b2"
+                    android:paddingStart="8dp"
                     android:layout_below="@id/detailLocation"
                     android:layout_marginTop="8dp"
                     android:layout_marginBottom="8dp"
@@ -177,6 +177,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="PayScale"
+                    android:textColor="@color/b2"
                     android:textSize="22sp"
                     android:fontFamily="@font/lato_bold"
                     android:textStyle="bold"
@@ -187,6 +188,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_below="@id/pay"
+                    android:paddingStart="8dp"
                     android:layout_marginTop="10dp"
                     android:src="@drawable/currency" />
 
@@ -212,6 +214,7 @@
                     android:layout_marginTop="13dp"
                     android:text="Created On "
                     android:textSize="22sp"
+                    android:textColor="@color/b2"
                     android:fontFamily="@font/lato_bold"
                     android:textStyle="bold"/>
                 <TextView
@@ -220,6 +223,8 @@
                     android:layout_marginTop="10dp"
                     android:layout_below="@id/createText"
                     android:text="Date"
+                    android:textColor="@color/b2"
+                    android:paddingStart="8dp"
                     android:drawableLeft="@drawable/calender"
                     android:drawablePadding="8dp"
                     android:id="@+id/detailCreated"
@@ -230,10 +235,11 @@
                     android:layout_height="wrap_content"
                     android:layout_below="@id/detailCreated"
                     android:drawableLeft="@drawable/info"
-                    android:drawablePadding="8dp"
+                    android:drawablePadding="4dp"
                     android:layout_marginBottom="15dp"
                     android:layout_marginTop="20dp"
                     android:text="Description"
+                    android:textColor="@color/b2"
                     android:layout_alignParentStart="true"
                     android:id="@+id/d"
                     android:fontFamily="@font/lato_bold"
@@ -244,6 +250,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="Description"
+                    android:textColor="@color/b2"
+                    android:paddingStart="8dp"
                     android:id="@+id/detailDesc"
                     android:layout_below="@id/d"
                     android:fontFamily="@font/lato_regular"
@@ -268,27 +276,6 @@
                 android:textColor="@color/white"
                 android:textSize="20sp"
                 android:textStyle="bold" />
-
-        <!--<androidx.cardview.widget.CardView
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:layout_below="@id/rl2"
-            android:layout_toEndOf="@id/apply"
-            android:layout_marginTop="15dp"
-            app:cardCornerRadius="20dp"
-            android:layout_marginStart="10dp"
-            app:cardElevation="20dp">
-
-            <ImageView
-                android:id="@+id/marked"
-                android:clickable="true"
-                android:focusable="true"
-                android:layout_width="45dp"
-                android:layout_height="45dp"
-                android:src="{if is_marked==1 ? @drawable/mark2 : @drawable/mark}"/>
-
-        </androidx.cardview.widget.CardView>-->
-
 
         </RelativeLayout>
 

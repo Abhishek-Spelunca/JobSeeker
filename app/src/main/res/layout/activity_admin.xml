@@ -19,9 +19,9 @@
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
             android:layout_height="50dp"
-            android:background="@color/color"
+            android:background="@color/col"
             android:elevation="4dp"
-            android:padding="10dp"
+            android:padding="8dp"
             android:popupTheme="@style/ThemeOverlay.AppCompat.Light"
             android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
 
@@ -32,6 +32,7 @@
                 android:drawableRight="@drawable/logout"
                 android:drawablePadding="10dp"
                 android:text="Welcome Admin !"
+                android:fontFamily="@font/lato_regular"
                 android:textColor="@color/white"
                 android:textSize="24sp"
                 android:textStyle="bold" />
@@ -45,7 +46,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@drawable/admin_border"
-        android:backgroundTint="@color/color"
+        android:backgroundTint="@color/col"
         android:orientation="horizontal">
 
         <androidx.appcompat.widget.SearchView
@@ -62,8 +63,8 @@
             app:closeIcon="@drawable/clear"
             android:layout_marginStart="12dp"
             android:layout_marginEnd="12dp"
-            android:layout_marginBottom="20dp"
-            android:layout_marginTop="16dp" />
+            android:layout_marginBottom="10dp"
+            android:layout_marginTop="8dp" />
 
     </RelativeLayout>
 
@@ -75,11 +76,15 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Available Jobs"
-            android:textStyle="bold"
-            android:textSize="24sp"
-            android:layout_margin="6dp"
-            android:textColor="@color/black"/>
+            android:layout_marginStart="6dp"
+            android:layout_marginTop="6dp"
+            android:layout_marginEnd="6dp"
+            android:layout_marginBottom="6dp"
+            android:text="Available Jobs!"
+            android:fontFamily="@font/lato_bold"
+            android:textColor="@color/b2"
+            android:textSize="28sp"
+            android:textStyle="bold" />
 
     </RelativeLayout>
 
@@ -109,10 +114,9 @@
             android:layout_marginTop="40dp"
             android:layout_marginEnd="40dp"
             android:layout_marginBottom="40dp"
-            android:backgroundTint="@color/color"
-            android:background="@drawable/border"
-            android:src="@drawable/add"
-            android:tint="@color/white" />
+            android:backgroundTint="@color/col"
+            android:background="@drawable/edit_border"
+            android:src="@drawable/add" />
 
 
     </RelativeLayout>

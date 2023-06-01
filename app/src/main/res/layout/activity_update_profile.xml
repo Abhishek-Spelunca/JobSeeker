@@ -5,130 +5,144 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/color"
+    android:background="@color/col"
     tools:context=".UpdateProfileActivity">
 
-
-    <androidx.cardview.widget.CardView
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@drawable/border"
-        android:padding="20dp"
-        android:layout_margin="10dp"
-        app:cardElevation="20dp"
-        app:cardCornerRadius="30dp">
+        android:orientation="vertical">
 
-        <LinearLayout
+        <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
-            android:elevation="4dp"
-            android:orientation="vertical"
-            android:padding="15dp">
+            android:drawableLeft="@drawable/back"
+            android:id="@+id/back_btn1"
+            android:layout_marginTop="4dp"
+            android:layout_marginBottom="8dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="8dp"/>
 
-            <TextView
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/rounded_top"
+            android:padding="20dp"
+            app:cardElevation="20dp"
+            app:cardCornerRadius="30dp">
+
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Upload Profile"
-                android:textAlignment="center"
-                android:fontFamily="@font/lato_bold"
-                android:textStyle="bold"
-                android:background="@drawable/rounded_top"
-                android:backgroundTint="@color/grey"
-                android:textSize="30sp" />
+                android:layout_gravity="center_horizontal"
+                android:elevation="4dp"
+                android:orientation="vertical"
+                android:padding="15dp">
 
-            <ImageView
-                android:id="@+id/uploadImg"
-                android:layout_width="150dp"
-                android:layout_height="150dp"
-                android:layout_gravity="center"
-                android:layout_margin="10dp"
-                android:scaleType="fitXY"
-                android:src="@drawable/set_profile" />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:text="Upload Profile"
+                    android:textAlignment="center"
+                    android:fontFamily="@font/lato_bold"
+                    android:textStyle="bold"
+                    android:textColor="@color/white"
+                    android:background="@drawable/edit_border"
+                    android:backgroundTint="@color/col"
+                    android:textSize="30sp" />
 
-            <EditText
-                android:id="@+id/upload_name"
-                android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:background="@drawable/edit_border"
-                android:gravity="start|center_vertical"
-                android:hint="Name"
-                android:padding="16dp"
-                android:textColor="@color/black" />
+                <ImageView
+                    android:id="@+id/uploadImg"
+                    android:layout_width="150dp"
+                    android:layout_height="150dp"
+                    android:layout_gravity="center"
+                    android:layout_margin="10dp"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/set_profile" />
 
-            <EditText
-                android:id="@+id/upload_phone"
-                android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:layout_marginTop="20dp"
-                android:background="@drawable/edit_border"
-                android:gravity="start|center_vertical"
-                android:hint="Phone No"
-                android:padding="16dp"
-                android:inputType="number"
-                android:textColor="@color/black" />
+                <EditText
+                    android:id="@+id/upload_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:background="@drawable/edit_border"
+                    android:gravity="start|center_vertical"
+                    android:hint="Name"
+                    android:padding="16dp"
+                    android:textColor="@color/b2" />
 
-            <EditText
-                android:id="@+id/upload_age"
-                android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:layout_marginTop="20dp"
-                android:background="@drawable/edit_border"
-                android:gravity="start|center_vertical"
-                android:hint="Age"
-                android:inputType="number"
-                android:padding="16dp"
-                android:textColor="@color/black" />
+                <EditText
+                    android:id="@+id/upload_phone"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_marginTop="20dp"
+                    android:background="@drawable/edit_border"
+                    android:gravity="start|center_vertical"
+                    android:hint="Phone No"
+                    android:padding="16dp"
+                    android:inputType="number"
+                    android:textColor="@color/b2" />
 
-            <EditText
-                android:id="@+id/upload_address"
-                android:layout_width="match_parent"
-                android:layout_height="80dp"
-                android:layout_marginTop="20dp"
-                android:background="@drawable/edit_border"
-                android:gravity="start|center_vertical"
-                android:hint="Address"
-                android:padding="16dp"
-                android:textColor="@color/black" />
+                <EditText
+                    android:id="@+id/upload_age"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_marginTop="20dp"
+                    android:background="@drawable/edit_border"
+                    android:gravity="start|center_vertical"
+                    android:hint="Age"
+                    android:inputType="number"
+                    android:padding="16dp"
+                    android:textColor="@color/b2" />
 
-
-            <EditText
-                android:id="@+id/upload_qualification"
-                android:layout_width="match_parent"
-                android:layout_height="80dp"
-                android:layout_marginTop="20dp"
-                android:background="@drawable/edit_border"
-                android:gravity="start|center_vertical"
-                android:hint="Qualification"
-                android:padding="16dp"
-                android:textColor="@color/black" />
-
-            <EditText
-                android:id="@+id/upload_experience"
-                android:layout_width="match_parent"
-                android:layout_height="80dp"
-                android:layout_marginTop="20dp"
-                android:background="@drawable/edit_border"
-                android:gravity="start|center_vertical"
-                android:hint="Work Experience if any.."
-                android:padding="16dp"
-                android:textColor="@color/black" />
-
-            <Button
-                android:id="@+id/upload_btn"
-                android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:layout_marginTop="20dp"
-                android:text="Update"
-                android:background="@drawable/edit_border"
-                android:backgroundTint="@color/color"
-                android:textColor="@color/white"
-                android:textSize="20sp"
-                app:cornerRadius="20dp" />
+                <EditText
+                    android:id="@+id/upload_address"
+                    android:layout_width="match_parent"
+                    android:layout_height="80dp"
+                    android:layout_marginTop="20dp"
+                    android:background="@drawable/edit_border"
+                    android:gravity="start|center_vertical"
+                    android:hint="Address"
+                    android:padding="16dp"
+                    android:textColor="@color/b2" />
 
 
-        </LinearLayout>
+                <EditText
+                    android:id="@+id/upload_qualification"
+                    android:layout_width="match_parent"
+                    android:layout_height="80dp"
+                    android:layout_marginTop="20dp"
+                    android:background="@drawable/edit_border"
+                    android:gravity="start|center_vertical"
+                    android:hint="Qualification"
+                    android:padding="16dp"
+                    android:textColor="@color/b2" />
 
-    </androidx.cardview.widget.CardView>
+                <EditText
+                    android:id="@+id/upload_experience"
+                    android:layout_width="match_parent"
+                    android:layout_height="80dp"
+                    android:layout_marginTop="20dp"
+                    android:background="@drawable/edit_border"
+                    android:gravity="start|center_vertical"
+                    android:hint="Work Experience if any.."
+                    android:padding="16dp"
+                    android:textColor="@color/b2" />
+
+                <Button
+                    android:id="@+id/upload_btn"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_marginTop="20dp"
+                    android:text="Update"
+                    android:background="@drawable/border"
+                    android:textColor="@color/white"
+                    android:textSize="20sp"
+                    app:cornerRadius="20dp" />
+
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+
+    </LinearLayout>
 
 </ScrollView>

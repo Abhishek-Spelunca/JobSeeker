@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/white"
+    android:background="@color/col"
     android:gravity="center"
     android:orientation="vertical"
     tools:context=".SignUpActivity">
@@ -22,6 +22,7 @@
             android:layout_gravity="center_horizontal"
             android:background="@drawable/border"
             android:orientation="vertical"
+            android:elevation="8dp"
             android:padding="24dp">
 
             <TextView
@@ -29,8 +30,9 @@
                 android:layout_height="wrap_content"
                 android:text="Sign Up"
                 android:textAlignment="center"
-                android:textColor="@color/cyan"
+                android:textColor="@color/color"
                 android:textSize="34sp"
+                android:fontFamily="@font/lato_bold"
                 android:textStyle="bold" />
 
             <EditText
@@ -43,7 +45,7 @@
                 android:drawablePadding="8dp"
                 android:hint="Username"
                 android:padding="8dp"
-                android:textColor="@color/black" />
+                android:textColor="@color/col" />
 
             <EditText
                 android:id="@+id/sign_email"
@@ -55,7 +57,7 @@
                 android:drawablePadding="8dp"
                 android:hint="Email"
                 android:padding="8dp"
-                android:textColor="@color/black" />
+                android:textColor="@color/col" />
 
             <EditText
                 android:id="@+id/sign_pass"
@@ -68,18 +70,19 @@
                 android:hint="Password"
                 android:inputType="textPassword"
                 android:padding="8dp"
-                android:textColor="@color/black" />
+                android:textColor="@color/col" />
 
             <Button
                 android:id="@+id/sign_btn"
                 android:layout_width="match_parent"
-                android:layout_height="55dp"
-                android:layout_marginTop="40dp"
+                android:layout_height="52dp"
+                android:layout_marginTop="30dp"
                 android:backgroundTint="@color/color"
                 android:background="@drawable/edit_border"
                 android:textColor="@color/white"
-                android:text="Sign Up"
-                android:textSize="26sp"
+                android:text="SIGN UP"
+                android:fontFamily="@font/lato_bold"
+                android:textSize="24sp"
                 android:textStyle="bold"
                 app:cornerRadius="20dp" />
 
@@ -90,7 +93,8 @@
                 android:layout_marginTop="30dp"
                 android:text="Already registered? Login"
                 android:textAlignment="center"
-                android:textColor="@color/cyan"
+                android:textColor="@color/b2"
+                android:fontFamily="@font/lato_bold"
                 android:textSize="20sp" />
 
         </LinearLayout>

@@ -32,23 +32,25 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="We provide a list of various jobs for you to choose ..
-Find the job you are looking for.We provide third party job finding services along with the company info."
+Find the job you are looking for.       We  provide third party job finding services along with the company info."
             android:fontFamily="@font/lato_regular"
+            android:textColor="@color/b2"
             android:textSize="18sp" />
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@id/aboutText"
-            android:textColor="@color/red"
-            android:text="We just help you in finding suitable jobs."
-            android:textSize="19sp"
-            android:drawableLeft="@drawable/baseline_warning_24"
-            android:drawablePadding="8dp"
             android:background="@drawable/edit_border"
             android:backgroundTint="@color/grey"
+            android:drawableLeft="@drawable/baseline_warning_24"
+            android:drawablePadding="8dp"
             android:elevation="4dp"
-            android:padding="10dp"/>
+            android:fontFamily="@font/lato_bold"
+            android:padding="10dp"
+            android:text="We just help you in finding rigth jobs."
+            android:textColor="@color/red"
+            android:textSize="18sp" />
 
     </RelativeLayout>
 
@@ -80,7 +82,7 @@ Find the job you are looking for.We provide third party job finding services alo
             android:textStyle="bold"
             android:textSize="18sp"
             android:layout_marginStart="15dp"
-            android:textColor="@color/cyan"
+            android:textColor="@color/link"
             android:fontFamily="@font/lato_regular"/>
 
         <TextView
@@ -96,7 +98,7 @@ Find the job you are looking for.We provide third party job finding services alo
             android:textStyle="bold"
             android:fontFamily="@font/lato_regular"
             android:layout_marginStart="15dp"
-            android:textColor="@color/cyan"/>
+            android:textColor="@color/link"/>
 
         <TextView
             android:id="@+id/p1"
@@ -109,6 +111,7 @@ Find the job you are looking for.We provide third party job finding services alo
             android:text="88776-00998"
             android:textStyle="bold"
             android:textSize="18sp"
+            android:textColor="@color/b2"
             android:layout_marginStart="15dp"
             android:fontFamily="@font/lato_regular"/>
 
@@ -120,8 +123,8 @@ Find the job you are looking for.We provide third party job finding services alo
             android:drawableLeft="@drawable/location"
             android:layout_marginTop="10dp"
             android:drawablePadding="8dp"
+            android:textColor="@color/b2"
             android:text="Anand Nagar near Hebbal police station, Hebbal , Banglore Urban,Karnataka  560064"
-            android:textStyle="bold"
             android:textSize="18sp"
             android:layout_marginStart="15dp"
             android:fontFamily="@font/lato_regular"/>
