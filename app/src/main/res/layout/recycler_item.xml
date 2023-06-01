@@ -27,8 +27,8 @@
             android:layout_marginTop="18dp"
             android:id="@+id/recImg"
             android:src="@drawable/resume"
-            android:background="@drawable/edit_border"
-            android:scaleType="fitXY"
+            android:background="@drawable/image_holder"
+            android:scaleType="fitCenter"
             android:elevation="5dp"/>
         <LinearLayout
             android:layout_width="match_parent"
@@ -46,7 +46,6 @@
                     android:id="@+id/rec_title"
                     android:maxLines="2"
                     android:ellipsize="end"
-                    android:textColor="@color/black"
                     android:textSize="19sp"
                     android:layout_marginBottom="3dp"
                     android:layout_marginStart="16dp"
@@ -80,7 +79,9 @@
                     android:layout_width="15dp"
                     android:layout_height="16dp"
                     android:layout_marginEnd="5dp"
+                    android:layout_marginTop="2.6dp"
                     android:src="@drawable/company"
+                    android:scaleType="fitCenter"
                     app:tint="@color/color"/>
 
                 <TextView
@@ -106,6 +107,8 @@
                     android:layout_height="16dp"
                     android:layout_marginEnd="5dp"
                     android:src="@drawable/location"
+                    android:layout_marginTop="2.6dp"
+                    android:scaleType="fitCenter"
                     app:tint="@color/color"/>
 
                 <TextView
@@ -130,6 +133,8 @@
                     android:layout_width="15dp"
                     android:layout_height="16dp"
                     android:layout_marginEnd="5dp"
+                    android:layout_marginTop="2.6dp"
+                    android:scaleType="fitCenter"
                     android:src="@drawable/currency"
                     app:tint="@color/color"/>
 
@@ -178,7 +183,7 @@
                     android:layout_toStartOf="@id/rec_Created"
                     android:id="@+id/recCreatedText"
                     android:ellipsize="end"
-                    android:textColor="@color/black"
+                    android:textColor="@color/grey"
 
                     android:paddingStart="6dp"
                     android:paddingEnd="6dp"
