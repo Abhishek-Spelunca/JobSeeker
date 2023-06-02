@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+
+    tools:context=".SplashScreenActivity">
+
+    <pl.droidsonroids.gif.GifImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/rll"
+        android:layout_centerInParent="true"
+        android:layout_marginBottom="0dp"
+        android:src="@drawable/search" />
+
+    <RelativeLayout
+        android:id="@+id/rll"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:gravity="center">
+
+        <TextView
+            android:id="@+id/text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingBottom="8dp"
+            android:text="JOB"
+            android:textColor="@color/b2"
+            android:textSize="44sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_toEndOf="@id/text"
+            android:paddingStart="8dp"
+            android:paddingBottom="8dp"
+            android:text="SEEKER"
+            android:textColor="@color/b2"
+            android:textSize="44sp"
+            android:textStyle="bold" />
+
+
+    </RelativeLayout>
+
+
+
+
+
+</RelativeLayout>
