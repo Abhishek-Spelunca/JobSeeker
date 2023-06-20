@@ -31,7 +31,7 @@
                 android:text="Login"
                 android:fontFamily="@font/lato_bold"
                 android:textAlignment="center"
-                android:textColor="@color/color"
+                android:textColor="@color/col"
                 android:textSize="34sp"
                 android:textStyle="bold" />
 

@@ -107,7 +107,5 @@ class MyViewHolder extends RecyclerView.ViewHolder{
         recDate=itemView.findViewById(R.id.rec_Created);
         recCard=itemView.findViewById(R.id.recCard);
 
-
-
     }
 }

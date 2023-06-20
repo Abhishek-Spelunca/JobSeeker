@@ -3,7 +3,7 @@
     <style name="Base.Theme.JobSeeker" parent="Theme.Material3.DayNight.NoActionBar">
         <!-- Customize your light theme here. -->
         <item name="colorPrimary">@color/col</item>
-        <item name="colorPrimaryVariant">@color/b2</item>
+        <item name="colorPrimaryVariant">@color/color</item>
     </style>
 
     <style name="AppTheme" parent="Base.Theme.JobSeeker">

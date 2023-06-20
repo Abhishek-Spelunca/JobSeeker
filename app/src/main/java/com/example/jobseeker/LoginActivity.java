@@ -166,29 +166,15 @@ public class LoginActivity extends AppCompatActivity {
                 @Override
                 public void onSuccess(AuthResult authResult) {
                     Toast.makeText(LoginActivity.this, "Login Successful", Toast.LENGTH_SHORT).show();
-                    startActivity(new Intent(LoginActivity.this, HomePageActivity.class));                }
+                    startActivity(new Intent(LoginActivity.this, HomePageActivity.class));
+                    finish();
+                }
             }).addOnFailureListener(new OnFailureListener() {
                 @Override
                 public void onFailure(@NonNull Exception e) {
                     Toast.makeText(LoginActivity.this, "Login Failed", Toast.LENGTH_SHORT).show();
                 }
             });
-
-        }
-    }
-
-    @Override
-    protected void onStart() {
-        super.onStart();
-        if (auth.getCurrentUser() != null){
-            String admin= FirebaseAuth.getInstance().getCurrentUser().getUid();
-            if (admin.equals("5iCUYJUk2FRUcMKMmwmPgGz7tHH3")){//checking for Admin
-                startActivity(new Intent(LoginActivity.this, AdminActivity.class));
-                finish();
-            }else {
-                startActivity(new Intent(LoginActivity.this, HomePageActivity.class));
-                finish();
-            }
 
         }
     }

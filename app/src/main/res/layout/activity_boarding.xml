@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/color"
+    tools:context=".BoardingActivity">
+
+    <pl.droidsonroids.gif.GifImageView
+        android:layout_marginTop="60dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/boarding"
+        android:scaleType="fitStart"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Find out the job that suits you..."
+        android:textSize="36sp"
+        android:layout_marginTop="500dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        android:padding="8dp"
+        android:textStyle="bold"
+        android:textColor="@color/b2"
+        android:id="@+id/tv"
+        android:fontFamily="@font/lato_bold"/>
+
+
+    <Button
+        android:id="@+id/board"
+        android:layout_width="wrap_content"
+        android:layout_height="60dp"
+        android:text="Get Started"
+        android:backgroundTint="@color/white"
+        android:textColor="@color/b2"
+        android:textSize="22sp"
+        android:layout_below="@id/tv"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="40dp"
+        android:textStyle="bold"
+        android:fontFamily="@font/lato_bold"
+        android:drawableRight="@drawable/arrow"
+        android:drawablePadding="8dp"
+        android:drawableTintMode="@color/white"/>
+
+
+</RelativeLayout>

@@ -92,7 +92,7 @@
                 android:layout_centerInParent="true"
                 android:layout_marginBottom="10dp"
                 android:background="@drawable/edit_border"
-                android:backgroundTint="@color/b2"
+                android:backgroundTint="@color/col"
                 android:fontFamily="@font/lato_bold"
                 android:paddingStart="6dp"
                 android:paddingTop="8dp"
@@ -100,7 +100,7 @@
                 android:paddingBottom="6dp"
                 android:text="Type"
                 android:textAlignment="center"
-                android:textColor="@color/white"
+                android:textColor="@color/b2"
                 android:textSize="20sp" />
 
             <RelativeLayout

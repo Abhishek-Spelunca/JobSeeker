@@ -101,7 +101,7 @@
             android:paddingBottom="6dp"
             android:text="Type"
             android:textAlignment="center"
-            android:textColor="@color/white"
+            android:textColor="@color/b2"
             android:textSize="20sp" />
 
     <RelativeLayout

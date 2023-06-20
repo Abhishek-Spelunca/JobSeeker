@@ -30,7 +30,7 @@
                 android:layout_height="wrap_content"
                 android:text="Sign Up"
                 android:textAlignment="center"
-                android:textColor="@color/color"
+                android:textColor="@color/col"
                 android:textSize="34sp"
                 android:fontFamily="@font/lato_bold"
                 android:textStyle="bold" />
