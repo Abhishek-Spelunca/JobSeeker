@@ -10,6 +10,19 @@
     tools:context=".HomeFragment">
 
 
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Hi Welcome Back !"
+        android:textColor="@color/b2"
+        android:textStyle="bold"
+        android:textSize="20sp"
+        android:layout_marginTop="10dp"
+        android:layout_marginStart="13dp"
+        android:layout_marginEnd="13dp"
+        android:fontFamily="@font/lato_bold"
+        android:padding="8dp"/>
+
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -31,7 +44,7 @@
             app:closeIcon="@drawable/clear"
             android:layout_marginStart="12dp"
             android:layout_marginEnd="12dp"
-            android:layout_marginTop="16dp" />
+            android:layout_marginTop="12dp" />
 
         <androidx.appcompat.widget.SearchView
             android:id="@+id/searchLocation"
@@ -53,7 +66,7 @@
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         android:background="@drawable/rounded_top">
 
         <TextView
@@ -66,7 +79,32 @@
             android:fontFamily="@font/lato_bold"
             android:layout_marginTop="10dp"
             android:layout_marginStart="14dp"
-            android:id="@+id/text"/>
+            android:id="@+id/text"
+            android:visibility="gone"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="gone"
+            android:id="@+id/error">
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="520dp"
+                android:layout_marginTop="20dp"
+                android:src="@drawable/error"
+                android:scaleType="fitCenter" />
+        </LinearLayout>
+        <ImageView
+            android:id="@+id/noData"
+            android:layout_width="match_parent"
+            android:layout_height="520dp"
+            android:layout_marginTop="20dp"
+            android:src="@drawable/err"
+            android:scaleType="fitCenter"
+            android:visibility="gone"/>
+
+
+
 
         <androidx.recyclerview.widget.RecyclerView
             android:layout_width="match_parent"
@@ -74,7 +112,8 @@
             android:layout_marginTop="10dp"
             android:scrollbars="vertical"
             android:layout_below="@id/text"
-            android:id="@+id/recyclerView"/>
+            android:id="@+id/recyclerView"
+            android:visibility="gone"/>
 
     </RelativeLayout>
 

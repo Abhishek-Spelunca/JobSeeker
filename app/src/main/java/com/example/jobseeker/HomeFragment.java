@@ -1,9 +1,15 @@
 package com.example.jobseeker;
 
+import android.content.Context;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
@@ -12,6 +18,7 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.google.android.gms.tasks.OnFailureListener;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -29,7 +36,9 @@ public class HomeFragment extends Fragment {
 
 
     FirebaseAuth auth;
-
+    LinearLayout err;
+    ImageView noData;
+    TextView text;
     RecyclerView recyclerView;
     List<DataClass> dataList;
     DatabaseReference reference;
@@ -42,13 +51,15 @@ public class HomeFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 
-        // Inflate the layout for this fragment
         View v= inflater.inflate(R.layout.fragment_home, container, false);
 
         auth=FirebaseAuth.getInstance();
 
 
         recyclerView=v.findViewById(R.id.recyclerView);
+        err=v.findViewById(R.id.error);
+        text=v.findViewById(R.id.text);
+        noData=v.findViewById(R.id.noData);
         searchView=v.findViewById(R.id.search);
         locationView=v.findViewById(R.id.searchLocation);
         searchView.clearFocus();
@@ -63,37 +74,41 @@ public class HomeFragment extends Fragment {
         builder.setView(R.layout.progress_layout);
         AlertDialog dialog=builder.create();
         dialog.show();
+        if (isConnected())
+        {
+            recyclerView.setVisibility(View.VISIBLE);
+            text.setVisibility(View.VISIBLE);
+            dataList=new ArrayList<>();
 
+            adapter=new MyAdapter(getActivity(),dataList);
+            recyclerView.setAdapter(adapter);
+            reference= FirebaseDatabase.getInstance().getReference("Jobs");
+            dialog.show();
+            eventListener=reference.addValueEventListener(new ValueEventListener() {
+                @Override
+                public void onDataChange(@NonNull DataSnapshot snapshot) {
+                    dataList.clear();
+                    recyclerView.setVisibility(View.VISIBLE);
+                    for (DataSnapshot itemSnapshot:snapshot.getChildren()){
 
-        dataList=new ArrayList<>();
-
-        adapter=new MyAdapter(getActivity(),dataList);
-        recyclerView.setAdapter(adapter);
-
-        reference= FirebaseDatabase.getInstance().getReference("Jobs");
-        dialog.show();
-
-        eventListener=reference.addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot snapshot) {
-                dataList.clear();
-                for (DataSnapshot itemSnapshot:snapshot.getChildren()){
-
-                    DataClass dataClass=itemSnapshot.getValue(DataClass.class);
-                    dataClass.setKey(itemSnapshot.getKey());
-                    dataList.add(dataClass);
+                        DataClass dataClass=itemSnapshot.getValue(DataClass.class);
+                        dataClass.setKey(itemSnapshot.getKey());
+                        dataList.add(dataClass);
+                    }
+                    adapter.notifyDataSetChanged();
+                    dialog.dismiss();
                 }
-                adapter.notifyDataSetChanged();
-                dialog.dismiss();
-            }
+                @Override
+                public void onCancelled(@NonNull DatabaseError error) {
+                    dialog.dismiss();
+                }
 
-            @Override
-            public void onCancelled(@NonNull DatabaseError error) {
-                dialog.dismiss();
-            }
-        });
+            });
 
-
+        }else {
+            err.setVisibility(View.VISIBLE);
+            dialog.dismiss();
+        }
         searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
             @Override
             public boolean onQueryTextSubmit(String query) {
@@ -139,5 +154,14 @@ public class HomeFragment extends Fragment {
             }
         }
         adapter.searchDataList(searchLocation);
+    }
+    private boolean isConnected(){
+        ConnectivityManager cm=(ConnectivityManager)getContext().getSystemService(Context.CONNECTIVITY_SERVICE);
+        NetworkInfo active=cm.getActiveNetworkInfo();
+        if (active!=null && active.isConnectedOrConnecting())
+        {
+            return true;
+        }
+        return false;
     }
 }
