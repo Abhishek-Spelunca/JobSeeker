@@ -15,6 +15,11 @@
             android:icon="@drawable/profile"
             android:title="Profile" />
 
+        <item
+            android:id="@+id/nav_save"
+            android:icon="@drawable/saved"
+            android:title="Marked Jobs" />
+
 
         <item
             android:id="@+id/nav_about"

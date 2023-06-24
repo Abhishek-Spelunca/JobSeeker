@@ -14,6 +14,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.FirebaseDatabase;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -59,7 +60,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyViewHolder> {
                 Intent intent;
                 if (admin.equals("5iCUYJUk2FRUcMKMmwmPgGz7tHH3")){//checking for Admin
                     intent = new Intent(context, AdminDetailActivity.class);
-                }else {
+                } else {
                     intent = new Intent(context, DetailActivity.class);
                 }
                 intent.putExtra("Image", dataList.get(holder.getAdapterPosition()).getLogo());

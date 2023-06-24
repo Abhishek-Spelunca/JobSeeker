@@ -50,7 +50,9 @@
             android:fontFamily="@font/lato_regular"
             android:drawableLeft="@drawable/website"
             android:drawablePadding="8dp"
-            android:layout_margin="15dp"/>
+            android:layout_margin="15dp"
+            android:autoLink="all"
+            android:textIsSelectable="true"/>
 
         <Button
             android:layout_width="wrap_content"

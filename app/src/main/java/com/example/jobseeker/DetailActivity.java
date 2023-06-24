@@ -1,5 +1,6 @@
 package com.example.jobseeker;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.Dialog;
@@ -7,6 +8,7 @@ import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
+import android.os.Handler;
 import android.view.Gravity;
 import android.view.View;
 import android.view.ViewGroup;
@@ -15,14 +17,27 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+import com.google.firebase.storage.FirebaseStorage;
+import com.google.firebase.storage.StorageReference;
 
 public class DetailActivity extends AppCompatActivity {
 
     TextView back_btn, detailTitle,detailCompany,titleCompany,detailLocation,detailPay,detailType,detailDesc,detailDate,detailWeb;
     ImageView detailImage;
-    Button apply_btn;
+    Button apply_btn,save_btn;
     String key="";
     String imageUrl="";
     Bundle bundle;
@@ -43,6 +58,7 @@ public class DetailActivity extends AppCompatActivity {
         detailWeb=findViewById(R.id.company_website);
         apply_btn=findViewById(R.id.apply);
         back_btn=findViewById(R.id.back);
+        save_btn=findViewById(R.id.save);
 
         detailImage=findViewById(R.id.detailLogo);
 
@@ -77,6 +93,13 @@ public class DetailActivity extends AppCompatActivity {
             }
         });
 
+        save_btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                saveData();
+            }
+        });
+
     }
     private void showBottomDialog(){
         final Dialog dialog=new Dialog(this);
@@ -101,5 +124,67 @@ public class DetailActivity extends AppCompatActivity {
         dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
         dialog.getWindow().getAttributes().windowAnimations=R.style.DialogAnimation;
         dialog.getWindow().setGravity(Gravity.BOTTOM);
+    }
+
+    public void saveData(){
+        bundle=getIntent().getExtras();
+
+        if (bundle!=null){
+            String title=bundle.getString("Title");
+            String company=bundle.getString("Company");
+            String location=bundle.getString("Location");
+            String pay=bundle.getString("PayScale");
+            String type=bundle.getString("Type");
+            String desc=bundle.getString("Description");
+            String date=bundle.getString("Date");
+            String web=bundle.getString("CompanyUrl");
+            key=bundle.getString("Key");
+            imageUrl=bundle.getString("Image");
+
+
+            DataClass dataClass=new DataClass(title,company,type,pay,location,desc,date,web,imageUrl);
+            DatabaseReference ref=FirebaseDatabase.getInstance().getReference("Saved Jobs").child(FirebaseAuth.getInstance().getCurrentUser().getUid());
+            ref.addListenerForSingleValueEvent(new ValueEventListener() {
+                @Override
+                public void onDataChange(@NonNull DataSnapshot snapshot) {
+                    if (snapshot.child(title).exists()){
+                        removeData();
+                    }else{
+
+
+                    ref.child(title).setValue(dataClass).addOnCompleteListener(
+                    new OnCompleteListener<Void>() {
+                        @Override
+                        public void onComplete(@NonNull Task<Void> task) {
+                            if (task.isSuccessful()){
+                                Toast.makeText(DetailActivity.this, "Saved", Toast.LENGTH_SHORT).show();
+                                finish();
+                            }
+                        }
+                    });}
+                }
+                @Override
+                public void onCancelled(@NonNull DatabaseError error) {onBackPressed();}
+            });
+        }
+    }
+    public void removeData(){
+        String title=bundle.getString("Title");
+        final DatabaseReference reference= FirebaseDatabase.getInstance().getReference("Saved Jobs");
+        reference.child(FirebaseAuth.getInstance().getCurrentUser().getUid()).child(title).removeValue().addOnCompleteListener(new OnCompleteListener<Void>() {
+            @Override
+            public void onComplete(@NonNull Task<Void> task) {
+                if (task.isSuccessful()) {
+                    Toast.makeText(DetailActivity.this, "Removed", Toast.LENGTH_SHORT).show();
+                    finish();
+                }
+            }
+        }).addOnFailureListener(new OnFailureListener() {
+            @Override
+            public void onFailure(@NonNull Exception e) {
+                Toast.makeText(DetailActivity.this, "Failed", Toast.LENGTH_SHORT).show();
+            }
+        });
+
     }
 }

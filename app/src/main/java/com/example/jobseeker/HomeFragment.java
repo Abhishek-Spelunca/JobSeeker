@@ -38,10 +38,10 @@ public class HomeFragment extends Fragment {
     FirebaseAuth auth;
     LinearLayout err;
     ImageView noData;
-    TextView text;
-    RecyclerView recyclerView;
+    TextView text,text2;
+    RecyclerView recyclerView2,recyclerView;
     List<DataClass> dataList;
-    DatabaseReference reference;
+    DatabaseReference reference,reference2;
     ValueEventListener eventListener;
     androidx.appcompat.widget.SearchView searchView,locationView;
     MyAdapter adapter;
@@ -83,6 +83,7 @@ public class HomeFragment extends Fragment {
             adapter=new MyAdapter(getActivity(),dataList);
             recyclerView.setAdapter(adapter);
             reference= FirebaseDatabase.getInstance().getReference("Jobs");
+            reference2= FirebaseDatabase.getInstance().getReference("Saved Jobs");
             dialog.show();
             eventListener=reference.addValueEventListener(new ValueEventListener() {
                 @Override
