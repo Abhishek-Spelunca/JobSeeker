@@ -78,6 +78,12 @@ public class DetailActivity extends AppCompatActivity {
             imageUrl=bundle.getString("Image");
             Glide.with(this).load(bundle.getString("Image")).into(detailImage);
         }
+        detailDesc.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                detailDesc.setMaxLines(Integer.MAX_VALUE);
+            }
+        });
 
         apply_btn.setOnClickListener(new View.OnClickListener() {
             @Override

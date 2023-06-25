@@ -80,6 +80,12 @@ public class AdminDetailActivity extends AppCompatActivity {
                 });
             }
         });
+        detailDesc.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                detailDesc.setMaxLines(Integer.MAX_VALUE);
+            }
+        });
         backBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
