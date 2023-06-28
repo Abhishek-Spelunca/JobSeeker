@@ -80,9 +80,9 @@ Find the job you are looking for.       We  provide third party job finding serv
             android:drawablePadding="8dp"
             android:text="www.jobseeker.com"
             android:textStyle="bold"
+            android:autoLink="web|all"
             android:textSize="18sp"
             android:layout_marginStart="15dp"
-            android:textColor="@color/link"
             android:fontFamily="@font/lato_regular"/>
 
         <TextView
@@ -98,7 +98,7 @@ Find the job you are looking for.       We  provide third party job finding serv
             android:textStyle="bold"
             android:fontFamily="@font/lato_regular"
             android:layout_marginStart="15dp"
-            android:textColor="@color/link"/>
+            android:autoLink="email|all" />
 
         <TextView
             android:id="@+id/p1"
@@ -111,7 +111,7 @@ Find the job you are looking for.       We  provide third party job finding serv
             android:text="88776-00998"
             android:textStyle="bold"
             android:textSize="18sp"
-            android:textColor="@color/b2"
+            android:autoLink="phone|all"
             android:layout_marginStart="15dp"
             android:fontFamily="@font/lato_regular"/>
 

@@ -66,7 +66,8 @@ public class SavedJobs extends Fragment {
         dataList=new ArrayList<>();
         adapter=new MyAdapter(getActivity(),dataList);
         recyclerView.setAdapter(adapter);
-        reference2= FirebaseDatabase.getInstance().getReference("Saved Jobs").child(FirebaseAuth.getInstance().getCurrentUser().getUid());
+        reference2= FirebaseDatabase.getInstance().getReference("Saved Jobs").
+                child(FirebaseAuth.getInstance().getCurrentUser().getUid());
         dialog.show();
         eventListener=reference2.addValueEventListener(new ValueEventListener() {
             @Override

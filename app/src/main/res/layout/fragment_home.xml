@@ -14,7 +14,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Hi Welcome Back !"
-        android:textColor="@color/b2"
+        android:textColor="@color/white"
         android:textStyle="bold"
         android:textSize="20sp"
         android:layout_marginTop="10dp"
@@ -44,7 +44,7 @@
             app:closeIcon="@drawable/clear"
             android:layout_marginStart="12dp"
             android:layout_marginEnd="12dp"
-            android:layout_marginTop="12dp" />
+            android:layout_marginTop="8dp" />
 
         <androidx.appcompat.widget.SearchView
             android:id="@+id/searchLocation"
@@ -64,55 +64,59 @@
             app:searchIcon="@drawable/location" />
     </RelativeLayout>
 
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="@drawable/rounded_top">
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Available Jobs!"
-            android:textStyle="bold"
-            android:textColor="@color/b2"
-            android:textSize="28sp"
-            android:fontFamily="@font/lato_bold"
-            android:layout_marginTop="10dp"
-            android:layout_marginStart="14dp"
-            android:id="@+id/text"
-            android:visibility="gone"/>
 
-        <LinearLayout
+        <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:visibility="gone"
-            android:id="@+id/error">
+            android:background="@drawable/rounded_top">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Available Jobs!"
+                android:textStyle="bold"
+                android:textColor="@color/b2"
+                android:textSize="28sp"
+                android:fontFamily="@font/lato_bold"
+                android:layout_marginTop="10dp"
+                android:layout_marginStart="14dp"
+                android:id="@+id/text"
+                android:visibility="gone"/>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:visibility="gone"
+                android:id="@+id/error">
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="520dp"
+                    android:layout_marginTop="20dp"
+                    android:src="@drawable/error"
+                    android:scaleType="fitCenter" />
+            </LinearLayout>
+
             <ImageView
+                android:id="@+id/noData"
                 android:layout_width="match_parent"
                 android:layout_height="520dp"
                 android:layout_marginTop="20dp"
-                android:src="@drawable/error"
-                android:scaleType="fitCenter" />
-        </LinearLayout>
-        <ImageView
-            android:id="@+id/noData"
-            android:layout_width="match_parent"
-            android:layout_height="520dp"
-            android:layout_marginTop="20dp"
-            android:src="@drawable/err"
-            android:scaleType="fitCenter"
-            android:visibility="gone"/>
+                android:src="@drawable/err"
+                android:scaleType="fitCenter"
+                android:visibility="gone"/>
+            <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@id/text"
+                android:id="@+id/swipe">
 
-        <androidx.recyclerview.widget.RecyclerView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_marginTop="10dp"
-            android:scrollbars="vertical"
-            android:layout_below="@id/text"
-            android:id="@+id/recyclerView"
-            android:visibility="gone"/>
+            <androidx.recyclerview.widget.RecyclerView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="10dp"
+                android:scrollbars="vertical"
+                android:id="@+id/recyclerView"
+                android:visibility="gone"/>
 
-    </RelativeLayout>
-
-
+            </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+        </RelativeLayout>
 </LinearLayout>

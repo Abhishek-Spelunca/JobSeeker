@@ -32,7 +32,7 @@
             android:layout_height="wrap_content"
             android:textAlignment="center"
             android:layout_gravity="center"
-            android:text="How to apply..Please Visit"
+            android:text="To apply... Please Visit"
             android:textSize="25sp"
             android:textColor="@color/b2"
             android:fontFamily="@font/lato_bold"
@@ -46,12 +46,12 @@
             android:text="Company url"
             android:layout_gravity="center"
             android:textSize="18sp"
-            android:textColor="@color/link"
             android:fontFamily="@font/lato_regular"
             android:drawableLeft="@drawable/website"
             android:drawablePadding="8dp"
             android:layout_margin="15dp"
-            android:autoLink="all"
+            android:autoLink="web|all"
+            android:textColor="@color/color"
             android:textIsSelectable="true"/>
 
         <Button
@@ -62,8 +62,10 @@
             android:layout_gravity="center"
             android:layout_marginTop="10dp"
             android:fontFamily="@font/lato_bold"
+            android:backgroundTint="@color/grey"
             android:id="@+id/close"
             android:textSize="18sp"
+            android:textColor="@color/white"
             android:textStyle="bold"/>
 
     </LinearLayout>

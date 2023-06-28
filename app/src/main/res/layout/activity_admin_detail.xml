@@ -12,7 +12,8 @@
     <LinearLayout
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:padding="3dp">
 
         <TextView
             android:id="@+id/previous"
@@ -48,9 +49,9 @@
             android:layout_marginTop="10dp"
             android:layout_marginEnd="84dp"
             android:layout_marginBottom="10dp"
-            android:background="@drawable/edit_border"
+            android:background="@drawable/image_holder"
             android:elevation="6dp"
-            android:scaleType="fitXY"
+            android:scaleType="fitCenter"
             android:src="@drawable/image" />
 
         <TextView
@@ -200,12 +201,16 @@
             android:layout_below="@id/pay"
             android:layout_toEndOf="@id/currencyLogo"
             android:layout_marginStart="8dp"
-            android:background="@color/green2"
+            android:background="@drawable/edit_border"
+            android:backgroundTint="@color/green2"
             android:textColor="@color/green"
             android:text="Pay"
             android:fontFamily="@font/lato_bold"
             android:layout_marginTop="10dp"
-            android:textSize="18sp" />
+            android:textSize="18sp"
+            android:paddingBottom="6dp"
+            android:paddingStart="4dp"
+            android:paddingEnd="4dp"/>
 
 
         <TextView
@@ -272,6 +277,8 @@
             app:menu_colorNormal="@color/color"
             app:menu_colorPressed="@color/red"
             app:menu_fab_size="normal"
+            android:background="@drawable/border"
+            android:backgroundTint="@color/col"
             android:layout_below="@id/detailDesc"
             app:menu_icon="@drawable/list"
             app:menu_openDirection="up"

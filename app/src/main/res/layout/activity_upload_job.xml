@@ -140,10 +140,10 @@
                 <EditText
                     android:id="@+id/upload_description"
                     android:layout_width="match_parent"
-                    android:layout_height="100dp"
+                    android:layout_height="150dp"
                     android:layout_marginTop="20dp"
                     android:background="@drawable/edit_border"
-                    android:gravity="start|center_vertical"
+                    android:gravity="start|center_vertical|top"
                     android:hint="Qualification and Description"
                     android:padding="16dp"
                     android:textColor="@color/b2" />
@@ -151,13 +151,14 @@
                 <Button
                     android:id="@+id/add_btn"
                     android:layout_width="match_parent"
-                    android:layout_height="50dp"
+                    android:layout_height="45dp"
                     android:layout_marginTop="30dp"
                     android:layout_marginBottom="20dp"
                     android:background="@drawable/edit_border"
                     android:text="Upload"
+                    android:backgroundTint="@color/col"
                     android:textColor="@color/white"
-                    android:textSize="20sp"
+                    android:textSize="24sp"
                     app:cornerRadius="20dp" />
 
 

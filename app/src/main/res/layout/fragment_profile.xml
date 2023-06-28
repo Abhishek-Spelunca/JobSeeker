@@ -265,13 +265,14 @@
                 android:layout_marginStart="10dp"
                 android:layout_marginEnd="10dp"
                 android:background="@drawable/edit_border"
+                android:backgroundTint="@color/col"
                 android:gravity="center"
                 android:layout_marginBottom="20dp"
                 android:textColor="@color/white"
                 android:text="Edit Profile"
                 android:textStyle="bold"
                 android:fontFamily="@font/lato_bold"
-                android:textSize="30sp" />
+                android:textSize="26sp" />
 
         </RelativeLayout>
 

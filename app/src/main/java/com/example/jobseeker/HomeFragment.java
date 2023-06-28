@@ -17,6 +17,7 @@ import androidx.appcompat.widget.SearchView;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.firebase.auth.FirebaseAuth;
@@ -29,13 +30,16 @@ import com.google.firebase.database.ValueEventListener;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.Collections;
 import java.util.List;
+import java.util.Random;
 
 
 public class HomeFragment extends Fragment {
 
 
     FirebaseAuth auth;
+    SwipeRefreshLayout swipe;
     LinearLayout err;
     ImageView noData;
     TextView text,text2;
@@ -55,6 +59,7 @@ public class HomeFragment extends Fragment {
 
         auth=FirebaseAuth.getInstance();
 
+        swipe=v.findViewById(R.id.swipe);
 
         recyclerView=v.findViewById(R.id.recyclerView);
         err=v.findViewById(R.id.error);
@@ -83,7 +88,6 @@ public class HomeFragment extends Fragment {
             adapter=new MyAdapter(getActivity(),dataList);
             recyclerView.setAdapter(adapter);
             reference= FirebaseDatabase.getInstance().getReference("Jobs");
-            reference2= FirebaseDatabase.getInstance().getReference("Saved Jobs");
             dialog.show();
             eventListener=reference.addValueEventListener(new ValueEventListener() {
                 @Override
@@ -110,6 +114,13 @@ public class HomeFragment extends Fragment {
             err.setVisibility(View.VISIBLE);
             dialog.dismiss();
         }
+        swipe.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
+            @Override
+            public void onRefresh() {
+                swipe.setRefreshing(false);
+                rearrangeItems();
+            }
+        });
         searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
             @Override
             public boolean onQueryTextSubmit(String query) {
@@ -135,9 +146,15 @@ public class HomeFragment extends Fragment {
             }
         });
 
-
         return v;
     }
+
+    private void rearrangeItems() {
+        Collections.shuffle(dataList,new Random(System.currentTimeMillis()));
+        adapter=new MyAdapter(getActivity(),dataList);
+        recyclerView.setAdapter(adapter);
+    }
+
     public void searchList(String text){
         ArrayList<DataClass> searchList=new ArrayList<>();
         for (DataClass dataClass:dataList){

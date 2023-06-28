@@ -45,21 +45,21 @@
 
         <EditText
             android:layout_width="300dp"
-            android:layout_height="wrap_content"
+            android:layout_height="35dp"
             android:id="@+id/emailBox"
             android:textColor="@color/b2"
             android:textSize="16sp"
             android:layout_marginStart="15dp"
             android:layout_marginBottom="30dp"
             android:maxLines="1"
-            android:backgroundTint="@color/color"
+            android:background="@drawable/edit_border"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintTop_toBottomOf="@id/forgotTitle"/>
 
         <Button
             android:layout_width="0dp"
-            android:layout_height="50dp"
+            android:layout_height="40dp"
             android:id="@+id/btnCancel"
             android:layout_marginStart="40dp"
             android:layout_marginEnd="10dp"
@@ -67,6 +67,8 @@
             android:textColor="@color/white"
             android:textSize="16sp"
             app:cornerRadius="20dp"
+            android:background="@drawable/border"
+            android:backgroundTint="@color/col"
             android:fontFamily="@font/lato_bold"
             android:layout_marginBottom="8dp"
             android:layout_marginTop="10dp"
@@ -77,7 +79,7 @@
 
         <Button
             android:layout_width="0dp"
-            android:layout_height="50dp"
+            android:layout_height="40dp"
             android:id="@+id/btnReset"
             android:layout_marginStart="10dp"
             android:layout_marginBottom="8dp"
@@ -88,6 +90,8 @@
             android:textColor="@color/white"
             android:textSize="16sp"
             app:cornerRadius="20dp"
+            android:backgroundTint="@color/col"
+            android:background="@drawable/border"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintBottom_toBottomOf="@id/dialogBox"
             app:layout_constraintStart_toEndOf="@id/btnCancel"/>

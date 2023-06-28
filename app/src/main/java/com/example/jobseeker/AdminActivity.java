@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.SearchView;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -24,12 +25,15 @@ import com.google.firebase.database.ValueEventListener;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.Collections;
 import java.util.List;
+import java.util.Random;
 
 public class AdminActivity extends AppCompatActivity {
 
     TextView logout;
     FirebaseAuth auth;
+    SwipeRefreshLayout swipe;
 
     FloatingActionButton fab;
     RecyclerView recyclerView;
@@ -51,6 +55,7 @@ public class AdminActivity extends AppCompatActivity {
         recyclerView=findViewById(R.id.recyclerView);
         searchView=findViewById(R.id.search);
         searchView.clearFocus();
+        swipe=findViewById(R.id.swipe1);
 
         GridLayoutManager gridLayoutManager=new GridLayoutManager(AdminActivity.this,1);
         recyclerView.setLayoutManager(gridLayoutManager);
@@ -104,6 +109,13 @@ public class AdminActivity extends AppCompatActivity {
             }
         });
 
+        swipe.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
+            @Override
+            public void onRefresh() {
+                swipe.setRefreshing(false);
+                rearrangeItems();
+            }
+        });
 
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -129,5 +141,10 @@ public class AdminActivity extends AppCompatActivity {
             }
         }
         adapter.searchDataList(searchList);
+    }
+    private void rearrangeItems() {
+        Collections.shuffle(dataList,new Random(System.currentTimeMillis()));
+        adapter=new MyAdapter(this,dataList);
+        recyclerView.setAdapter(adapter);
     }
 }

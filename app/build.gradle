@@ -46,4 +46,5 @@ dependencies {
     implementation 'com.github.clans:fab:1.6.4'
 
     implementation 'pl.droidsonroids.gif:android-gif-drawable:1.2.22'
+    implementation 'androidx.swiperefreshlayout:swiperefreshlayout:1.1.0'
 }
