@@ -7,8 +7,11 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.Spinner;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -39,16 +42,20 @@ public class HomeFragment extends Fragment {
 
 
     FirebaseAuth auth;
+
+    Spinner type;
     SwipeRefreshLayout swipe;
     LinearLayout err;
-    ImageView noData;
-    TextView text,text2;
-    RecyclerView recyclerView2,recyclerView;
+    TextView text;
+    RecyclerView recyclerView;
     List<DataClass> dataList;
-    DatabaseReference reference,reference2;
+    DatabaseReference reference;
     ValueEventListener eventListener;
     androidx.appcompat.widget.SearchView searchView,locationView;
     MyAdapter adapter;
+    ArrayList<DataClass> searchList;
+
+    String[] types={"full-time","part-time","temporary","internship","default"};
 
 
     @Override
@@ -63,8 +70,8 @@ public class HomeFragment extends Fragment {
 
         recyclerView=v.findViewById(R.id.recyclerView);
         err=v.findViewById(R.id.error);
+        type=v.findViewById(R.id.spinner);
         text=v.findViewById(R.id.text);
-        noData=v.findViewById(R.id.noData);
         searchView=v.findViewById(R.id.search);
         locationView=v.findViewById(R.id.searchLocation);
         searchView.clearFocus();
@@ -146,6 +153,27 @@ public class HomeFragment extends Fragment {
             }
         });
 
+        ArrayAdapter ad=new ArrayAdapter(getActivity(), android.R.layout.simple_spinner_dropdown_item,types);
+        ad.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        type.setAdapter(ad);
+        type.setSelection(4);
+        type.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                String ty=types[position];
+                if (ty.equals("default")){
+                    rearrangeItems();
+                }else {
+                    searchtype(ty);
+                }
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+                rearrangeItems();
+            }
+        });
+
         return v;
     }
 
@@ -156,7 +184,7 @@ public class HomeFragment extends Fragment {
     }
 
     public void searchList(String text){
-        ArrayList<DataClass> searchList=new ArrayList<>();
+        searchList=new ArrayList<>();
         for (DataClass dataClass:dataList){
             if (dataClass.getDataTitle().toLowerCase().contains(text.toLowerCase())){
                 searchList.add(dataClass);
@@ -165,13 +193,22 @@ public class HomeFragment extends Fragment {
         adapter.searchDataList(searchList);
     }
     public void searchLocation(String text){
-        ArrayList<DataClass> searchLocation=new ArrayList<>();
+         searchList=new ArrayList<>();
         for (DataClass dataClass:dataList){
             if (dataClass.getDataLocation().toLowerCase().contains(text.toLowerCase())){
-                searchLocation.add(dataClass);
+                searchList.add(dataClass);
             }
         }
-        adapter.searchDataList(searchLocation);
+        adapter.searchDataList(searchList);
+    }
+    public void searchtype(String text){
+        searchList=new ArrayList<>();
+        for (DataClass dataClass:dataList){
+            if (dataClass.getDataType().toLowerCase().contains(text.toLowerCase())){
+                searchList.add(dataClass);
+            }
+        }
+        adapter.searchDataList(searchList);
     }
     private boolean isConnected(){
         ConnectivityManager cm=(ConnectivityManager)getContext().getSystemService(Context.CONNECTIVITY_SERVICE);

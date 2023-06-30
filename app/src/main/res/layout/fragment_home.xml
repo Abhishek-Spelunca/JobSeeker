@@ -53,7 +53,7 @@
             android:layout_below="@id/search"
             android:layout_marginStart="12dp"
             android:layout_marginEnd="12dp"
-            android:layout_marginBottom="20dp"
+            android:layout_marginBottom="14dp"
             android:background="@drawable/search_border2"
             android:backgroundTint="@color/white"
             android:focusable="false"
@@ -70,18 +70,44 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:background="@drawable/rounded_top">
+
+            <TextView
+                android:id="@+id/fil"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:drawableStart="@drawable/filter"
+                android:drawablePadding="6dp"
+                android:drawableTint="@color/b2"
+                android:layout_alignParentStart="true"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="6dp"/>
+
+
+            <Spinner
+                android:id="@+id/spinner"
+                android:layout_width="wrap_content"
+                android:layout_height="28dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="6dp"
+                android:background="@drawable/border"
+                android:elevation="12dp"
+                android:layout_toEndOf="@id/fil"
+                android:backgroundTint="@color/green2" />
+
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Available Jobs!"
                 android:textStyle="bold"
+                android:layout_below="@id/spinner"
                 android:textColor="@color/b2"
                 android:textSize="28sp"
                 android:fontFamily="@font/lato_bold"
                 android:layout_marginTop="10dp"
                 android:layout_marginStart="14dp"
+                android:layout_marginEnd="14dp"
                 android:id="@+id/text"
-                android:visibility="gone"/>
+                android:visibility="visible"/>
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
@@ -95,24 +121,17 @@
                     android:scaleType="fitCenter" />
             </LinearLayout>
 
-            <ImageView
-                android:id="@+id/noData"
-                android:layout_width="match_parent"
-                android:layout_height="520dp"
-                android:layout_marginTop="20dp"
-                android:src="@drawable/err"
-                android:scaleType="fitCenter"
-                android:visibility="gone"/>
             <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_below="@id/text"
+                android:layout_marginTop="10dp"
                 android:id="@+id/swipe">
 
             <androidx.recyclerview.widget.RecyclerView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_marginTop="10dp"
+                android:layout_marginTop="8dp"
                 android:scrollbars="vertical"
                 android:id="@+id/recyclerView"
                 android:visibility="gone"/>

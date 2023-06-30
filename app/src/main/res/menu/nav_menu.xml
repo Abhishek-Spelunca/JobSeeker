@@ -20,7 +20,6 @@
             android:icon="@drawable/saved"
             android:title="Marked Jobs" />
 
-
         <item
             android:id="@+id/nav_about"
             android:icon="@drawable/about"
