@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/col"
+    android:background="@drawable/bkg"
     android:gravity="center"
     android:orientation="vertical"
     tools:context=".LoginActivity">
@@ -28,10 +28,10 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Login"
                 android:fontFamily="@font/lato_bold"
+                android:text="Login"
                 android:textAlignment="center"
-                android:textColor="@color/col"
+                android:textColor="@color/color"
                 android:textSize="34sp"
                 android:textStyle="bold" />
 
@@ -57,18 +57,19 @@
                 android:drawableLeft="@drawable/password"
                 android:drawablePadding="8dp"
                 android:hint="Password"
-                android:padding="8dp"
                 android:inputType="textPassword"
+                android:padding="8dp"
                 android:textColor="@color/b2" />
+
             <TextView
                 android:id="@+id/forgot_pass"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
+                android:fontFamily="@font/lato_bold"
                 android:text="Forgot Password?"
                 android:textAlignment="viewEnd"
                 android:textColor="@color/b2"
-                android:fontFamily="@font/lato_bold"
                 android:textSize="14sp" />
 
             <Button
@@ -77,9 +78,9 @@
                 android:layout_height="50dp"
                 android:layout_marginTop="20dp"
                 android:background="@drawable/edit_border"
-                android:text="LOGIN"
-                android:backgroundTint="@color/col"
+                android:backgroundTint="@color/button"
                 android:fontFamily="@font/lato_bold"
+                android:text="LOGIN"
                 android:textColor="@color/white"
                 android:textSize="26sp"
                 android:textStyle="bold"
@@ -90,10 +91,10 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="25dp"
+                android:fontFamily="@font/lato_bold"
                 android:text="Not yet registered? Signup"
                 android:textAlignment="center"
                 android:textColor="@color/b2"
-                android:fontFamily="@font/lato_bold"
                 android:textSize="20sp" />
 
         </LinearLayout>

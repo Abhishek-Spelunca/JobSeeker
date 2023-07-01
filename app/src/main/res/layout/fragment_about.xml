@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -9,31 +8,31 @@
     tools:context=".AboutFragment">
 
     <RelativeLayout
+        android:id="@+id/rl"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/rl"
         android:layout_marginTop="10dp">
 
         <TextView
+            android:id="@+id/about"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="About Us"
-            android:id="@+id/about"
             android:drawableLeft="@drawable/about"
             android:drawablePadding="8dp"
             android:fontFamily="@font/lato_bold"
-            android:textStyle="bold"
-            android:textSize="24sp" />
+            android:text="About Us"
+            android:textSize="24sp"
+            android:textStyle="bold" />
 
         <TextView
-            android:padding="10dp"
             android:id="@+id/aboutText"
-            android:layout_below="@id/about"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_below="@id/about"
+            android:fontFamily="@font/lato_regular"
+            android:padding="10dp"
             android:text="We provide a list of various jobs for you to choose ..
 Find the job you are looking for.       We  provide third party job finding services along with the company info."
-            android:fontFamily="@font/lato_regular"
             android:textColor="@color/b2"
             android:textSize="18sp" />
 
@@ -60,81 +59,77 @@ Find the job you are looking for.       We  provide third party job finding serv
         android:layout_marginTop="30dp">
 
         <TextView
+            android:id="@+id/contact"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Contact Us"
-            android:id="@+id/contact"
-            android:textStyle="bold"
-            android:textSize="24sp"
-            android:fontFamily="@font/lato_bold"
             android:drawableLeft="@drawable/contact"
-            android:drawablePadding="8dp"/>
+            android:drawablePadding="8dp"
+            android:fontFamily="@font/lato_bold"
+            android:text="Contact Us"
+            android:textSize="24sp"
+            android:textStyle="bold" />
 
         <TextView
             android:id="@+id/web"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:drawableLeft="@drawable/website"
             android:layout_below="@id/contact"
-            android:layout_marginTop="10dp"
-            android:drawablePadding="8dp"
-            android:text="www.jobseeker.com"
-            android:textStyle="bold"
-            android:autoLink="web|all"
-            android:textSize="18sp"
             android:layout_marginStart="15dp"
-            android:fontFamily="@font/lato_regular"/>
+            android:layout_marginTop="10dp"
+            android:autoLink="web|all"
+            android:drawableLeft="@drawable/website"
+            android:drawablePadding="8dp"
+            android:fontFamily="@font/lato_regular"
+            android:text="www.jobseeker.com"
+            android:textSize="18sp"
+            android:textStyle="bold" />
 
         <TextView
+            android:id="@+id/mail"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:drawableLeft="@drawable/mail"
             android:layout_below="@id/web"
-            android:id="@+id/mail"
+            android:layout_marginStart="15dp"
             android:layout_marginTop="10dp"
+            android:autoLink="email|all"
+            android:drawableLeft="@drawable/mail"
             android:drawablePadding="8dp"
+            android:fontFamily="@font/lato_regular"
             android:text="jobseeker@gmail.com"
             android:textSize="18sp"
-            android:textStyle="bold"
-            android:fontFamily="@font/lato_regular"
-            android:layout_marginStart="15dp"
-            android:autoLink="email|all" />
+            android:textStyle="bold" />
 
         <TextView
             android:id="@+id/p1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@+id/mail"
-            android:drawableLeft="@drawable/phone"
-            android:layout_marginTop="10dp"
-            android:drawablePadding="8dp"
-            android:text="88776-00998"
-            android:textStyle="bold"
-            android:textSize="18sp"
-            android:autoLink="phone|all"
             android:layout_marginStart="15dp"
-            android:fontFamily="@font/lato_regular"/>
+            android:layout_marginTop="10dp"
+            android:autoLink="phone|all"
+            android:drawableLeft="@drawable/phone"
+            android:drawablePadding="8dp"
+            android:fontFamily="@font/lato_regular"
+            android:text="88776-00998"
+            android:textSize="18sp"
+            android:textStyle="bold" />
 
         <TextView
             android:id="@+id/p2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@+id/p1"
-            android:drawableLeft="@drawable/location"
-            android:layout_marginTop="10dp"
-            android:drawablePadding="8dp"
-            android:textColor="@color/b2"
-            android:text="Anand Nagar near Hebbal police station, Hebbal , Banglore Urban,Karnataka  560064"
-            android:textSize="18sp"
             android:layout_marginStart="15dp"
-            android:fontFamily="@font/lato_regular"/>
-
-
-
+            android:layout_marginTop="10dp"
+            android:drawableLeft="@drawable/location"
+            android:drawablePadding="8dp"
+            android:fontFamily="@font/lato_regular"
+            android:text="Anand Nagar near Hebbal police station, Hebbal , Banglore Urban,Karnataka  560064"
+            android:textColor="@color/b2"
+            android:textSize="18sp" />
 
 
     </RelativeLayout>
-
 
 
 </LinearLayout>

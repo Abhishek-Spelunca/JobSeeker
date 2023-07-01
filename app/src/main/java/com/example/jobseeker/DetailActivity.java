@@ -1,7 +1,5 @@
 package com.example.jobseeker;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
 import android.app.Dialog;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
@@ -14,6 +12,9 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.bumptech.glide.Glide;
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -28,34 +29,35 @@ import com.google.firebase.database.ValueEventListener;
 
 public class DetailActivity extends AppCompatActivity {
 
-    TextView back_btn, detailTitle,detailCompany,titleCompany,detailLocation,detailPay,detailType,detailDesc,detailDate,detailWeb;
+    TextView back_btn, detailTitle, detailCompany, titleCompany, detailLocation, detailPay, detailType, detailDesc, detailDate, detailWeb;
     ImageView detailImage;
-    Button apply_btn,save_btn;
-    String key="";
-    String imageUrl="";
+    Button apply_btn, save_btn;
+    String key = "";
+    String imageUrl = "";
     Bundle bundle;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detail);
 
-        detailTitle=findViewById(R.id.detailTitle);
-        detailCompany=findViewById(R.id.detailCompany);
-        detailLocation=findViewById(R.id.detailLocation);
-        detailPay=findViewById(R.id.detailPayScale);
-        detailType=findViewById(R.id.detailType);
-        detailDesc=findViewById(R.id.detailDesc);
-        detailDate=findViewById(R.id.detailCreated);
-        titleCompany=findViewById(R.id.detailCompany2);
-        detailWeb=findViewById(R.id.company_website);
-        apply_btn=findViewById(R.id.apply);
-        back_btn=findViewById(R.id.back);
-        save_btn=findViewById(R.id.save);
-        detailImage=findViewById(R.id.detailLogo);
+        detailTitle = findViewById(R.id.detailTitle);
+        detailCompany = findViewById(R.id.detailCompany);
+        detailLocation = findViewById(R.id.detailLocation);
+        detailPay = findViewById(R.id.detailPayScale);
+        detailType = findViewById(R.id.detailType);
+        detailDesc = findViewById(R.id.detailDesc);
+        detailDate = findViewById(R.id.detailCreated);
+        titleCompany = findViewById(R.id.detailCompany2);
+        detailWeb = findViewById(R.id.company_website);
+        apply_btn = findViewById(R.id.apply);
+        back_btn = findViewById(R.id.back);
+        save_btn = findViewById(R.id.save);
+        detailImage = findViewById(R.id.detailLogo);
 
-        bundle=getIntent().getExtras();
+        bundle = getIntent().getExtras();
 
-        if (bundle!=null){
+        if (bundle != null) {
             detailTitle.setText(bundle.getString("Title"));
             detailCompany.setText(bundle.getString("Company"));
             detailLocation.setText(bundle.getString("Location"));
@@ -65,8 +67,8 @@ public class DetailActivity extends AppCompatActivity {
             detailDate.setText(bundle.getString("Date"));
             detailWeb.setText(bundle.getString("CompanyUrl"));
             titleCompany.setText(bundle.getString("Company"));
-            key=bundle.getString("Key");
-            imageUrl=bundle.getString("Image");
+            key = bundle.getString("Key");
+            imageUrl = bundle.getString("Image");
             Glide.with(this).load(bundle.getString("Image")).into(detailImage);
         }
         detailDesc.setOnClickListener(new View.OnClickListener() {
@@ -98,15 +100,16 @@ public class DetailActivity extends AppCompatActivity {
         });
 
     }
-    private void showBottomDialog(){
-        final Dialog dialog=new Dialog(this);
+
+    private void showBottomDialog() {
+        final Dialog dialog = new Dialog(this);
         dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
         dialog.setContentView(R.layout.bottomsheet_layout);
 
-        TextView urlLayout=dialog.findViewById(R.id.url);
-        Button closeDialog=dialog.findViewById(R.id.close);
-        bundle=getIntent().getExtras();
-        if (bundle!=null){
+        TextView urlLayout = dialog.findViewById(R.id.url);
+        Button closeDialog = dialog.findViewById(R.id.close);
+        bundle = getIntent().getExtras();
+        if (bundle != null) {
             urlLayout.setText(bundle.getString("CompanyUrl"));
         }
         closeDialog.setOnClickListener(new View.OnClickListener() {
@@ -117,57 +120,62 @@ public class DetailActivity extends AppCompatActivity {
         });
 
         dialog.show();
-        dialog.getWindow().setLayout(ViewGroup.LayoutParams.MATCH_PARENT,ViewGroup.LayoutParams.WRAP_CONTENT);
+        dialog.getWindow().setLayout(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
         dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
-        dialog.getWindow().getAttributes().windowAnimations=R.style.DialogAnimation;
+        dialog.getWindow().getAttributes().windowAnimations = R.style.DialogAnimation;
         dialog.getWindow().setGravity(Gravity.BOTTOM);
     }
 
-    public void saveData(){
-        bundle=getIntent().getExtras();
+    public void saveData() {
+        bundle = getIntent().getExtras();
 
-        if (bundle!=null){
-            String title=bundle.getString("Title");
-            String company=bundle.getString("Company");
-            String location=bundle.getString("Location");
-            String pay=bundle.getString("PayScale");
-            String type=bundle.getString("Type");
-            String desc=bundle.getString("Description");
-            String date=bundle.getString("Date");
-            String web=bundle.getString("CompanyUrl");
-            key=bundle.getString("Key");
-            imageUrl=bundle.getString("Image");
+        if (bundle != null) {
+            String title = bundle.getString("Title");
+            String company = bundle.getString("Company");
+            String location = bundle.getString("Location");
+            String pay = bundle.getString("PayScale");
+            String type = bundle.getString("Type");
+            String desc = bundle.getString("Description");
+            String date = bundle.getString("Date");
+            String web = bundle.getString("CompanyUrl");
+            key = bundle.getString("Key");
+            imageUrl = bundle.getString("Image");
 
 
-            DataClass dataClass=new DataClass(title,company,type,pay,location,desc,date,web,imageUrl);
-            DatabaseReference ref=FirebaseDatabase.getInstance().getReference("Saved Jobs").child(FirebaseAuth.getInstance().getCurrentUser().getUid());
+            DataClass dataClass = new DataClass(title, company, type, pay, location, desc, date, web, imageUrl);
+            DatabaseReference ref = FirebaseDatabase.getInstance().getReference("Saved Jobs").child(FirebaseAuth.getInstance().getCurrentUser().getUid());
             ref.addListenerForSingleValueEvent(new ValueEventListener() {
                 @Override
                 public void onDataChange(@NonNull DataSnapshot snapshot) {
-                    if (snapshot.child(title).exists()){
+                    if (snapshot.child(title).exists()) {
                         removeData();
-                    }else{
+                    } else {
 
 
-                    ref.child(title).setValue(dataClass).addOnCompleteListener(
-                    new OnCompleteListener<Void>() {
-                        @Override
-                        public void onComplete(@NonNull Task<Void> task) {
-                            if (task.isSuccessful()){
-                                Toast.makeText(DetailActivity.this, "Saved", Toast.LENGTH_SHORT).show();
-                                finish();
-                            }
-                        }
-                    });}
+                        ref.child(title).setValue(dataClass).addOnCompleteListener(
+                                new OnCompleteListener<Void>() {
+                                    @Override
+                                    public void onComplete(@NonNull Task<Void> task) {
+                                        if (task.isSuccessful()) {
+                                            Toast.makeText(DetailActivity.this, "Saved", Toast.LENGTH_SHORT).show();
+                                            finish();
+                                        }
+                                    }
+                                });
+                    }
                 }
+
                 @Override
-                public void onCancelled(@NonNull DatabaseError error) {onBackPressed();}
+                public void onCancelled(@NonNull DatabaseError error) {
+                    onBackPressed();
+                }
             });
         }
     }
-    public void removeData(){
-        String title=bundle.getString("Title");
-        final DatabaseReference reference= FirebaseDatabase.getInstance().getReference("Saved Jobs");
+
+    public void removeData() {
+        String title = bundle.getString("Title");
+        final DatabaseReference reference = FirebaseDatabase.getInstance().getReference("Saved Jobs");
         reference.child(FirebaseAuth.getInstance().getCurrentUser().getUid()).child(title).removeValue().addOnCompleteListener(new OnCompleteListener<Void>() {
             @Override
             public void onComplete(@NonNull Task<Void> task) {

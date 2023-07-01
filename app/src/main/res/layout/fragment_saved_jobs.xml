@@ -1,12 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
     android:background="@color/col"
+    android:orientation="vertical"
     tools:context=".SavedJobs">
 
 
@@ -26,38 +24,40 @@
         android:background="@drawable/rounded_top">
 
         <TextView
+            android:id="@+id/text2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginStart="14dp"
+            android:layout_marginTop="10dp"
+            android:fontFamily="@font/lato_bold"
             android:text="MarkedJobs!"
-            android:textStyle="bold"
             android:textColor="@color/b2"
             android:textSize="28sp"
-            android:fontFamily="@font/lato_bold"
-            android:layout_marginTop="10dp"
-            android:layout_marginStart="14dp"
-            android:id="@+id/text2"
-            android:visibility="gone"/>
+            android:textStyle="bold"
+            android:visibility="gone" />
 
         <LinearLayout
+            android:id="@+id/error"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:visibility="gone"
-            android:id="@+id/error">
+            android:visibility="gone">
+
             <ImageView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_marginTop="60dp"
-                android:src="@drawable/err"
-                android:scaleType="fitCenter" />
+                android:scaleType="fitCenter"
+                android:src="@drawable/err" />
         </LinearLayout>
+
         <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recycle"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:layout_below="@id/text2"
             android:layout_marginTop="10dp"
             android:scrollbars="vertical"
-            android:layout_below="@id/text2"
-            android:id="@+id/recycle"
-            android:visibility="gone"/>
+            android:visibility="gone" />
 
     </RelativeLayout>
 

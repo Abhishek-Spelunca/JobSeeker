@@ -4,10 +4,10 @@
 
     <stroke
         android:width="4dp"
-        android:color="@color/col"/>
+        android:color="@color/col" />
 
     <corners
         android:bottomLeftRadius="30dp"
-        android:bottomRightRadius="30dp"/>
+        android:bottomRightRadius="30dp" />
 
 </shape>

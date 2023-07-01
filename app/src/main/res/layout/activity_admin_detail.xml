@@ -1,311 +1,305 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/bkgrd"
     android:orientation="horizontal"
-    android:background="@color/col"
     tools:context=".AdminDetailActivity">
 
     <LinearLayout
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:orientation="vertical"
-    android:padding="3dp">
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="3dp">
 
         <TextView
             android:id="@+id/previous"
             android:layout_width="match_parent"
             android:layout_height="40dp"
-            android:drawableLeft="@drawable/back"
+            android:layout_marginStart="8dp"
             android:layout_marginTop="3dp"
-            android:layout_marginStart="8dp"
-            android:layout_marginEnd="8dp"/>
+            android:layout_marginEnd="8dp"
+            android:drawableLeft="@drawable/back" />
 
 
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_gravity="center"
-        android:elevation="6dp"
-        
-        android:padding="10dp"
-        android:background="@drawable/rounded_top">
-
-
-        <com.google.android.material.imageview.ShapeableImageView
-            android:id="@+id/detailLogo"
-            android:layout_width="236dp"
-            android:layout_height="169dp"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentTop="true"
-            android:layout_alignParentEnd="true"
-            android:layout_centerInParent="true"
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:layout_marginStart="84dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginEnd="84dp"
-            android:layout_marginBottom="10dp"
-            android:background="@drawable/image_holder"
+            android:background="@drawable/rounded_top"
             android:elevation="6dp"
-            android:scaleType="fitCenter"
-            android:src="@drawable/image" />
 
-        <TextView
-            android:id="@+id/detailTitle"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/detailLogo"
-            android:layout_centerInParent="true"
-            android:layout_marginStart="15dp"
-            android:layout_marginEnd="15dp"
-            android:fontFamily="@font/lato_bold"
-            android:gravity="center"
-            android:text="Title"
-            android:textColor="@color/b2"
-            android:textSize="30sp"
-            android:textStyle="bold" />
-
-    <TextView
-        android:id="@+id/detailCompany"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/detailTitle"
-        android:layout_centerInParent="true"
-        android:layout_marginStart="15dp"
-        android:layout_marginTop="5dp"
-        android:layout_marginEnd="15dp"
-        android:layout_marginBottom="5dp"
-        android:fontFamily="@font/lato_bold"
-        android:gravity="center"
-        android:textColor="@color/b2"
-        android:text="Company"
-        android:textSize="20sp" />
+            android:orientation="horizontal"
+            android:padding="10dp">
 
 
-        <TextView
-            android:id="@+id/detailType"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/detailCompany"
-            android:layout_centerInParent="true"
-            android:layout_marginBottom="10dp"
-            android:background="@drawable/edit_border"
-            android:backgroundTint="@color/green"
-            android:fontFamily="@font/lato_bold"
-            android:paddingStart="6dp"
-            android:paddingTop="8dp"
-            android:paddingEnd="6dp"
-            android:paddingBottom="6dp"
-            android:text="Type"
-            android:textAlignment="center"
-            android:textColor="@color/white"
-            android:textSize="20sp" />
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/detailLogo"
+                android:layout_width="236dp"
+                android:layout_height="169dp"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentEnd="true"
+                android:layout_centerInParent="true"
+                android:layout_gravity="center"
+                android:layout_marginStart="84dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="84dp"
+                android:layout_marginBottom="10dp"
+                android:background="@drawable/image_holder"
+                android:elevation="6dp"
+                android:scaleType="fitCenter"
+                android:src="@drawable/image" />
 
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/detailType"
-        android:layout_marginTop="15dp"
-        android:elevation="4dp"
-        android:layout_marginBottom="10dp"
-        android:id="@+id/rl">
+            <TextView
+                android:id="@+id/detailTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/detailLogo"
+                android:layout_centerInParent="true"
+                android:layout_marginStart="15dp"
+                android:layout_marginEnd="15dp"
+                android:fontFamily="@font/lato_bold"
+                android:gravity="center"
+                android:text="Title"
+                android:textColor="@color/b2"
+                android:textSize="30sp"
+                android:textStyle="bold" />
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Company Details"
-            android:textSize="22sp"
-            android:textStyle="bold"
-            android:textColor="@color/b2"
-            android:fontFamily="@font/lato_bold"
-            android:id="@+id/cd"/>
-
-        <TextView
-            android:paddingStart="8dp"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Company Name"
-            android:layout_below="@id/cd"
-            android:layout_marginTop="8dp"
-            android:id="@+id/detailCompany2"
-            android:textColor="@color/b2"
-            android:drawableLeft="@drawable/company"
-            android:drawablePadding="8dp"
-            android:textSize="18sp"/>
-
-        <TextView
-            android:paddingStart="8dp"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Location"
-            android:layout_below="@id/detailCompany2"
-            android:layout_marginTop="8dp"
-            android:id="@+id/detailLocation"
-            android:drawableLeft="@drawable/location"
-            android:textColor="@color/b2"
-            android:drawablePadding="8dp"
-            android:textSize="18sp"/>
-
-        <TextView
-            android:paddingStart="8dp"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Company Website"
-            android:layout_below="@id/detailLocation"
-            android:layout_marginTop="8dp"
-            android:layout_marginBottom="8dp"
-            android:id="@+id/company_website"
-            android:textColor="@color/b2"
-            android:drawableLeft="@drawable/website"
-            android:drawablePadding="8dp"
-            android:textSize="18sp"/>
+            <TextView
+                android:id="@+id/detailCompany"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/detailTitle"
+                android:layout_centerInParent="true"
+                android:layout_marginStart="15dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginEnd="15dp"
+                android:layout_marginBottom="5dp"
+                android:fontFamily="@font/lato_bold"
+                android:gravity="center"
+                android:text="Company"
+                android:textColor="@color/b2"
+                android:textSize="20sp" />
 
 
-    </RelativeLayout>
-
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/rl"
-        android:id="@+id/rl2"
-        android:elevation="4dp"
-        android:layout_marginTop="10dp">
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="PayScale"
-            android:textSize="22sp"
-            android:fontFamily="@font/lato_bold"
-            android:textStyle="bold"
-            android:textColor="@color/b2"
-            android:id="@+id/pay"/>
-
-        <ImageView
-            android:id="@+id/currencyLogo"
-            android:paddingStart="8dp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/pay"
-            android:layout_marginTop="10dp"
-            android:src="@drawable/currency" />
-
-        <TextView
-            android:id="@+id/detailPayScale"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/pay"
-            android:layout_toEndOf="@id/currencyLogo"
-            android:layout_marginStart="8dp"
-            android:background="@drawable/edit_border"
-            android:backgroundTint="@color/green2"
-            android:textColor="@color/green"
-            android:text="Pay"
-            android:fontFamily="@font/lato_bold"
-            android:layout_marginTop="10dp"
-            android:textSize="18sp"
-            android:paddingBottom="6dp"
-            android:paddingStart="4dp"
-            android:paddingEnd="4dp"/>
-
-
-        <TextView
-            android:id="@+id/createText"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/currencyLogo"
-            android:layout_marginTop="13dp"
-            android:text="Created On "
-            android:textSize="22sp"
-            android:fontFamily="@font/lato_bold"
-            android:textColor="@color/b2"
-            android:textStyle="bold"/>
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:layout_below="@id/createText"
-            android:text="Date"
-            android:paddingStart="8dp"
-            android:drawableLeft="@drawable/calender"
-            android:drawablePadding="8dp"
-            android:id="@+id/detailCreated"
-            android:textColor="@color/b2"
-            android:textSize="18sp" />
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/detailCreated"
-            android:drawableLeft="@drawable/info"
-            android:drawablePadding="8dp"
-            android:layout_marginBottom="15dp"
-            android:layout_marginTop="20dp"
-            android:text="Description"
-            android:layout_alignParentStart="true"
-            android:id="@+id/d"
-            android:fontFamily="@font/lato_bold"
-            android:textStyle="bold"
-            android:textColor="@color/b2"
-            android:textSize="22sp" />
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Description"
-            android:paddingStart="8dp"
-            android:id="@+id/detailDesc"
-            android:layout_below="@id/d"
-            android:textColor="@color/b2"
-            android:fontFamily="@font/lato_regular"
-            android:textSize="18sp"
-            android:maxLines="3"
-            android:ellipsize="end"/>
-
-        <com.github.clans.fab.FloatingActionMenu
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="20dp"
-            android:layout_gravity="end"
-            android:layout_marginBottom="20dp"
-            android:layout_alignParentEnd="true"
-            android:layout_alignParentBottom="true"
-            app:menu_colorNormal="@color/color"
-            app:menu_colorPressed="@color/red"
-            app:menu_fab_size="normal"
-            android:background="@drawable/border"
-            android:backgroundTint="@color/col"
-            android:layout_below="@id/detailDesc"
-            app:menu_icon="@drawable/list"
-            app:menu_openDirection="up"
-            app:menu_showShadow="true">
-
-            <com.github.clans.fab.FloatingActionButton
-                android:id="@+id/deleteBtn"
+            <TextView
+                android:id="@+id/detailType"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:src="@drawable/delete"
-                app:fabSize="mini"
-                app:fab_colorNormal="@color/red"
-                app:fab_showShadow="true" />
+                android:layout_below="@id/detailCompany"
+                android:layout_centerInParent="true"
+                android:layout_marginBottom="10dp"
+                android:background="@drawable/edit_border"
+                android:backgroundTint="@color/green"
+                android:fontFamily="@font/lato_bold"
+                android:paddingStart="6dp"
+                android:paddingTop="8dp"
+                android:paddingEnd="6dp"
+                android:paddingBottom="6dp"
+                android:text="Type"
+                android:textAlignment="center"
+                android:textColor="@color/white"
+                android:textSize="20sp" />
 
-        </com.github.clans.fab.FloatingActionMenu>
+            <RelativeLayout
+                android:id="@+id/rl"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/detailType"
+                android:layout_marginTop="15dp"
+                android:layout_marginBottom="10dp"
+                android:elevation="4dp">
 
-    </RelativeLayout>
+                <TextView
+                    android:id="@+id/cd"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/lato_bold"
+                    android:text="Company Details"
+                    android:textColor="@color/b2"
+                    android:textSize="22sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/detailCompany2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/cd"
+                    android:layout_marginTop="8dp"
+                    android:drawableLeft="@drawable/company"
+                    android:drawablePadding="8dp"
+                    android:paddingStart="8dp"
+                    android:text="Company Name"
+                    android:textColor="@color/b2"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:id="@+id/detailLocation"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/detailCompany2"
+                    android:layout_marginTop="8dp"
+                    android:drawableLeft="@drawable/location"
+                    android:drawablePadding="8dp"
+                    android:paddingStart="8dp"
+                    android:text="Location"
+                    android:textColor="@color/b2"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:id="@+id/company_website"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/detailLocation"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginBottom="8dp"
+                    android:drawableLeft="@drawable/website"
+                    android:drawablePadding="8dp"
+                    android:paddingStart="8dp"
+                    android:text="Company Website"
+                    android:textColor="@color/b2"
+                    android:textSize="18sp" />
 
 
-    </RelativeLayout>
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/rl2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/rl"
+                android:layout_marginTop="10dp"
+                android:elevation="4dp">
+
+                <TextView
+                    android:id="@+id/pay"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/lato_bold"
+                    android:text="PayScale"
+                    android:textColor="@color/b2"
+                    android:textSize="22sp"
+                    android:textStyle="bold" />
+
+                <ImageView
+                    android:id="@+id/currencyLogo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/pay"
+                    android:layout_marginTop="10dp"
+                    android:paddingStart="8dp"
+                    android:src="@drawable/currency" />
+
+                <TextView
+                    android:id="@+id/detailPayScale"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/pay"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_toEndOf="@id/currencyLogo"
+                    android:background="@drawable/edit_border"
+                    android:backgroundTint="@color/green2"
+                    android:fontFamily="@font/lato_bold"
+                    android:paddingStart="4dp"
+                    android:paddingEnd="4dp"
+                    android:paddingBottom="6dp"
+                    android:text="Pay"
+                    android:textColor="@color/green"
+                    android:textSize="18sp" />
 
 
+                <TextView
+                    android:id="@+id/createText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/currencyLogo"
+                    android:layout_marginTop="13dp"
+                    android:fontFamily="@font/lato_bold"
+                    android:text="Created On "
+                    android:textColor="@color/b2"
+                    android:textSize="22sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/detailCreated"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/createText"
+                    android:layout_marginTop="10dp"
+                    android:drawableLeft="@drawable/calender"
+                    android:drawablePadding="8dp"
+                    android:paddingStart="8dp"
+                    android:text="Date"
+                    android:textColor="@color/b2"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:id="@+id/d"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/detailCreated"
+                    android:layout_alignParentStart="true"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginBottom="15dp"
+                    android:drawableLeft="@drawable/info"
+                    android:drawablePadding="8dp"
+                    android:fontFamily="@font/lato_bold"
+                    android:text="Description"
+                    android:textColor="@color/b2"
+                    android:textSize="22sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/detailDesc"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/d"
+                    android:ellipsize="end"
+                    android:fontFamily="@font/lato_regular"
+                    android:maxLines="3"
+                    android:paddingStart="8dp"
+                    android:text="Description"
+                    android:textColor="@color/b2"
+                    android:textSize="18sp" />
+
+                <com.github.clans.fab.FloatingActionMenu
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/detailDesc"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentBottom="true"
+                    android:layout_gravity="end"
+                    android:layout_marginEnd="20dp"
+                    android:layout_marginBottom="20dp"
+                    app:menu_colorNormal="@color/color"
+                    app:menu_colorPressed="@color/red"
+                    app:menu_fab_size="normal"
+                    app:menu_icon="@drawable/list"
+                    app:menu_openDirection="up"
+                    app:menu_showShadow="true">
+
+                    <com.github.clans.fab.FloatingActionButton
+                        android:id="@+id/deleteBtn"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/delete"
+                        app:fabSize="mini"
+                        app:fab_colorNormal="@color/red"
+                        app:fab_showShadow="true" />
+
+                </com.github.clans.fab.FloatingActionMenu>
+
+            </RelativeLayout>
+
+
+        </RelativeLayout>
 
 
     </LinearLayout>
-
-
 
 
 </ScrollView>

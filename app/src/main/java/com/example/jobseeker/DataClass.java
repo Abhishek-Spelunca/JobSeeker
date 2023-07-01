@@ -26,6 +26,10 @@ public class DataClass {
         this.key = getKey();
     }
 
+    public DataClass() {
+
+    }
+
     public String getKey() {
         return key;
     }
@@ -68,10 +72,5 @@ public class DataClass {
 
     public String getDataDate() {
         return dataDate;
-    }
-
-
-    public DataClass(){
-
     }
 }

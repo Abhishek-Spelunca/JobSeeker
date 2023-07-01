@@ -57,11 +57,10 @@ public class SignUpActivity extends AppCompatActivity {
                             database = FirebaseDatabase.getInstance();
                             reference = database.getReference("Users");
 
-                            String uid= auth.getUid();
+                            String uid = auth.getUid();
 
-                            HelperClass helperClass = new HelperClass(uid,username,email,pass);
+                            HelperClass helperClass = new HelperClass(uid, username, email, pass);
                             reference.child(uid).setValue(helperClass);
-
 
 
                             Toast.makeText(SignUpActivity.this, "Signed in successfully", Toast.LENGTH_SHORT).show();

@@ -19,36 +19,35 @@ import com.google.firebase.storage.StorageReference;
 
 public class AdminDetailActivity extends AppCompatActivity {
 
-    TextView backBtn,detailTitle,detailCompany,detailLocation,detailPay,detailType,detailDesc,detailDate,titleCompany,detailWeb;
+    TextView backBtn, detailTitle, detailCompany, detailLocation, detailPay, detailType, detailDesc, detailDate, titleCompany, detailWeb;
     ImageView detailImage;
     FloatingActionButton deleteButton;
-    String key="";
-    String imageUrl="";
+    String key = "";
+    String imageUrl = "";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_admin_detail);
 
-        detailTitle=findViewById(R.id.detailTitle);
-        detailCompany=findViewById(R.id.detailCompany);
-        detailLocation=findViewById(R.id.detailLocation);
-        detailPay=findViewById(R.id.detailPayScale);
-        detailType=findViewById(R.id.detailType);
-        detailDesc=findViewById(R.id.detailDesc);
-        detailDate=findViewById(R.id.detailCreated);
-        deleteButton=findViewById(R.id.deleteBtn);
-        titleCompany=findViewById(R.id.detailCompany2);
-        detailWeb=findViewById(R.id.company_website);
-        backBtn=findViewById(R.id.previous);
+        detailTitle = findViewById(R.id.detailTitle);
+        detailCompany = findViewById(R.id.detailCompany);
+        detailLocation = findViewById(R.id.detailLocation);
+        detailPay = findViewById(R.id.detailPayScale);
+        detailType = findViewById(R.id.detailType);
+        detailDesc = findViewById(R.id.detailDesc);
+        detailDate = findViewById(R.id.detailCreated);
+        deleteButton = findViewById(R.id.deleteBtn);
+        titleCompany = findViewById(R.id.detailCompany2);
+        detailWeb = findViewById(R.id.company_website);
+        backBtn = findViewById(R.id.previous);
 
 
+        detailImage = findViewById(R.id.detailLogo);
 
-        detailImage=findViewById(R.id.detailLogo);
 
-
-        Bundle bundle=getIntent().getExtras();
-        if (bundle!=null){
+        Bundle bundle = getIntent().getExtras();
+        if (bundle != null) {
             detailTitle.setText(bundle.getString("Title"));
             detailCompany.setText(bundle.getString("Company"));
             detailLocation.setText(bundle.getString("Location"));
@@ -58,23 +57,23 @@ public class AdminDetailActivity extends AppCompatActivity {
             detailDate.setText(bundle.getString("Date"));
             detailWeb.setText(bundle.getString("CompanyUrl"));
             titleCompany.setText(bundle.getString("Company"));
-            key=bundle.getString("Key");
-            imageUrl=bundle.getString("Image");
+            key = bundle.getString("Key");
+            imageUrl = bundle.getString("Image");
             Glide.with(this).load(bundle.getString("Image")).into(detailImage);
         }
         deleteButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                final DatabaseReference reference= FirebaseDatabase.getInstance().getReference("Jobs");
-                FirebaseStorage storage=FirebaseStorage.getInstance();
+                final DatabaseReference reference = FirebaseDatabase.getInstance().getReference("Jobs");
+                FirebaseStorage storage = FirebaseStorage.getInstance();
 
-                StorageReference storageReference=storage.getReferenceFromUrl(imageUrl);
+                StorageReference storageReference = storage.getReferenceFromUrl(imageUrl);
                 storageReference.delete().addOnSuccessListener(new OnSuccessListener<Void>() {
                     @Override
                     public void onSuccess(Void unused) {
                         reference.child(key).removeValue();
                         Toast.makeText(AdminDetailActivity.this, "Deleted", Toast.LENGTH_SHORT).show();
-                        startActivity(new Intent(getApplicationContext(),AdminActivity.class));
+                        startActivity(new Intent(getApplicationContext(), AdminActivity.class));
                         finish();
                     }
                 });

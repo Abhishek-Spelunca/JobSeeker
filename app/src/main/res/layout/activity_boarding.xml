@@ -1,7 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -9,46 +7,46 @@
     tools:context=".BoardingActivity">
 
     <pl.droidsonroids.gif.GifImageView
-        android:layout_marginTop="60dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:src="@drawable/boarding"
-        android:scaleType="fitStart"/>
+        android:layout_marginTop="60dp"
+        android:scaleType="fitStart"
+        android:src="@drawable/boarding" />
 
     <TextView
+        android:id="@+id/tv"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Find out the job that suits you..."
-        android:textSize="36sp"
-        android:layout_marginTop="500dp"
         android:layout_marginStart="10dp"
+        android:layout_marginTop="500dp"
         android:layout_marginEnd="10dp"
+        android:fontFamily="@font/lato_bold"
         android:padding="8dp"
-        android:textStyle="bold"
+        android:text="Find out the job that suits you..."
         android:textColor="@color/b2"
-        android:id="@+id/tv"
-        android:fontFamily="@font/lato_bold"/>
+        android:textSize="36sp"
+        android:textStyle="bold" />
 
 
     <Button
         android:id="@+id/board"
         android:layout_width="wrap_content"
-        android:layout_height="50dp"
-        android:text="Get Started"
-        android:background="@drawable/border"
-        android:backgroundTint="@color/white"
-        android:textColor="@color/b2"
-        android:textSize="22sp"
+        android:layout_height="45dp"
         android:layout_below="@id/tv"
         android:layout_alignParentEnd="true"
         android:layout_marginEnd="40dp"
-        android:textStyle="bold"
-        android:fontFamily="@font/lato_bold"
+        android:background="@drawable/border"
+        android:backgroundTint="@color/white"
         android:drawableRight="@drawable/arrow"
         android:drawablePadding="8dp"
+        android:drawableTintMode="@color/white"
+        android:fontFamily="@font/lato_bold"
         android:paddingStart="4dp"
         android:paddingEnd="4dp"
-        android:drawableTintMode="@color/white"/>
+        android:text="Get Started"
+        android:textColor="@color/b2"
+        android:textSize="22sp"
+        android:textStyle="bold" />
 
 
 </RelativeLayout>

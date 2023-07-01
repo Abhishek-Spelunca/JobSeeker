@@ -9,4 +9,6 @@
     <color name="red">#c70000</color>
     <color name="green">#539165</color>
     <color name="green2">#9DF1DF</color>
+    <color name="tool">#2454a4</color>
+    <color name="button">#042f67</color>
 </resources>

@@ -1,11 +1,11 @@
 package com.example.jobseeker;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.firebase.auth.FirebaseAuth;
 
@@ -16,7 +16,7 @@ public class BoardingActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_boarding);
-        board=findViewById(R.id.board);
+        board = findViewById(R.id.board);
 
 
         board.setOnClickListener(new View.OnClickListener() {
@@ -27,14 +27,15 @@ public class BoardingActivity extends AppCompatActivity {
             }
         });
     }
+
     protected void onStart() {
         super.onStart();
-        if (FirebaseAuth.getInstance().getCurrentUser() != null){
-            String admin= FirebaseAuth.getInstance().getCurrentUser().getUid();
-            if (admin.equals("5iCUYJUk2FRUcMKMmwmPgGz7tHH3")){//checking for Admin
+        if (FirebaseAuth.getInstance().getCurrentUser() != null) {
+            String admin = FirebaseAuth.getInstance().getCurrentUser().getUid();
+            if (admin.equals("5iCUYJUk2FRUcMKMmwmPgGz7tHH3")) {//checking for Admin
                 startActivity(new Intent(BoardingActivity.this, AdminActivity.class));
                 finish();
-            }else {
+            } else {
                 startActivity(new Intent(BoardingActivity.this, HomePageActivity.class));
                 finish();
             }

@@ -2,7 +2,6 @@ package com.example.jobseeker;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Patterns;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
@@ -53,31 +52,31 @@ public class HomePageActivity extends AppCompatActivity implements NavigationVie
         drawerLayout.addDrawerListener(toggle);
         toggle.syncState();
 
-        View header=navigationView.getHeaderView(0);
-        TextView user=header.findViewById(R.id.nav_user);
-        TextView email=header.findViewById(R.id.nav_email);
-        ImageView pic=header.findViewById(R.id.image);
+        View header = navigationView.getHeaderView(0);
+        TextView user = header.findViewById(R.id.nav_user);
+        TextView email = header.findViewById(R.id.nav_email);
+        ImageView pic = header.findViewById(R.id.image);
 
 
-        FirebaseDatabase database=FirebaseDatabase.getInstance();
+        FirebaseDatabase database = FirebaseDatabase.getInstance();
 
 
-        DatabaseReference reference= database.getReference("Users");
-        String currUser= auth.getUid();
+        DatabaseReference reference = database.getReference("Users");
+        String currUser = auth.getUid();
 
 
-        Query checkType=reference.orderByChild("uid").equalTo(currUser);
+        Query checkType = reference.orderByChild("uid").equalTo(currUser);
 
         checkType.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
-                if (snapshot.exists()){
+                if (snapshot.exists()) {
                     String userDB = snapshot.child(currUser).child("username").getValue(String.class);
                     String emailDB = snapshot.child(currUser).child("email").getValue(String.class);
-                    user.setText(""+userDB);
-                    email.setText(""+emailDB);
+                    user.setText("" + userDB);
+                    email.setText("" + emailDB);
                     if (snapshot.child(auth.getUid()).child("profile")
-                            .child("imageUrl").getValue(String.class)!=null) {
+                            .child("imageUrl").getValue(String.class) != null) {
                         Glide.with(HomePageActivity.this).load(snapshot.child(currUser)
                                 .child("profile").child("imageUrl").getValue(String.class)).into(pic);
                     }
@@ -89,9 +88,6 @@ public class HomePageActivity extends AppCompatActivity implements NavigationVie
 
             }
         });
-
-
-
 
 
         if (savedInstanceState == null) {

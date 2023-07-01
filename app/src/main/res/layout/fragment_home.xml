@@ -1,50 +1,47 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/tool"
     android:orientation="vertical"
-    android:background="@color/col"
     tools:context=".HomeFragment">
 
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Hi Welcome Back !"
-        android:textColor="@color/white"
-        android:textStyle="bold"
-        android:textSize="20sp"
-        android:layout_marginTop="10dp"
         android:layout_marginStart="13dp"
+        android:layout_marginTop="10dp"
         android:layout_marginEnd="13dp"
         android:fontFamily="@font/lato_bold"
-        android:padding="8dp"/>
+        android:padding="8dp"
+        android:text="Hi Welcome Back !"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        android:textStyle="bold" />
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@drawable/admin_border"
-        android:backgroundTint="@color/col"
         android:orientation="horizontal">
 
         <androidx.appcompat.widget.SearchView
+            android:id="@+id/search"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:searchHintIcon="@null"
-            app:iconifiedByDefault="false"
-            android:focusable="false"
+            android:layout_marginStart="12dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="12dp"
             android:background="@drawable/search_border"
             android:backgroundTint="@color/white"
-            app:queryHint="What kind of job are u looking ?"
-            android:id="@+id/search"
-            app:searchIcon="@drawable/search_icon"
+            android:focusable="false"
             app:closeIcon="@drawable/clear"
-            android:layout_marginStart="12dp"
-            android:layout_marginEnd="12dp"
-            android:layout_marginTop="8dp" />
+            app:iconifiedByDefault="false"
+            app:queryHint="What kind of job are u looking ?"
+            app:searchHintIcon="@null"
+            app:searchIcon="@drawable/search_icon" />
 
         <androidx.appcompat.widget.SearchView
             android:id="@+id/searchLocation"
@@ -65,77 +62,94 @@
     </RelativeLayout>
 
 
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/rounded_top">
 
-        <RelativeLayout
+        <TextView
+            android:id="@+id/fil"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="6dp"
+            android:drawableStart="@drawable/filter"
+            android:drawablePadding="6dp"
+            android:drawableTint="@color/b2" />
+
+
+        <Spinner
+            android:id="@+id/spinner"
+            android:layout_width="wrap_content"
+            android:layout_height="28dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="6dp"
+            android:layout_toEndOf="@id/fil"
+            android:background="@drawable/border"
+            android:backgroundTint="@color/color"
+            android:elevation="12dp" />
+
+        <TextView
+            android:id="@+id/text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/spinner"
+            android:layout_marginStart="14dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="14dp"
+            android:fontFamily="@font/lato_bold"
+            android:text="Available Jobs!"
+            android:textColor="@color/b2"
+            android:textSize="28sp"
+            android:textStyle="bold"
+            android:visibility="visible" />
+
+        <TextView
+            android:id="@+id/text1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/spinner"
+            android:layout_marginStart="14dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="30dp"
+            android:fontFamily="@font/lato_bold"
+            android:text="show all"
+            android:textColor="@color/grey"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:visibility="visible"
+            android:layout_alignParentEnd="true"/>
+
+        <LinearLayout
+            android:id="@+id/error"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="@drawable/rounded_top">
+            android:visibility="gone">
 
-            <TextView
-                android:id="@+id/fil"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:drawableStart="@drawable/filter"
-                android:drawablePadding="6dp"
-                android:drawableTint="@color/b2"
-                android:layout_alignParentStart="true"
-                android:layout_marginStart="10dp"
-                android:layout_marginTop="6dp"/>
-
-
-            <Spinner
-                android:id="@+id/spinner"
-                android:layout_width="wrap_content"
-                android:layout_height="28dp"
-                android:layout_marginStart="10dp"
-                android:layout_marginTop="6dp"
-                android:background="@drawable/border"
-                android:elevation="12dp"
-                android:layout_toEndOf="@id/fil"
-                android:backgroundTint="@color/green2" />
-
-            <TextView
+            <ImageView
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Available Jobs!"
-                android:textStyle="bold"
-                android:layout_below="@id/spinner"
-                android:textColor="@color/b2"
-                android:textSize="28sp"
-                android:fontFamily="@font/lato_bold"
-                android:layout_marginTop="10dp"
-                android:layout_marginStart="14dp"
-                android:layout_marginEnd="14dp"
-                android:id="@+id/text"
-                android:visibility="visible"/>
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:visibility="gone"
-                android:id="@+id/error">
-                <ImageView
-                    android:layout_width="match_parent"
-                    android:layout_height="520dp"
-                    android:layout_marginTop="20dp"
-                    android:src="@drawable/error"
-                    android:scaleType="fitCenter" />
-            </LinearLayout>
+                android:layout_height="520dp"
+                android:layout_marginTop="20dp"
+                android:scaleType="fitCenter"
+                android:src="@drawable/error" />
+        </LinearLayout>
 
-            <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_below="@id/text"
-                android:layout_marginTop="10dp"
-                android:id="@+id/swipe">
+        <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+            android:id="@+id/swipe"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@id/text"
+            android:layout_marginTop="10dp">
 
             <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerView"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_marginTop="8dp"
                 android:scrollbars="vertical"
-                android:id="@+id/recyclerView"
-                android:visibility="gone"/>
+                android:visibility="gone" />
 
-            </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
-        </RelativeLayout>
+        </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+    </RelativeLayout>
 </LinearLayout>

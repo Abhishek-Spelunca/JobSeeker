@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/bkgrd"
     android:orientation="vertical"
-    android:background="@color/col"
     tools:context=".ProfileFragment">
 
     <LinearLayout
@@ -20,239 +19,241 @@
             android:layout_height="120dp"
             android:layout_gravity="center"
             android:layout_margin="10dp"
+            android:elevation="4dp"
             android:scaleType="fitXY"
-            app:shapeAppearanceOverlay="@style/roundedImageViewRounded"
             android:src="@drawable/set_profile"
-            android:elevation="4dp"/>
+            app:shapeAppearanceOverlay="@style/roundedImageViewRounded" />
 
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@drawable/rounded_top"
             android:layout_marginTop="10dp"
+            android:background="@drawable/rounded_top"
             android:padding="8dp">
 
             <TextView
+                android:id="@+id/profileUsername"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Username"
                 android:layout_marginTop="10dp"
-                android:id="@+id/profileUsername"
+                android:fontFamily="@font/lato_bold"
                 android:gravity="center"
-                android:textSize="22sp"
+                android:text="Username"
                 android:textColor="@color/b2"
-                android:textStyle="bold"
-                android:fontFamily="@font/lato_bold"/>
+                android:textSize="22sp"
+                android:textStyle="bold" />
 
             <RelativeLayout
+                android:id="@+id/rl"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/profileUsername"
-                android:id="@+id/rl"
                 android:layout_marginTop="20dp">
 
                 <TextView
+                    android:id="@+id/userText"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="User's Details"
-                    android:id="@+id/userText"
-                    android:textStyle="bold"
-                    android:textSize="24sp"
-                    android:textColor="@color/b2"
                     android:drawableLeft="@drawable/username"
                     android:drawablePadding="8dp"
-                    android:fontFamily="@font/lato_bold"/>
+                    android:fontFamily="@font/lato_bold"
+                    android:text="User's Details"
+                    android:textColor="@color/b2"
+                    android:textSize="24sp"
+                    android:textStyle="bold" />
 
                 <TextView
+                    android:id="@+id/nameText"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_below="@id/userText"
+                    android:layout_marginTop="8dp"
+                    android:fontFamily="@font/lato_regular"
+                    android:paddingStart="10dp"
                     android:text="Name:"
-                    android:paddingStart="10dp"
-                    android:layout_below="@id/userText"
-                    android:layout_marginTop="8dp"
+                    android:textColor="@color/b2"
                     android:textSize="18sp"
-                    android:textStyle="bold"
-                    android:fontFamily="@font/lato_regular"
-                    android:textColor="@color/b2"
-                    android:id="@+id/nameText"/>
+                    android:textStyle="bold" />
+
                 <TextView
-                    android:textColor="@color/b2"
+                    android:id="@+id/profileName"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Name"
+                    android:layout_below="@id/userText"
                     android:layout_marginStart="8dp"
+                    android:layout_marginTop="8dp"
                     android:layout_toEndOf="@id/nameText"
-                    android:layout_below="@id/userText"
-                    android:layout_marginTop="8dp"
-                    android:textSize="18sp"
                     android:fontFamily="@font/lato_regular"
-                    android:id="@+id/profileName"/>
-
+                    android:text="Name"
+                    android:textColor="@color/b2"
+                    android:textSize="18sp" />
 
 
                 <TextView
-                    android:textColor="@color/b2"
+                    android:id="@+id/ageText"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_below="@id/profileName"
+                    android:layout_marginTop="8dp"
+                    android:fontFamily="@font/lato_regular"
+                    android:paddingStart="10dp"
                     android:text="Age:"
-                    android:layout_below="@id/profileName"
-                    android:layout_marginTop="8dp"
+                    android:textColor="@color/b2"
                     android:textSize="18sp"
-                    android:paddingStart="10dp"
-                    android:textStyle="bold"
-                    android:fontFamily="@font/lato_regular"
-                    android:id="@+id/ageText"/>
+                    android:textStyle="bold" />
 
                 <TextView
-                    android:textColor="@color/b2"
+                    android:id="@+id/profileAge"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Age"
+                    android:layout_below="@id/profileName"
                     android:layout_marginStart="8dp"
+                    android:layout_marginTop="8dp"
                     android:layout_toEndOf="@id/ageText"
-                    android:layout_below="@id/profileName"
-                    android:layout_marginTop="8dp"
-                    android:textSize="18sp"
                     android:fontFamily="@font/lato_regular"
-                    android:id="@+id/profileAge"/>
+                    android:text="Age"
+                    android:textColor="@color/b2"
+                    android:textSize="18sp" />
 
                 <TextView
-                    android:textColor="@color/b2"
+                    android:id="@+id/addressText"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Address:"
+                    android:layout_below="@id/ageText"
+                    android:layout_marginTop="8dp"
+                    android:fontFamily="@font/lato_regular"
                     android:paddingStart="10dp"
-                    android:layout_below="@id/ageText"
-                    android:layout_marginTop="8dp"
-                    android:textSize="18sp"
-                    android:textStyle="bold"
-                    android:fontFamily="@font/lato_regular"
-                    android:id="@+id/addressText"/>
-                <TextView
+                    android:text="Address:"
                     android:textColor="@color/b2"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/profileAddress"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Address"
-                    android:layout_marginStart="8dp"
-                    android:layout_toEndOf="@id/addressText"
                     android:layout_below="@id/ageText"
+                    android:layout_marginStart="8dp"
                     android:layout_marginTop="8dp"
-                    android:textSize="18sp"
+                    android:layout_toEndOf="@id/addressText"
                     android:fontFamily="@font/lato_regular"
-                    android:id="@+id/profileAddress"/>
+                    android:text="Address"
+                    android:textColor="@color/b2"
+                    android:textSize="18sp" />
 
             </RelativeLayout>
 
             <RelativeLayout
+                android:id="@+id/rl2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/rl"
-                android:id="@+id/rl2"
                 android:layout_marginTop="20dp">
 
                 <TextView
-                    android:textColor="@color/b2"
+                    android:id="@+id/contactText"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Contact Details"
-                    android:textStyle="bold"
                     android:drawableLeft="@drawable/contact"
                     android:drawablePadding="8dp"
-                    android:textSize="24sp"
                     android:fontFamily="@font/lato_regular"
-                    android:id="@+id/contactText"/>
+                    android:text="Contact Details"
+                    android:textColor="@color/b2"
+                    android:textSize="24sp"
+                    android:textStyle="bold" />
 
                 <TextView
-                    android:textColor="@color/b2"
+                    android:id="@+id/profileEmail"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Email"
-                    android:paddingStart="10dp"
-                    android:id="@+id/profileEmail"
                     android:layout_below="@id/contactText"
                     android:layout_marginTop="8dp"
-                    android:fontFamily="@font/lato_regular"
-                    android:textSize="18sp"
                     android:drawableLeft="@drawable/mail"
-                    android:drawablePadding="8dp"/>
+                    android:drawablePadding="8dp"
+                    android:fontFamily="@font/lato_regular"
+                    android:paddingStart="10dp"
+                    android:text="Email"
+                    android:textColor="@color/b2"
+                    android:textSize="18sp" />
 
                 <TextView
-                    android:textColor="@color/b2"
+                    android:id="@+id/profilePhone"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Phone"
-                    android:paddingStart="10dp"
-                    android:id="@+id/profilePhone"
                     android:layout_below="@id/profileEmail"
                     android:layout_marginTop="8dp"
-                    android:fontFamily="@font/lato_regular"
-                    android:textSize="18sp"
                     android:drawableLeft="@drawable/phone"
-                    android:drawablePadding="8dp"/>
+                    android:drawablePadding="8dp"
+                    android:fontFamily="@font/lato_regular"
+                    android:paddingStart="10dp"
+                    android:text="Phone"
+                    android:textColor="@color/b2"
+                    android:textSize="18sp" />
 
             </RelativeLayout>
+
             <RelativeLayout
+                android:id="@+id/rl3"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
-                android:id="@+id/rl3"
-                android:layout_below="@id/rl2">
+                android:layout_below="@id/rl2"
+                android:layout_marginTop="20dp">
 
                 <TextView
-                    android:textColor="@color/b2"
+                    android:id="@+id/qualificationText"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Quailifications"
-                    android:textStyle="bold"
-                    android:textSize="24sp"
                     android:drawableLeft="@drawable/qualifications"
                     android:drawablePadding="8dp"
                     android:fontFamily="@font/lato_bold"
-                    android:id="@+id/qualificationText"/>
+                    android:text="Quailifications"
+                    android:textColor="@color/b2"
+                    android:textSize="24sp"
+                    android:textStyle="bold" />
 
                 <TextView
-                    android:textColor="@color/b2"
+                    android:id="@+id/profileQualify"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="qualification"
-                    android:paddingStart="10dp"
-                    android:id="@+id/profileQualify"
                     android:layout_below="@id/qualificationText"
                     android:layout_marginTop="8dp"
-                    android:textSize="18sp"
-                    android:fontFamily="@font/lato_regular"/>
+                    android:fontFamily="@font/lato_regular"
+                    android:paddingStart="10dp"
+                    android:text="qualification"
+                    android:textColor="@color/b2"
+                    android:textSize="18sp" />
 
             </RelativeLayout>
 
             <RelativeLayout
+                android:id="@+id/rl4"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:id="@+id/rl4"
                 android:layout_below="@id/rl3"
                 android:layout_marginTop="20dp">
 
                 <TextView
-                    android:textColor="@color/b2"
+                    android:id="@+id/experienceText"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Work Experience"
-                    android:textSize="24dp"
-                    android:fontFamily="@font/lato_bold"
-                    android:textStyle="bold"
-                    android:id="@+id/experienceText"
                     android:drawableLeft="@drawable/work"
-                    android:drawablePadding="8dp"/>
+                    android:drawablePadding="8dp"
+                    android:fontFamily="@font/lato_bold"
+                    android:text="Work Experience"
+                    android:textColor="@color/b2"
+                    android:textSize="24dp"
+                    android:textStyle="bold" />
 
                 <TextView
-                    android:textColor="@color/b2"
+                    android:id="@+id/profileExperience"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:id="@+id/profileExperience"
                     android:layout_below="@id/experienceText"
-                    android:text="Experience"
-                    android:textSize="18sp"
+                    android:layout_marginTop="8dp"
                     android:paddingStart="10dp"
-                    android:layout_marginTop="8dp"/>
+                    android:text="Experience"
+                    android:textColor="@color/b2"
+                    android:textSize="18sp" />
 
             </RelativeLayout>
 
@@ -261,18 +262,18 @@
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:layout_below="@id/rl4"
-                android:layout_marginTop="30dp"
                 android:layout_marginStart="10dp"
+                android:layout_marginTop="30dp"
                 android:layout_marginEnd="10dp"
+                android:layout_marginBottom="20dp"
                 android:background="@drawable/edit_border"
                 android:backgroundTint="@color/col"
-                android:gravity="center"
-                android:layout_marginBottom="20dp"
-                android:textColor="@color/white"
-                android:text="Edit Profile"
-                android:textStyle="bold"
                 android:fontFamily="@font/lato_bold"
-                android:textSize="26sp" />
+                android:gravity="center"
+                android:text="Edit Profile"
+                android:textColor="@color/white"
+                android:textSize="26sp"
+                android:textStyle="bold" />
 
         </RelativeLayout>
 

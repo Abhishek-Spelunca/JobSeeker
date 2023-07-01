@@ -1,7 +1,7 @@
 package com.example.jobseeker;
 
 public class ProfileHelper {
-    String name,phone,age,address,qualify,experience,imageUrl;
+    String name, phone, age, address, qualify, experience, imageUrl;
 
 
     public ProfileHelper(String name, String phone, String age, String address, String qualify, String experience, String imageUrl) {
@@ -10,8 +10,8 @@ public class ProfileHelper {
         this.age = age;
         this.address = address;
         this.qualify = qualify;
-        this.experience=experience;
-        this.imageUrl=imageUrl;
+        this.experience = experience;
+        this.imageUrl = imageUrl;
     }
 
     public String getName() {

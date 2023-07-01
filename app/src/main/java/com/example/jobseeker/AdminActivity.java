@@ -1,5 +1,12 @@
 package com.example.jobseeker;
 
+import android.content.Intent;
+import android.os.Bundle;
+import android.view.View;
+import android.widget.ImageView;
+import android.widget.TextView;
+import android.widget.Toast;
+
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
@@ -7,12 +14,6 @@ import androidx.appcompat.widget.SearchView;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
-
-import android.content.Intent;
-import android.os.Bundle;
-import android.view.View;
-import android.widget.TextView;
-import android.widget.Toast;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.firebase.auth.FirebaseAuth;
@@ -22,16 +23,14 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.Calendar;
 import java.util.Collections;
 import java.util.List;
 import java.util.Random;
 
 public class AdminActivity extends AppCompatActivity {
 
-    TextView logout;
+    ImageView logout;
     FirebaseAuth auth;
     SwipeRefreshLayout swipe;
 
@@ -48,40 +47,40 @@ public class AdminActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_admin);
 
-        auth=FirebaseAuth.getInstance();
+        auth = FirebaseAuth.getInstance();
 
-        logout=findViewById(R.id.admin_logout);
-        fab=findViewById(R.id.fab);
-        recyclerView=findViewById(R.id.recyclerView);
-        searchView=findViewById(R.id.search);
+        logout = findViewById(R.id.admin_logout);
+        fab = findViewById(R.id.fab);
+        recyclerView = findViewById(R.id.recyclerView);
+        searchView = findViewById(R.id.search);
         searchView.clearFocus();
-        swipe=findViewById(R.id.swipe1);
+        swipe = findViewById(R.id.swipe1);
 
-        GridLayoutManager gridLayoutManager=new GridLayoutManager(AdminActivity.this,1);
+        GridLayoutManager gridLayoutManager = new GridLayoutManager(AdminActivity.this, 1);
         recyclerView.setLayoutManager(gridLayoutManager);
 
 
-        AlertDialog.Builder builder=new AlertDialog.Builder(AdminActivity.this);
+        AlertDialog.Builder builder = new AlertDialog.Builder(AdminActivity.this);
         builder.setCancelable(false);
         builder.setView(R.layout.progress_layout);
-        AlertDialog dialog=builder.create();
+        AlertDialog dialog = builder.create();
         dialog.show();
 
 
-        dataList=new ArrayList<>();
+        dataList = new ArrayList<>();
 
-        adapter=new MyAdapter(AdminActivity.this,dataList);
+        adapter = new MyAdapter(AdminActivity.this, dataList);
         recyclerView.setAdapter(adapter);
 
-        reference= FirebaseDatabase.getInstance().getReference("Jobs");
+        reference = FirebaseDatabase.getInstance().getReference("Jobs");
         dialog.show();
 
-        eventListener=reference.addValueEventListener(new ValueEventListener() {
+        eventListener = reference.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 dataList.clear();
-                for (DataSnapshot itemSnapshot:snapshot.getChildren()){
-                    DataClass dataClass=itemSnapshot.getValue(DataClass.class);
+                for (DataSnapshot itemSnapshot : snapshot.getChildren()) {
+                    DataClass dataClass = itemSnapshot.getValue(DataClass.class);
                     dataClass.setKey(itemSnapshot.getKey());
                     dataList.add(dataClass);
                 }
@@ -120,7 +119,7 @@ public class AdminActivity extends AppCompatActivity {
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(AdminActivity.this,UploadJobActivity.class));
+                startActivity(new Intent(AdminActivity.this, UploadJobActivity.class));
             }
         });
 
@@ -133,18 +132,20 @@ public class AdminActivity extends AppCompatActivity {
             }
         });
     }
-    public void searchList(String text){
-        ArrayList<DataClass> searchList=new ArrayList<>();
-        for (DataClass dataClass:dataList){
-            if (dataClass.getDataTitle().toLowerCase().contains(text.toLowerCase())){
+
+    public void searchList(String text) {
+        ArrayList<DataClass> searchList = new ArrayList<>();
+        for (DataClass dataClass : dataList) {
+            if (dataClass.getDataTitle().toLowerCase().contains(text.toLowerCase())) {
                 searchList.add(dataClass);
             }
         }
         adapter.searchDataList(searchList);
     }
+
     private void rearrangeItems() {
-        Collections.shuffle(dataList,new Random(System.currentTimeMillis()));
-        adapter=new MyAdapter(this,dataList);
+        Collections.shuffle(dataList, new Random(System.currentTimeMillis()));
+        adapter = new MyAdapter(this, dataList);
         recyclerView.setAdapter(adapter);
     }
 }

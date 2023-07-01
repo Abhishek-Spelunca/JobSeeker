@@ -33,7 +33,7 @@ public class UploadJobActivity extends AppCompatActivity {
     ImageView logo;
     Button uploadBtn;
     TextView back;
-    EditText uploadTitle,uploadCompany,uploadType,uploadUrl,uploadPay,uploadLocation,uploadDesc,uploadDate;
+    EditText uploadTitle, uploadCompany, uploadType, uploadUrl, uploadPay, uploadLocation, uploadDesc, uploadDate;
     String imageUrl;
     Uri uri;
 
@@ -42,27 +42,27 @@ public class UploadJobActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_upload_job);
 
-        logo=findViewById(R.id.logo);
-        uploadTitle=findViewById(R.id.job_title);
-        uploadCompany=findViewById(R.id.company_name);
-        uploadType=findViewById(R.id.job_type);
-        uploadUrl=findViewById(R.id.job_url);
-        uploadPay=findViewById(R.id.pay_scale);
-        uploadLocation=findViewById(R.id.location);
-        uploadDate=findViewById(R.id.Date);
-        uploadDesc=findViewById(R.id.upload_description);
-        uploadBtn=findViewById(R.id.add_btn);
-        back=findViewById(R.id.back);
+        logo = findViewById(R.id.logo);
+        uploadTitle = findViewById(R.id.job_title);
+        uploadCompany = findViewById(R.id.company_name);
+        uploadType = findViewById(R.id.job_type);
+        uploadUrl = findViewById(R.id.job_url);
+        uploadPay = findViewById(R.id.pay_scale);
+        uploadLocation = findViewById(R.id.location);
+        uploadDate = findViewById(R.id.Date);
+        uploadDesc = findViewById(R.id.upload_description);
+        uploadBtn = findViewById(R.id.add_btn);
+        back = findViewById(R.id.back);
 
-        ActivityResultLauncher<Intent> activityResultLauncher=registerForActivityResult(
+        ActivityResultLauncher<Intent> activityResultLauncher = registerForActivityResult(
                 new ActivityResultContracts.StartActivityForResult(), new ActivityResultCallback<ActivityResult>() {
                     @Override
                     public void onActivityResult(ActivityResult result) {
-                        if (result.getResultCode()== Activity.RESULT_OK){
-                            Intent data=result.getData();
-                            uri=data.getData();
+                        if (result.getResultCode() == Activity.RESULT_OK) {
+                            Intent data = result.getData();
+                            uri = data.getData();
                             logo.setImageURI(uri);
-                        }else {
+                        } else {
                             Toast.makeText(UploadJobActivity.this, "No Image Selected", Toast.LENGTH_SHORT).show();
                         }
                     }
@@ -72,7 +72,7 @@ public class UploadJobActivity extends AppCompatActivity {
         logo.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent photoPicker=new Intent(Intent.ACTION_PICK);
+                Intent photoPicker = new Intent(Intent.ACTION_PICK);
                 photoPicker.setType("image/+");
                 activityResultLauncher.launch(photoPicker);
             }
@@ -93,23 +93,23 @@ public class UploadJobActivity extends AppCompatActivity {
         });
     }
 
-    public void saveData(){
-        StorageReference storageReference= FirebaseStorage.getInstance().getReference().child("Companies Logo")
+    public void saveData() {
+        StorageReference storageReference = FirebaseStorage.getInstance().getReference().child("Companies Logo")
                 .child(uri.getLastPathSegment());
 
-        AlertDialog.Builder builder=new AlertDialog.Builder(UploadJobActivity.this);
+        AlertDialog.Builder builder = new AlertDialog.Builder(UploadJobActivity.this);
         builder.setCancelable(false);
         builder.setView(R.layout.progress_layout);
-        AlertDialog dialog=builder.create();
+        AlertDialog dialog = builder.create();
         dialog.show();
 
         storageReference.putFile(uri).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
             @Override
             public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
-                Task<Uri> uriTask=taskSnapshot.getStorage().getDownloadUrl();
-                while(!uriTask.isComplete());
-                Uri urlImage=uriTask.getResult();
-                imageUrl=urlImage.toString();
+                Task<Uri> uriTask = taskSnapshot.getStorage().getDownloadUrl();
+                while (!uriTask.isComplete()) ;
+                Uri urlImage = uriTask.getResult();
+                imageUrl = urlImage.toString();
                 uploadData();
                 dialog.dismiss();
             }
@@ -121,23 +121,23 @@ public class UploadJobActivity extends AppCompatActivity {
         });
     }
 
-    public void uploadData(){
-        String title=uploadTitle.getText().toString();
-        String company=uploadCompany.getText().toString();
-        String companyUrl=uploadUrl.getText().toString();
-        String type=uploadType.getText().toString();
-        String payScale=uploadPay.getText().toString();
-        String location=uploadLocation.getText().toString();
-        String date=uploadDate.getText().toString();
-        String desc=uploadDesc.getText().toString();
+    public void uploadData() {
+        String title = uploadTitle.getText().toString();
+        String company = uploadCompany.getText().toString();
+        String companyUrl = uploadUrl.getText().toString();
+        String type = uploadType.getText().toString();
+        String payScale = uploadPay.getText().toString();
+        String location = uploadLocation.getText().toString();
+        String date = uploadDate.getText().toString();
+        String desc = uploadDesc.getText().toString();
 
-       DataClass dataClass=new DataClass(title,company,type,payScale,location,desc,date,companyUrl,imageUrl);
+        DataClass dataClass = new DataClass(title, company, type, payScale, location, desc, date, companyUrl, imageUrl);
 
         FirebaseDatabase.getInstance().getReference("Jobs").child(title).setValue(dataClass).addOnCompleteListener(
                 new OnCompleteListener<Void>() {
                     @Override
                     public void onComplete(@NonNull Task<Void> task) {
-                        if (task.isSuccessful()){
+                        if (task.isSuccessful()) {
                             Toast.makeText(UploadJobActivity.this, "Saved", Toast.LENGTH_SHORT).show();
                             startActivity(new Intent(UploadJobActivity.this, AdminActivity.class));
                             finish();

@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/col"
+    android:background="@drawable/bkg"
     android:gravity="center"
     android:orientation="vertical"
     tools:context=".SignUpActivity">
@@ -21,18 +21,18 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
             android:background="@drawable/border"
-            android:orientation="vertical"
             android:elevation="8dp"
+            android:orientation="vertical"
             android:padding="24dp">
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:fontFamily="@font/lato_bold"
                 android:text="Sign Up"
                 android:textAlignment="center"
                 android:textColor="@color/col"
                 android:textSize="34sp"
-                android:fontFamily="@font/lato_bold"
                 android:textStyle="bold" />
 
             <EditText
@@ -77,11 +77,11 @@
                 android:layout_width="match_parent"
                 android:layout_height="52dp"
                 android:layout_marginTop="30dp"
-                android:backgroundTint="@color/col"
                 android:background="@drawable/edit_border"
-                android:textColor="@color/white"
-                android:text="SIGN UP"
+                android:backgroundTint="@color/button"
                 android:fontFamily="@font/lato_bold"
+                android:text="SIGN UP"
+                android:textColor="@color/white"
                 android:textSize="24sp"
                 android:textStyle="bold"
                 app:cornerRadius="20dp" />
@@ -91,10 +91,10 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="30dp"
+                android:fontFamily="@font/lato_bold"
                 android:text="Already registered? Login"
                 android:textAlignment="center"
                 android:textColor="@color/b2"
-                android:fontFamily="@font/lato_bold"
                 android:textSize="20sp" />
 
         </LinearLayout>

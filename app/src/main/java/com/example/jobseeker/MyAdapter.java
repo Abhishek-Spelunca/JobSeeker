@@ -14,7 +14,6 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.database.FirebaseDatabase;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -31,11 +30,10 @@ public class MyAdapter extends RecyclerView.Adapter<MyViewHolder> {
     }
 
 
-
     @NonNull
     @Override
     public MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View v= LayoutInflater.from(parent.getContext()).inflate(R.layout.recycler_item,parent,false);
+        View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.recycler_item, parent, false);
         return new MyViewHolder(v);
     }
 
@@ -51,14 +49,14 @@ public class MyAdapter extends RecyclerView.Adapter<MyViewHolder> {
         holder.recDesc.setText(dataList.get(position).getDataDesc());
         holder.recDate.setText(dataList.get(position).getDataDate());
 
-        String admin= FirebaseAuth.getInstance().getCurrentUser().getUid();
+        String admin = FirebaseAuth.getInstance().getCurrentUser().getUid();
 
 
         holder.recCard.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent;
-                if (admin.equals("5iCUYJUk2FRUcMKMmwmPgGz7tHH3")){//checking for Admin
+                if (admin.equals("5iCUYJUk2FRUcMKMmwmPgGz7tHH3")) {//checking for Admin
                     intent = new Intent(context, AdminDetailActivity.class);
                 } else {
                     intent = new Intent(context, DetailActivity.class);
@@ -72,7 +70,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyViewHolder> {
                 intent.putExtra("Description", dataList.get(holder.getAdapterPosition()).getDataDesc());
                 intent.putExtra("Key", dataList.get(holder.getAdapterPosition()).getKey());
                 intent.putExtra("Date", dataList.get(holder.getAdapterPosition()).getDataDate());
-                intent.putExtra("CompanyUrl",dataList.get(holder.getAdapterPosition()).getDataCompanyUrl());
+                intent.putExtra("CompanyUrl", dataList.get(holder.getAdapterPosition()).getDataCompanyUrl());
                 context.startActivity(intent);
             }
         });
@@ -83,30 +81,30 @@ public class MyAdapter extends RecyclerView.Adapter<MyViewHolder> {
         return dataList.size();
     }
 
-    public void searchDataList(ArrayList<DataClass> searchList){
-        dataList=searchList;
+    public void searchDataList(ArrayList<DataClass> searchList) {
+        dataList = searchList;
         notifyDataSetChanged();
     }
 }
 
-class MyViewHolder extends RecyclerView.ViewHolder{
+class MyViewHolder extends RecyclerView.ViewHolder {
     ImageView recImage;
-    TextView recTitle,recCompany,recUrl,recType,recPay,recAddress,recDesc,recDate;
+    TextView recTitle, recCompany, recUrl, recType, recPay, recAddress, recDesc, recDate;
     CardView recCard;
 
     public MyViewHolder(@NonNull View itemView) {
         super(itemView);
 
-        recImage=itemView.findViewById(R.id.recImg);
-        recTitle=itemView.findViewById(R.id.rec_title);
-        recCompany=itemView.findViewById(R.id.rec_company);
-        recPay=itemView.findViewById(R.id.rec_pay);
-        recType=itemView.findViewById(R.id.rec_type);
-        recAddress=itemView.findViewById(R.id.rec_location);
-        recUrl=itemView.findViewById(R.id.rec_Url);
-        recDesc=itemView.findViewById(R.id.rec_Desc);
-        recDate=itemView.findViewById(R.id.rec_Created);
-        recCard=itemView.findViewById(R.id.recCard);
+        recImage = itemView.findViewById(R.id.recImg);
+        recTitle = itemView.findViewById(R.id.rec_title);
+        recCompany = itemView.findViewById(R.id.rec_company);
+        recPay = itemView.findViewById(R.id.rec_pay);
+        recType = itemView.findViewById(R.id.rec_type);
+        recAddress = itemView.findViewById(R.id.rec_location);
+        recUrl = itemView.findViewById(R.id.rec_Url);
+        recDesc = itemView.findViewById(R.id.rec_Desc);
+        recDate = itemView.findViewById(R.id.rec_Created);
+        recCard = itemView.findViewById(R.id.recCard);
 
     }
 }

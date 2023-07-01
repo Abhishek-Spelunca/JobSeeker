@@ -1,13 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:background="@drawable/bkgrd"
     tools:context=".AdminActivity">
-
 
 
     <RelativeLayout
@@ -19,24 +18,25 @@
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
             android:layout_height="50dp"
-            android:background="@color/col"
             android:elevation="4dp"
             android:padding="8dp"
             android:popupTheme="@style/ThemeOverlay.AppCompat.Light"
             android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
 
             <TextView
-                android:id="@+id/admin_logout"
-                android:layout_width="368dp"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:drawableRight="@drawable/logout"
-                android:drawablePadding="10dp"
-                android:text="Welcome Admin !"
                 android:fontFamily="@font/lato_regular"
+                android:text="Welcome Admin !"
                 android:textColor="@color/white"
                 android:textSize="24sp"
                 android:textStyle="bold" />
-
+            <ImageView
+                android:id="@+id/admin_logout"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:src="@drawable/logout"
+                android:layout_marginStart="168dp" />
         </androidx.appcompat.widget.Toolbar>
 
     </RelativeLayout>
@@ -44,65 +44,61 @@
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@drawable/admin_border"
-        android:backgroundTint="@color/col"
+        android:layout_height="65dp"
         android:orientation="horizontal">
 
         <androidx.appcompat.widget.SearchView
+            android:id="@+id/search"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:searchHintIcon="@null"
-            app:iconifiedByDefault="false"
-            android:focusable="false"
-            android:background="@drawable/border"
-            android:backgroundTint="@color/white"
-            app:queryHint="Search..."
-            android:id="@+id/search"
-            app:searchIcon="@drawable/search_icon"
-            app:closeIcon="@drawable/clear"
             android:layout_marginStart="12dp"
+            android:layout_marginTop="8dp"
             android:layout_marginEnd="12dp"
             android:layout_marginBottom="10dp"
-            android:layout_marginTop="8dp" />
+            android:background="@drawable/border"
+            android:backgroundTint="@color/white"
+            android:focusable="false"
+            app:closeIcon="@drawable/clear"
+            app:iconifiedByDefault="false"
+            app:queryHint="Search..."
+            app:searchHintIcon="@null"
+            app:searchIcon="@drawable/search_icon" />
 
     </RelativeLayout>
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:background="@drawable/rounded_top"
         android:elevation="5dp">
 
         <TextView
+            android:id="@+id/txt"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="6dp"
             android:layout_marginTop="6dp"
             android:layout_marginEnd="6dp"
             android:layout_marginBottom="6dp"
-            android:text="Available Jobs!"
             android:fontFamily="@font/lato_bold"
+            android:text="Available Jobs!"
             android:textColor="@color/b2"
             android:textSize="28sp"
             android:textStyle="bold" />
 
-    </RelativeLayout>
-
-
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
         <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+            android:id="@+id/swipe1"
+            android:layout_marginTop="11dp"
+            android:layout_below="@id/txt"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:id="@+id/swipe1">
+            android:layout_height="match_parent">
 
-        <androidx.recyclerview.widget.RecyclerView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_marginTop="10dp"
-            android:scrollbars="vertical"
-            android:id="@+id/recyclerView"/>
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="10dp"
+                android:scrollbars="vertical" />
 
         </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
 
@@ -112,18 +108,15 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentRight="true"
-            android:layout_alignParentBottom="true"
-            android:layout_gravity="bottom"
+            android:layout_gravity="center"
             android:layout_marginStart="40dp"
-            android:layout_marginTop="40dp"
+            android:layout_marginTop="520dp"
             android:layout_marginEnd="40dp"
             android:layout_marginBottom="40dp"
-            android:backgroundTint="@color/col"
-            android:background="@drawable/edit_border"
+            android:backgroundTint="@color/button"
             android:src="@drawable/add" />
 
 
     </RelativeLayout>
-
 
 </LinearLayout>

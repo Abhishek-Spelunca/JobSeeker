@@ -13,6 +13,7 @@
     <style name="RobotTextViewStyle" parent="android:Widget.TextView">
         <item name="android:fontFamily">@font/lato_regular</item>
     </style>
+
     <style name="roundedImageViewRounded">
         <item name="cornerFamily">rounded</item>
         <item name="cornerSize">50%</item>

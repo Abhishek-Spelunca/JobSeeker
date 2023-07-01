@@ -1,57 +1,58 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.cardview.widget.CardView
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/recCard"
-    android:layout_marginStart="12dp"
-    android:layout_marginEnd="12dp"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
     android:layout_marginHorizontal="10dp"
     android:layout_marginVertical="10dp"
+    android:layout_marginStart="12dp"
+    android:layout_marginEnd="12dp"
     app:cardCornerRadius="30dp"
     app:cardElevation="14dp">
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_gravity="center"
         android:layout_marginTop="6dp"
         android:layout_marginBottom="4dp"
-        android:layout_gravity="center"
         android:padding="4dp">
 
         <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/recImg"
             android:layout_width="70dp"
             android:layout_height="70dp"
             android:layout_marginStart="6dp"
             android:layout_marginTop="5dp"
-            android:id="@+id/recImg"
-            android:src="@drawable/resume"
-            app:shapeAppearanceOverlay="@style/roundedImageViewRounded"
+            android:elevation="5dp"
             android:scaleType="centerCrop"
-            android:elevation="5dp"/>
+            android:src="@drawable/resume"
+            app:shapeAppearanceOverlay="@style/roundedImageViewRounded" />
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:layout_toEndOf="@id/recImg">
+            android:layout_toEndOf="@id/recImg"
+            android:orientation="vertical">
+
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 
                 <TextView
+                    android:id="@+id/rec_title"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Job Title"
-                    android:id="@+id/rec_title"
-                    android:textColor="@color/b2"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginBottom="3dp"
+                    android:ellipsize="end"
                     android:fontFamily="@font/lato_bold"
                     android:maxLines="2"
-                    android:ellipsize="end"
+                    android:text="Job Title"
+                    android:textColor="@color/b2"
                     android:textSize="18sp"
-                    android:layout_marginBottom="3dp"
-                    android:layout_marginStart="16dp"
-                    android:textStyle="bold"/>
+                    android:textStyle="bold" />
 
 
             </RelativeLayout>
@@ -66,26 +67,27 @@
                     android:id="@+id/recCompany"
                     android:layout_width="15dp"
                     android:layout_height="16dp"
-                    android:layout_marginEnd="5dp"
                     android:layout_marginTop="2.6dp"
-                    android:src="@drawable/company"
+                    android:layout_marginEnd="5dp"
                     android:scaleType="fitCenter"
-                    app:tint="@color/col"/>
+                    android:src="@drawable/company"
+                    app:tint="@color/col" />
 
                 <TextView
-                    android:textColor="@color/b2"
-                    android:fontFamily="@font/lato_bold"
+                    android:id="@+id/rec_company"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_toEndOf="@id/recCompany"
-                    android:text="Company Name"
-                    android:id="@+id/rec_company"
-                    android:textStyle="bold"
-                    android:textSize="14sp"
+                    android:ellipsize="end"
+                    android:fontFamily="@font/lato_bold"
                     android:singleLine="true"
-                    android:ellipsize="end"/>
+                    android:text="Company Name"
+                    android:textColor="@color/b2"
+                    android:textSize="14sp"
+                    android:textStyle="bold" />
 
             </RelativeLayout>
+
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -95,26 +97,27 @@
                     android:id="@+id/recLocation"
                     android:layout_width="15dp"
                     android:layout_height="16dp"
-                    android:layout_marginEnd="5dp"
-                    android:src="@drawable/location"
                     android:layout_marginTop="2.6dp"
+                    android:layout_marginEnd="5dp"
                     android:scaleType="fitCenter"
-                    app:tint="@color/col"/>
+                    android:src="@drawable/location"
+                    app:tint="@color/col" />
 
                 <TextView
-                    android:textColor="@color/b2"
-                    android:fontFamily="@font/lato_bold"
+                    android:id="@+id/rec_location"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_toEndOf="@id/recLocation"
-                    android:text="Location"
-                    android:id="@+id/rec_location"
-                    android:textStyle="bold"
-                    android:textSize="14sp"
+                    android:ellipsize="end"
+                    android:fontFamily="@font/lato_bold"
                     android:singleLine="true"
-                    android:ellipsize="end"/>
+                    android:text="Location"
+                    android:textColor="@color/b2"
+                    android:textSize="14sp"
+                    android:textStyle="bold" />
 
             </RelativeLayout>
+
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -126,22 +129,23 @@
                     android:layout_height="0dp"
                     android:scaleType="fitCenter"
                     android:src="@drawable/currency"
-                    app:tint="@color/color"/>
+                    app:tint="@color/color" />
 
                 <TextView
+                    android:id="@+id/rec_pay"
                     android:layout_width="0dp"
                     android:layout_height="0dp"
                     android:layout_toEndOf="@id/recPayScale"
-                    android:fontFamily="@font/lato_bold"
-                    android:id="@+id/rec_pay"
                     android:background="@color/green2"
-                    android:textColor="@color/green"
-                    android:textStyle="bold"
-                    android:textSize="14sp"
+                    android:ellipsize="end"
+                    android:fontFamily="@font/lato_bold"
                     android:singleLine="true"
-                    android:ellipsize="end"/>
+                    android:textColor="@color/green"
+                    android:textSize="14sp"
+                    android:textStyle="bold" />
 
             </RelativeLayout>
+
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -149,74 +153,77 @@
                 android:layout_marginTop="4dp">
 
                 <TextView
+                    android:id="@+id/rec_type"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Job Type"
-                    android:id="@+id/rec_type"
-                    android:textSize="14sp"
-                    android:fontFamily="@font/lato_bold"
-                    android:singleLine="true"
                     android:background="@drawable/edit_border"
                     android:backgroundTint="@color/green"
+                    android:ellipsize="end"
+                    android:fontFamily="@font/lato_bold"
+                    android:paddingStart="6dp"
+                    android:paddingTop="2dp"
+                    android:paddingEnd="6dp"
+                    android:paddingBottom="2dp"
+                    android:singleLine="true"
+                    android:text="Job Type"
                     android:textColor="@color/white"
-                    android:ellipsize="end"
-                    android:paddingStart="6dp"
-                    android:paddingEnd="6dp"
-                    android:paddingTop="2dp"
-                    android:paddingBottom="2dp"/>
+                    android:textSize="14sp" />
+
                 <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Created on:"
-                    android:fontFamily="@font/lato_bold"
-                    android:textSize="14sp"
-                    android:singleLine="true"
-                    android:textStyle="bold"
-                    android:layout_toStartOf="@id/rec_Created"
                     android:id="@+id/recCreatedText"
-                    android:ellipsize="end"
-                    android:textColor="@color/grey"
-
-                    android:paddingStart="6dp"
-                    android:paddingEnd="6dp"
-                    android:paddingTop="2dp"
-                    android:paddingBottom="2dp"/>
-
-                <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Created at"
-                    android:textSize="14sp"
-                    android:layout_alignParentEnd="true"
-                    android:textColor="@color/b2"
-                    android:fontFamily="@font/lato_bold"
-                    android:singleLine="true"
-                    android:id="@+id/rec_Created"
-                    android:textStyle="bold"
+                    android:layout_toStartOf="@id/rec_Created"
                     android:ellipsize="end"
-                    android:paddingEnd="6dp"
+                    android:fontFamily="@font/lato_bold"
+                    android:paddingStart="6dp"
                     android:paddingTop="2dp"
-                    android:paddingBottom="2dp"/>
+                    android:paddingEnd="6dp"
+                    android:paddingBottom="2dp"
+                    android:singleLine="true"
+
+                    android:text="Created on:"
+                    android:textColor="@color/grey"
+                    android:textSize="14sp"
+                    android:textStyle="bold" />
+
                 <TextView
-                    android:layout_width="0dp"
+                    android:id="@+id/rec_Created"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:maxLines="0"
                     android:layout_alignParentEnd="true"
+                    android:ellipsize="end"
+                    android:fontFamily="@font/lato_bold"
+                    android:paddingTop="2dp"
+                    android:paddingEnd="6dp"
+                    android:paddingBottom="2dp"
+                    android:singleLine="true"
+                    android:text="Created at"
+                    android:textColor="@color/b2"
+                    android:textSize="14sp"
+                    android:textStyle="bold" />
+
+                <TextView
                     android:id="@+id/rec_Desc"
-                    android:paddingStart="6dp"
-                    android:paddingEnd="6dp"
-                    android:paddingTop="2dp"
-                    android:paddingBottom="2dp"/>
-                <TextView
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:maxLines="0"
                     android:layout_alignParentEnd="true"
-                    android:id="@+id/rec_Url"
+                    android:maxLines="0"
                     android:paddingStart="6dp"
-                    android:paddingEnd="6dp"
                     android:paddingTop="2dp"
-                    android:paddingBottom="2dp"/>
+                    android:paddingEnd="6dp"
+                    android:paddingBottom="2dp" />
+
+                <TextView
+                    android:id="@+id/rec_Url"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:maxLines="0"
+                    android:paddingStart="6dp"
+                    android:paddingTop="2dp"
+                    android:paddingEnd="6dp"
+                    android:paddingBottom="2dp" />
 
             </RelativeLayout>
 
