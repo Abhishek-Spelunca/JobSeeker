@@ -58,13 +58,28 @@
             android:layout_height="match_parent"
             android:layout_marginTop="10dp">
 
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/recyclerView"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
                 android:scrollbars="vertical"
                 android:visibility="gone" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recycle2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/recyclerView"
+                android:layout_marginTop="8dp"
+                android:scrollbars="vertical"
+                android:visibility="gone" />
+
+            </RelativeLayout>
 
         </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
     </RelativeLayout>

@@ -108,7 +108,7 @@
                     android:layout_marginTop="20dp"
                     android:background="@drawable/edit_border"
                     android:gravity="start|center_vertical"
-                    android:hint="Pay Scale"
+                    android:hint="Company Strength"
                     android:padding="16dp"
                     android:textColor="@color/b2" />
 

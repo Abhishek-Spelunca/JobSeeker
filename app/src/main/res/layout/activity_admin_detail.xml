@@ -163,6 +163,34 @@
                     android:textColor="@color/b2"
                     android:textSize="18sp" />
 
+                <ImageView
+                    android:id="@+id/currencyLogo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/company_website"
+                    android:layout_marginTop="13dp"
+                    android:paddingStart="8dp"
+                    android:src="@drawable/contact" />
+
+                <TextView
+                    android:id="@+id/detailPayScale"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/company_website"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_toEndOf="@id/currencyLogo"
+                    android:background="@drawable/edit_border"
+                    android:backgroundTint="@color/grey"
+                    android:fontFamily="@font/lato_regular"
+                    android:paddingStart="8dp"
+                    android:paddingEnd="8dp"
+                    android:paddingBottom="6dp"
+                    android:paddingTop="4dp"
+                    android:text="Company Strength"
+                    android:textColor="@color/b2"
+                    android:textSize="18sp" />
+
 
             </RelativeLayout>
 
@@ -174,49 +202,12 @@
                 android:layout_marginTop="10dp"
                 android:elevation="4dp">
 
-                <TextView
-                    android:id="@+id/pay"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:fontFamily="@font/lato_bold"
-                    android:text="PayScale"
-                    android:textColor="@color/b2"
-                    android:textSize="22sp"
-                    android:textStyle="bold" />
-
-                <ImageView
-                    android:id="@+id/currencyLogo"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@id/pay"
-                    android:layout_marginTop="10dp"
-                    android:paddingStart="8dp"
-                    android:src="@drawable/currency" />
-
-                <TextView
-                    android:id="@+id/detailPayScale"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@id/pay"
-                    android:layout_marginStart="8dp"
-                    android:layout_marginTop="10dp"
-                    android:layout_toEndOf="@id/currencyLogo"
-                    android:background="@drawable/edit_border"
-                    android:backgroundTint="@color/green2"
-                    android:fontFamily="@font/lato_bold"
-                    android:paddingStart="4dp"
-                    android:paddingEnd="4dp"
-                    android:paddingBottom="6dp"
-                    android:text="Pay"
-                    android:textColor="@color/green"
-                    android:textSize="18sp" />
 
 
                 <TextView
                     android:id="@+id/createText"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_below="@id/currencyLogo"
                     android:layout_marginTop="13dp"
                     android:fontFamily="@font/lato_bold"
                     android:text="Created On "
